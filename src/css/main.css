@@ -1,0 +1,2036 @@
+:root {
+    --black: #171717;
+    --yellow: #FFC822;
+    --orange: #FF6625;
+    --purple: #B453FE;
+    --pink: #FE53CB;
+    --lightgray: #F9F9F9;
+    --secondgray: #D9D9D9;
+    --thirdgray: #737373;
+    --safeDesktop: 50px;
+    --contentDesktop: 130px;
+    --HIScale: 1.1;
+    --BOpacity: 1;
+    --white: white;
+    --dynamicText: var(--black);
+    --dynamicTextInverted: var(--white);
+}
+
+@font-face {
+    font-family: 'DrukCyr'; /* Название, которое будет использоваться в CSS */
+    src: url('../../fonts/drukcyr/DrukCyr-Medium.ttf') format('truetype');
+    font-weight: medium; /* Обычное начертание (normal) */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DrukCyr'; /* Название, которое будет использоваться в CSS */
+    src: url('../../fonts/drukcyr/DrukCyr-MediumItalic.ttf') format('truetype');
+    font-weight: medium; /* Обычное начертание (normal) */
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'DrukCyr'; /* Название, которое будет использоваться в CSS */
+    src: url('../../fonts/drukcyr/DrukCyr-Bold.ttf') format('truetype');
+    font-weight: bold; /* Обычное начертание (normal) */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DrukCyr'; /* Название, которое будет использоваться в CSS */
+    src: url('../../fonts/drukcyr/DrukCyr-BoldItalic.ttf') format('truetype');
+    font-weight: bold; /* Обычное начертание (normal) */
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Okta Neue'; /* Название, которое будет использоваться в CSS */
+    src: url('../../fonts/oktaneue/OktaNeue-Bold.ttf') format('truetype');
+    font-weight: bold; /* Обычное начертание (normal) */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Okta Neue'; /* Название, которое будет использоваться в CSS */
+    src: url('../../fonts/oktaneue/OktaNeue-SemiBold.ttf') format('truetype');
+    font-weight: 600; /* Обычное начертание (normal) */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Okta Neue'; /* Название, которое будет использоваться в CSS */
+    src: url('../../fonts/oktaneue/OktaNeue-SemiBoldItalic.ttf') format('truetype');
+    font-weight: 600; /* Обычное начертание (normal) */
+    font-style: italic;
+}
+
+p {
+    margin: 0; /* Сбрасываем стандартные отступы */
+  padding: 0;
+}
+
+.DrukCyr {
+    font-family: 'DrukCyr';
+    text-transform: uppercase;
+}
+
+.OktaNeue {
+    font-family: 'Okta Neue';
+}
+
+.Italic {
+    font-style: italic;
+}
+
+.JustifyFont {
+     text-align: justify !important; /* Равномерное выравнивание */
+  hyphens: auto;       /* Перенос слов при необходимости */
+  text-align-last: justify;
+}
+
+.Tooltip {
+    position: relative;
+}
+
+.Tooltip::after {
+    content: attr(tooltip); /* Текст из атрибута data-tooltip */
+    position: absolute;
+    top: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    /* background: var(--black); */
+    color: var(--secondgray);
+    border-radius: 0px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Задержка 1 секунда */
+    pointer-events: none;
+    width: 100%;
+    max-width: 200px;
+    text-align: left;
+    margin-bottom: 8px;
+
+    font-size: 20px;
+    font-family: 'Okta Neue';
+}
+
+.Tooltip:hover::after {
+    opacity: 1;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
+
+html, body {
+    overflow-x: hidden;
+  height: 100%; /* Важно для iOS */
+  position: flex; /* Фикс для Safari 14+ */
+  overscroll-behavior-x: none; /* Блокирует "отскок" на iOS */
+  -webkit-overflow-scrolling: auto; /* Отключает инерционный скролл */
+  flex-direction: column;
+}
+
+button {
+    border: none;
+    color: var(--black);
+    background-color: transparent;
+    box-shadow: inset 0 0 0 3px rgba(23, 23, 23, var(--BOpacity));
+    transition: box-shadow 0.3s ease;
+
+    padding-left: 55px;
+    padding-right: 55px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    cursor: pointer;
+}
+
+[darkTheme] .ReviewBlock button {
+    box-shadow: inset 0 0 0 3px rgba(255, 255, 255, var(--BOpacity));
+}
+
+button[filled] {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+button:hover:not([notAnimation]) {
+    box-shadow: inset 0 0 0 5px rgba(0, 0, 0, var(--BOpacity));
+    transition: box-shadow 0.3s ease;
+}
+
+button.Inverted {
+    color: var(--white) !important;
+    background-color: transparent !important;
+    box-shadow: inset 0 0 0 3px rgba(255, 255, 255, var(--BOpacity));
+    transition: box-shadow 0.3s ease;
+}
+
+button.Inverted:hover {
+    box-shadow: inset 0 0 0 5px white;
+    transition: box-shadow 0.3s ease;
+}
+
+button[colorAccent] {
+    color: var(--colorAccent2);
+    box-shadow: inset 0 0 0 3px var(--colorAccent);
+    transition: box-shadow 0.3s ease;
+}
+
+button[colorAccent]:hover:not([notAnimation]) {
+    box-shadow: inset 0 0 0 5px var(--colorAccent);
+    transition: box-shadow 0.3s ease;
+}
+
+input {
+    box-sizing: border-box;
+    padding: 25px 35px;
+    background-color: transparent;
+    box-shadow: inset 0 0 0 3px rgba(0, 0, 0, var(--BOpacity));
+    border: none;
+    font-family: 'Okta Neue';
+    font-size: 20px;
+    color: var(--black);
+}
+
+div.TFFont > input {
+    font-size: 25px;
+}
+
+input::placeholder {
+    color: var(--secondgray);
+}
+
+input:focus {
+    outline: none;
+    border: none;
+}
+
+.MobileOnly {
+    display: none !important;
+}
+
+.DesktopOnly {
+    display: flex !important;
+}
+
+input.Inverted {
+    box-shadow: inset 0 0 0 3px rgba(255, 255, 255, var(--BOpacity));
+    color: var(--white) !important;
+    background-color: transparent !important;
+}
+
+input.Inverted::placeholder {
+    color: var(--thirdgray);
+}
+
+.TFFont { /* 25 px */
+    font-size: 25px;
+}
+
+.HoveringItem {
+    scale: 1;
+    transition: scale 0.3s ease;
+}
+
+.Line1 {
+    line-height: 1;
+}
+
+.HoveringItem:Hover {
+    scale: var(--HIScale);
+    transition: scale 0.3s ease;
+}
+
+.HoveringItem:hover:active {
+    scale:  calc(2 - var(--HIScale));
+    transition: scale 0.3s ease;
+}
+
+button.HoveringItem {
+    scale: 1;
+    transition: scale 0.3s ease;
+}
+
+button.HoveringItem:Hover {
+    scale: var(--HIScale)
+}
+
+.HoveringBorder {
+    transition: box-shadow 0.3s ease;
+    box-shadow: inset 0 0 0 3px var(--colorAccent);
+}
+
+.HoveringBorder:hover {
+    box-shadow: inset 0 0 0 4px var(--colorAccent);
+}
+
+.Secondary {
+    color: var(--thirdgray);
+}
+
+.Inverted .Secondary {
+    color: var(--secondgray);
+}
+
+.IABreathe {
+    transition: transform 0.2s ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+.IABreathe {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.NoSelect {
+    user-select: none;  /* Стандартное свойство */
+  -webkit-user-select: none;  /* Chrome, Safari */
+  -moz-user-select: none;  /* Firefox */
+  -ms-user-select: none;
+  cursor: default;
+}
+
+.Transparent {
+    color: transparent;
+}
+
+.HundredThirty {
+    font-size: 130px !important;
+}
+
+.Hundred {
+    font-size: 100px !important;
+}
+
+.HundredFifty {
+    font-size: 150px !important;
+}
+
+.Thirty {
+    font-size: 30px !important;
+}
+
+.NoCaps {
+    text-transform:none;
+}
+
+.Seventy {
+    font-size: 70px !important;
+}
+
+.Twenty {
+    font-size: 20px !important;
+}
+
+.Sixty {
+    font-size: 60px !important;
+}
+
+.Category {
+    width: fit-content;
+    font-size: 60px !important;
+    background-color: var(--white);
+    color: var(--black);
+    padding-right: 1%;
+    padding-left: 1%;
+    box-sizing: content-box;
+}
+
+.Inverted .Category {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.FullScreenModule.FSMOpen {
+    bottom: 0;
+    transition: bottom 0.2s ease;
+}
+
+.FullScreenModule {
+    color: white;
+    position: fixed;
+    bottom: -100%;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    padding: var(--safeDesktop);
+    width: 100%;
+    height: 100%;
+    background-color: var(--black);
+    z-index: 10;
+    box-sizing: border-box;
+    transition: bottom 0.2s ease;
+    overflow-y: scroll;
+    gap: 20px;
+}
+
+.FullScreenModule #FSMHeader[rotated] {
+    rotate: -1deg;
+}
+
+.FullScreenModule *[none], .FullScreenModule *[none] * {
+    display: none !important;
+}
+
+.FullScreenModule p.Blocked {
+    height: fit-content;
+    font-size: 100px !important;
+    width: fit-content;
+    white-space: nowrap;
+}
+
+.FullScreenModule > div:first-child > p:not(.Blocked) {
+    font-size: 100px !important;
+    line-height: 1;
+}
+
+.FullScreenModule > div:first-child {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+}
+
+.FullScreenModule a.LinkHover {
+    /* font-size: 100px; */
+}
+
+.FullScreenModule > div:last-child:not(.FSMButtonClose) {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.FullScreenModule #FSMBigHeader {
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.FullScreenModule #FSMLinks {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: start;
+    margin: var(--safeDesktop);
+    left: 0;
+    bottom: 0;
+}
+
+.FullScreenModule #FSMLinks[right] {
+    align-items: end;
+    right: 0;
+    top: 0;
+}
+
+.FullScreenModule #FSMLinks a {
+    line-height: 1;
+}
+
+.Button2 {
+    cursor: pointer;
+    padding: 20px 80px;
+    border: solid 3px rgba(255, 255, 255, 0.1);
+}
+
+.Button {
+    cursor: pointer;
+    padding: 30px 50px;
+    border: solid 3px var(--dynamicText);
+}
+
+.Button2.Active {
+    border: solid 3px rgba(255, 255, 255, 1);
+    color: white
+}
+
+#FSMInformation > div > div.Actived {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: var(--safeDesktop);
+    transform: translateX(0);
+}
+
+#FSMInformation > div > div.Actived:not(#FSMI1) {
+    top: 0;
+    justify-content:normal;
+}
+
+.FullScreenModule .FSMIInputs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: scroll;
+}
+
+.FullScreenModule .FSMIInputs > input {
+    width: 100%;
+}
+ 
+#FSMInformation > div:first-child > div:not(.Actived) {
+    position: absolute;
+    bottom: 0;
+    left: -100%;
+    margin: var(--safeDesktop);
+    transform: translateX(-100%); /* Скрыт слева */
+    transition: transform 0.3s ease-in-out;
+}
+
+#FSMInformation > div:first-child > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+#FSMInformation > div:first-child > div > div:first-child {
+    display: flex;
+    flex-direction: column;
+}
+
+
+#FSMInformation > div:first-child > div > div:first-child > p:last-child {
+    width: 60%;
+}
+
+.FSMGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:10px;
+}
+
+.FSMButton {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: var(--safeDesktop);
+    text-align: center;
+}
+
+#FSMIButtons {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: var(--safeDesktop);
+}
+
+#FSMIButtons > div {
+    flex-direction: column;
+    gap: 15px;
+    position: relative;
+}
+
+#FSMIButtons .FSMButton {
+    margin: 0;
+    position: relative;
+}
+
+#FSMI2 {
+    gap: 100px !important;
+}
+
+/* ############### HEADER ############### */
+
+
+
+header {
+    position: absolute;
+    display: flex;
+    justify-content: space-between; /* Распределяет пространство между элементами */
+    align-items: stretch;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: var(--safeDesktop);
+    padding-right: var(--safeDesktop);
+    z-index: 2;
+    width: calc(100vw - var(--safeDesktop) * 2);
+}
+
+#HeaderLinks {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+
+#HeaderLinks a {
+    text-decoration: none;
+    color: var(--black);
+    font-style: italic;
+    font-size: 30px;
+    position: relative; /* Создаем контекст для псевдоэлемента */
+    display: inline-block;
+}
+
+.LinkHover {
+    transform: scale(1);
+    width: fit-content;
+}
+
+.LinkHover::before {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  z-index: 10;
+  transition: width 0.1s ease-in-out;
+  background-color: currentColor;
+}
+
+.LinkHover:hover::before {
+  width: 100%;
+}
+
+.LinkHoverWrapper:hover > .LinkHover::before {
+  width: 100%;
+}
+
+.Active.LinkHover::before {
+    width: 100%;
+}
+
+.Active.LinkHover {
+    transform: scale(1);
+    transition: transform 0.3s ease;
+}
+
+.Active.LinkHover:hover {
+    transform: scale(1.1);
+}
+
+#HeaderLanguage {
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+#HeaderLanguage a {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-decoration: none;
+    font-style: bold;
+    font-size: 30px;
+    color: var(--black);
+}
+
+.ChangeAppearance {
+    display: flex;
+    position: relative;
+    border: solid 3px var(--black);
+    margin-right: 20px;
+    aspect-ratio: 1/1;
+    height: 100%;
+    min-height: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    transition: padding 0.3s ease;
+}
+
+.ChangeAppearance:hover:active {
+padding: 10px;
+    transition: padding 0.3s ease;
+}
+
+.ChangeAppearance:hover {
+    padding: 8px;
+    transition: padding 0.3s ease;
+}
+
+.ChangeAppearance > div {
+    width: 100%;
+    aspect-ratio: 1/1;
+    background-color: var(--black);
+
+    clip-path: polygon(
+        0% 0%,
+        100% 0%,
+        100% 0%,
+        100% 0%,
+        100% 100%,
+        0% 100%
+    );
+
+    transition: clip-path 0.3s ease;
+}
+
+.ChangeAppearance[moon] > div {
+    clip-path: polygon(
+        0 0,        /* Левый верхний угол */
+        40% 0,      /* Правая граница (оставляем 75% ширины) */
+        40% 60%,    /* Углубление на 25% высоты */
+        100% 60%,   /* Спускаемся вниз */
+        100% 100%,  /* Правый нижний угол */
+        0 100%      /* Левый нижний угол */
+    );
+
+     transition: clip-path 0.3s ease;
+}
+
+/* ############### MAIN ############### */
+
+#Start {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+
+
+#Main {
+    position: relative;
+    width: 100vw;    
+    height: 100vh;   
+    z-index: 0;
+    min-height: 0;
+    background-color: white;
+}
+
+[darkTheme] .LightTheme #Main {
+    color: var(--white);
+}
+
+[darkTheme] .LightTheme header a {
+    color: var(--white) !important;
+}
+
+[darkTheme] .LightTheme #NBButtons button[filled] {
+    color: var(--black);
+    background-color: var(--white);
+    box-shadow: none;
+}
+
+.LanguageButtons {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    align-items: center;
+    box-sizing: border-box;
+    font-size: 30px;
+    justify-content: center;
+    position: relative;
+}
+
+.LanguageButtons span {
+    padding: 10px 30px;
+    cursor: pointer;
+    position: relative;
+    box-shadow: inset 0 0 0 3px var(--black) ;
+    transition: box-shadow 0.3s ease;
+    transition: color 0.2s ease;
+    color: var(--black)
+}
+
+.LanguageButtons span.Actived {
+    color: white;
+    transition: color 0.2s ease;
+}
+
+.LanguageButtons div {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+}
+
+.LanguageButtons div::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    background-color: var(--black);
+    top: 0;
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+
+.LanguageButtons span:first-of-type.Actived ~ div::after {
+    left: 0;
+}
+
+.LanguageButtons span:nth-of-type(2).Actived ~ div::after {
+    left: 50%;
+}
+
+.LanguageButtons span:not(.Actived):hover {
+    box-shadow: inset 0 0 0 4px var(--black) ;
+    transition: box-shadow 0.3s ease;
+}
+
+#Navigation .LanguageButtons span.Actived,
+[darkTheme] .LightTheme .LanguageButtons span.Actived  {
+    color: var(--black);
+}
+
+#Navigation .LanguageButtons span,
+[darkTheme] .LightTheme .LanguageButtons span  {
+    color: var(--white);
+    box-shadow: inset 0 0 0 3px var(--white);
+    transition: box-shadow 0.3s ease;
+}
+
+#Navigation .LanguageButtons div::after,
+[darkTheme] .LightTheme .LanguageButtons div::after  {
+    background-color: var(--white);
+}
+
+[darkTheme] .LightTheme .LanguageButtons span:not(.Actived):hover {
+    box-shadow: inset 0 0 0 4px var(--white) ;
+    transition: box-shadow 0.3s ease;
+}
+
+#Navigation .LanguageButtons {
+    height: fit-content;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-bottom: 100px;
+    transform: translateX(-50%);
+}
+
+[darkTheme] .LightTheme #NBButtons button:not([filled]) {
+    color: var(--white);
+    box-shadow: inset 0 0 0 3px rgba(255, 255, 255, var(--BOpacity));
+}
+
+[darkTheme] .LightTheme .ChangeAppearance {
+    border-color: var(--white);
+}
+
+[darkTheme] .LightTheme .ChangeAppearance > div {
+    background-color: var(--white);
+}
+
+#Back {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: var(--bg-url);
+    background-size: cover;       /* Заполняет весь контейнер */
+    background-position: center;  /* Центрируем изображение */
+    background-repeat: no-repeat;
+}
+
+#Main::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle,farthest-side,
+        rgba(0,0,0,1),
+        rgba(0,0,0,1),
+    );
+    mask: radial-gradient(
+        circle,
+        rgba(0, 0, 0, 0) 0%, 
+        rgba(0, 0, 0, 1) 70%
+    );
+    backdrop-filter: blur(5px);
+    z-index: -1;
+}
+
+#backMe {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 80%;   /* 100% высоты viewport */
+    background-image: var(--bg-url);
+    background-size:contain;       /* Заполняет весь контейнер */
+    background-position: center center;  /* Центрируем изображение */
+    background-repeat: no-repeat; /* Убираем повторение */
+    z-index: 0;
+}
+
+
+#RunningLine {
+    position: absolute;
+    margin-top: 100px;
+    padding-left: var(--safeDesktop);
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: var(--black);
+    width: 100%;;
+}
+
+#RunningLine p {
+    margin: 0;
+    padding: 0;         /* На всякий случай */
+}
+
+#RunningLine > div {
+    display: flex;       /* Горизонтальное расположение */
+    gap: 50px;          /* Расстояние между элементами */
+    align-items: center;
+    font-size: 50px;
+    height: min-content;
+}
+
+#RunningLine > div > div {
+    display: flex;       /* Горизонтальное расположение */
+    gap: 25px;
+    align-items: center;
+}
+
+#RunningLine > div > div:first-child {
+    color: white;
+}
+
+#RunningLine > div > div:last-child {
+    color: var(--yellow);
+}
+
+#NameBlock {
+    position: absolute;
+    bottom: 0;
+    margin: var(--safeDesktop);
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between; /* Распределяет пространство между элементами */
+    align-items: end;
+    width: calc(100% - var(--safeDesktop)*2);;
+}
+
+#NameBlock a {
+    text-decoration: none;
+    color: var(--black);
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+#NameBlock #NBName p {
+    font-size: 70px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+#NameBlock #NBName {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#NameBlock #NBName > div {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+
+
+#NameBlock #NBName > div > a {
+    font-weight: 600;
+    font-size: 30px;
+    background-color: white;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 100px;
+    rotate: -2deg;
+    align-items: center;
+}
+
+#NameBlock #NBButtons {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+}
+
+#NameBlock #NBButtons a {
+    padding-left: 55px;
+    padding-right: 55px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    cursor: pointer;
+}
+
+/* ############### CONTENT ############### */
+
+body[darkTheme]  {
+    background-color: var(--black);
+    --dynamicText: var(--white);
+    --dynamicTextInverted: var(--black);
+    --secondgray: #434343;
+}
+
+#Content {
+    width: 100vw;
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+#Content p:not(.Secondary) {
+    color: var(--dynamicText);
+}
+
+#Content #Skills .Background p:not(.ColorRandom) {
+    color: var(--white);
+}
+
+#Content > *:not(.NMargin) {
+    margin: var(--contentDesktop);
+}
+
+#Content > *.NMargin {
+    margin: 0px;
+}
+
+#Content > *.SafeMargin {
+    margin: 0 var(--safeDesktop) !important;
+}
+
+#Content > *.ContentMargin {
+    margin: 0 var(--contentDesktop) !important;
+}
+
+#Content > *.SafeMargin.NMarginR {
+    margin: 0 0 0 var(--safeDesktop)  !important;
+}
+
+#Content > *.NMarginR {
+    margin-right: 0;
+}
+
+#Experience {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 180px !important;
+}
+
+#Experience > div {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: -40px;
+    height: 100%;
+}
+
+#Experience > div:last-child > div:first-child {
+     display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+}
+#Experience p.DrukCyr {
+    font-size: 150px;
+    white-space: nowrap;
+}
+
+
+.Blocked {
+    font-size: 110px !important;
+    color: var(--white) !important;
+    background-color: var(--black);
+    /* flex-grow: 1; */
+    align-items: center;
+    text-align: center;
+    /* padding-top: 25px; */
+    border-radius: 10px;
+    
+    /* padding-bottom: 15px;
+    padding-left: 20px;
+    padding-right: 20px; */
+    padding-bottom: 1%;
+    padding-left: 2%;
+    padding-right: 2%;
+    line-height: 1;
+}
+
+.Blocked[pink]  {
+        background-color: var(--pink);
+    }
+
+.Blocked[purple]  {
+    background-color: var(--purple);
+}
+
+.Blocked[orange]  {
+    background-color: var(--orange);
+}
+
+#Experience .Circled {
+    font-size: 110px !important;
+    color: var(--white) !important;
+    background-color: var(--pink);
+    /* flex-grow: 1; */
+    align-items: center;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    border-radius: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
+    line-height: 1;
+    rotate: -7deg;
+}
+
+#Experience > div:first-child > .Blocked {
+    background-color: var(--orange);
+    rotate: -1deg;
+}
+
+#Experience > div:nth-child(2) > .Blocked {
+    rotate: 1deg;
+}
+
+#Experience svg {
+    width: 4em;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+}
+
+#Reviews {
+    margin-bottom: 180px !important;
+}
+
+.ReviewBlock {
+    background-color: var(--black);
+    
+    padding: calc( var(--contentDesktop) - var(--safeDesktop));
+    padding-right: var(--contentDesktop);
+}
+
+[darkTheme] .ReviewBlock {
+    background-color: #F5F5F5;
+}
+
+[darkTheme] .ReviewBlock.Inverted {
+    background-color: #1C1C1C !important;
+}
+
+[darkTheme] .ReviewBlock.Inverted > div > div:first-of-type > *.Active {
+    background-color: var(--white);
+    color: #1C1C1C;
+}
+
+[darkTheme] .ReviewBlock > div > div:first-of-type > *.Active {
+    background-color: var(--black);
+    color: #F5F5F5 ;
+}
+
+
+.ReviewBlock:not(.Inverted) p:not(.Secondary):not(.Category), .ReviewBlock:not(.Inverted) label:not(.Active) {
+   color: var(--dynamicTextInverted) !important;
+}
+
+.ReviewBlock.Inverted p:not(.Secondary), .ReviewBlock.Inverted label:not(.Active) {
+   color: var(--dynamicText) !important;
+}
+
+.ReviewBlock:not(.Inverted) p.Category {
+    color: var(--dynamicText) !important;
+    background-color: var(--dynamicTextInverted) !important;
+}
+
+.ReviewBlock.Inverted p.Category {
+    color: var(--dynamicTextInverted) !important;
+    background-color: var(--dynamicText) !important;
+}
+
+.ReviewBlock.ColorAccent {
+    background-color: var(--colorAccent);
+}
+
+.ReviewBlock.ColorAccent p.Category {
+    background-color: var(--colorAccent2);
+    color: var(--colorAccent) !important;
+}
+
+.ReviewBlock p.Category {
+    margin-bottom: 0.5%;
+}
+
+.ReviewBlock.ColorAccent p:not(.Secondary) {
+    color: var(--colorAccent2);
+}
+
+
+.ReviewBlock .RBHeader {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 60px;
+    gap: 20px;
+    align-items: center;
+}
+
+.ReviewBlock p.RBHeader {
+    font-size: 100px;
+    margin-bottom: 60px;
+}
+
+.ReviewBlock p.RBHeader:not(:first-child) {
+    margin-top: 60px;
+}
+
+.ReviewBlock p.RBHeader:has(a) {
+    margin-bottom: 30px;
+    width: fit-content;
+}
+
+.ReviewBlock > div > .RBLinks {
+    margin-bottom: 60px;
+}
+
+.ReviewBlock > div > .RBLinks > *{
+    padding: 30px 50px;
+    line-height: 1;
+    margin: 0
+}
+
+.ReviewBlock > div > div:first-of-type > *.Active {
+    background-color: white;
+    color: var(--black);
+}
+
+.ReviewBlock.Inverted > div > div:first-of-type > *.Active  {
+    background-color: var(--black);
+    color: white;
+}
+
+.ReviewBlock.Inverted > div > div:first-of-type > *:not(.Active)  {
+    background-color: transparent;
+}
+
+.ReviewBlock > div > div:first-of-type > * > span {
+    position: relative; /* Создаем контекст для псевдоэлемента */
+    display: inline-block;
+}
+
+.ReviewBlock.Inverted > div > div:first-of-type > * > span {
+    position: relative; /* Создаем контекст для псевдоэлемента */
+    display: inline-block;
+}
+
+.ReviewBlock p[isHeader]{
+    margin-bottom: 30px;
+}
+
+.ReviewBlock .RBText > p {
+    display: inline;
+}
+
+.ReviewBlock > div .TabContent {
+    display: flex;
+    flex-direction: column;
+}
+
+.ReviewBlock > div .TabContent > div:first-child {
+    align-self: flex-start;
+}
+
+.ReviewBlock > div .TabContent > *:last-child {
+    align-self: flex-end;
+}
+
+.ReviewBlock > div .TabContent > div:first-child{
+    margin-bottom: 150px;
+}
+
+.TabContent {
+    display: none !important;
+}
+
+#tab1:checked ~ .TabsContents .TabContent:nth-child(1),
+#tab2:checked ~ .TabsContents .TabContent:nth-child(2) {
+  display: flex !important;
+}
+
+#tab21:checked ~ .TabsContents > .TabContent:nth-child(1),
+#tab22:checked ~ .TabsContents > .TabContent:nth-child(2),
+#tab23:checked ~ .TabsContents > .TabContent:nth-child(3),
+#tab24:checked ~ .TabsContents > .TabContent:nth-child(4)
+{
+  display: flex !important;
+}
+
+.ReviewBlock > div:first-of-type > input {
+    display: none;
+}
+
+.ReviewBlock .RBAddInfo {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-items: auto;
+    margin-top: 60px;
+}
+
+.ReviewBlock .RBAddInfo [right] {
+    margin-left: auto;
+    align-items: flex-end;
+}
+
+.RBAddInfo .RBButton {
+    cursor: pointer;
+    background-color: transparent;
+    font-size: 20px;
+    padding-right: 50px;
+    padding-left: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: var(--black) 2px solid;
+}
+
+.RBAddInfo .RBButton.Disabled {
+    opacity: 0.3;
+}
+ 
+.Inverted {
+    background-color: var(--lightgray) !important;
+    color: var(--black) !important;
+}
+
+*.Inverted a {
+    color: var(--dynamicText);
+}
+
+[darkTheme] .Inverted button {
+    color: var(--dynamicText);
+    
+}
+
+#Skills {
+    margin-bottom: 180px !important;
+}
+#Skills > p {
+    margin-left: var(--contentDesktop);
+}
+
+[darkTheme] #BHeader span {
+    background-color: var(--dynamicText);
+}
+
+div.BigLine {
+    width: 100%;
+    background-color: var(--dynamicText);
+    color:var(--dynamicTextInverted);
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    padding-left: var(--contentDesktop) ;
+    padding-right: calc(var(--contentDesktop) * 3 ) ;
+    overflow-x: scroll; /* или scroll для постоянной полосы прокрутки */
+    white-space: nowrap;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+#Portfolio > div:first-child {
+    display: flex;
+    flex-direction: column;
+    white-space: nowrap;
+}
+
+.Headers {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+#Portfolio > div:first-child > p {
+    line-height: 1;
+}
+
+#Portfolio > p.OktaNeue.TFFont {
+        margin-top: 25px;
+    }
+
+.Background {
+    background-color: var(--dynamicText);
+    color: var(--dynamicTextInverted) !important;
+    width: fit-content;
+    line-height: 1;
+    padding-bottom: 0.8%;
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    align-items: center;
+}
+
+[darkTheme] .Background p:not(.ColorfulRandom) {
+    color: var(--black) !important;
+}
+
+.BR {
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+#MyBlogTable {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 60px;
+}
+
+#MyBlogBlock {
+    width: calc(100vw - 2 * var(--contentDesktop));
+}
+
+#MyBlogBlock > div:first-child {
+    margin-bottom: 60px;
+}
+
+.MyBlogTableItem {
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    gap: 10px;
+    line-height: 1;
+}
+
+.MyBlogTableItem > p:first-child {
+    font-size: 60px;
+}
+
+.MyBlogTableItem > p:last-child {
+    font-size: 30px;
+    color: var(--secondgray) !important;
+    width: 100%;
+}
+/* 
+[darkTheme] .MyBlogTableItem > p:last-child {
+     color: var(--thirdgray) !important;
+} */
+
+#MyBlogTable > .MyBlogTableItem:nth-child(3n + 1) {
+    justify-self: start;
+}
+
+#MyBlogTable > .MyBlogTableItem:nth-child(3n + 2) {
+    justify-self: center;
+}
+
+#MyBlogTable > .MyBlogTableItem:nth-child(3n + 3) {
+    justify-self: end;
+}
+
+/* ################ FOOTER ###########. */
+
+footer {
+    box-sizing: border-box;
+    z-index: 0;
+    width: 100vw;
+    padding: var(--contentDesktop);
+    background-color: var(--black);
+    color: white;
+}
+
+footer.SafeMargin {
+    padding: var(--safeDesktop);
+}
+
+footer a {
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    z-index: 1;
+    position: relative;
+    line-height: 1;
+    transition: all 0.1s ease;
+}
+
+footer > div {
+    position: relative;
+    display: grid;
+  grid-template-areas:
+    "top-left ......"
+    "...... bottom-right";
+    width: 100%;
+    justify-content: space-between;
+    row-gap: 200px;
+}
+
+footer > div > div {
+    display: inline-flex;
+    flex-direction: row;
+    gap:30px;
+    width: max-content;
+}
+
+footer > div > div:first-child {
+    grid-area: top-left;
+  align-self: start; /* Прижимаем к верху */
+  justify-self: start;
+}
+
+footer > div > div:last-child {
+   grid-area: bottom-right;
+  align-self: end; /* Прижимаем к низу */
+  justify-self: end;
+}
+
+[data-language="ru"] .RuOnly {
+    display: revert;
+}
+
+[data-language="en"] .RuOnly {
+    display: none !important;
+}
+
+[data-language="en"] .EnOnly {
+    display: revert;
+}
+
+[data-language="ru"] .EnOnly {
+    display: none !important;
+}
+
+
+
+@media (max-width: 480px) {
+  :root {
+    --safeDesktop: 20px;
+    --contentDesktop: 40px;
+    --HIScale: 1.03 ;
+    --mobileAspect: calc(100vw / 480px);
+}
+
+    .Hundred {
+        font-size: 60px !important;
+    }
+
+    .HundredFifty {
+        font-size: 70px !important;
+    }
+
+    .TFFont {
+        font-size: 16px;
+    }
+
+    .Twenty {
+        font-size: 16px !important;
+    }
+
+    #Content {
+        font-size: 20px;
+        text-align: justify;
+    }
+
+    .ReviewBlock p.RBHeader {
+         font-size: 60px;
+        margin-bottom: 30px;
+    }
+
+    #Experience p.DrukCyr {
+        font-size: 70px;
+    }
+
+    .Blocked {
+        font-size: 60px !important;
+        rotate: -1deg;
+        padding-bottom: 3%;
+    padding-left: 4%;
+    padding-right: 4%;
+    }
+
+    #Content > p:first-child {
+        margin-bottom: 0;
+    }
+
+    #Experience > div:nth-child(2) > .Blocked {
+        rotate: -1deg;
+    }
+
+    #Experience {
+        align-items: flex-start;
+        margin: 0 var(--contentDesktop) !important;
+        width: calc(100% - var(--contentDesktop) * 2);
+        margin-bottom: 80px !important;
+        margin-top: 80px !important;
+    }
+
+    #Experience > div {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
+        margin-bottom: 0px;
+    }
+
+    #Experience > *:not(:last-child) {
+        margin-bottom: -10px;
+    }
+
+    #Experience > div:last-child {
+        margin-top: 10px;
+    }
+
+    #Experience > div:last-child > div:last-child {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    #NameBlock {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #NameBlock #NBButtons {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    #NameBlock #NBButtons {
+        width: 100%;
+    }
+
+    #NameBlock #NBName p {
+        font-size: calc(50px * var(--mobileAspect));
+    }
+
+    #NameBlock a, #NameBlock #NBButtons button {
+        font-size: 16px !important;
+    }
+
+    #Main::after {
+        left: -40%;
+        top: -40%;
+        backdrop-filter: blur(10px);
+        z-index: 0;
+    }
+
+    #Skills .Background {
+        border-radius: 0;
+        padding-left: var(--contentDesktop);
+    }
+
+    #RunningLine {
+        padding-top: var(--safeDesktop);
+        padding-bottom: var(--safeDesktop);
+        margin-top: calc(25px + var(--safeDesktop)*2);
+    }
+
+    #RunningLine > div {
+        font-size: calc(35px * var(--mobileAspect));
+    }
+
+    #backMe {
+        height: 80%;   /* 100% высоты viewport */
+        background-size:cover; 
+    }
+
+    #NameBlock, #RunningLine {
+        z-index: 2;
+    }
+
+    .MobileOnly {
+        display: flex !important;
+    }
+
+    .DesktopOnly {
+        display: none !important;
+    } 
+
+    .ReviewBlock p[isHeader]{
+        margin-bottom: 30px;
+        font-size: 18px;
+    }
+
+    .ReviewBlock > div > .RBLinks {
+        margin-bottom: 30px;
+        display: flex;
+        flex-direction: row;
+        overflow-x: scroll;
+    }
+
+    .ReviewBlock .Button {
+        padding: 15px 30px;
+    }
+
+    .ReviewBlock > div > .RBLinks > * {
+        font-size: 18px;
+        padding: 20px 30px;
+        line-height: 1;
+        white-space: nowrap;
+    }
+
+    .ReviewBlock > div > div:last-child > div:first-child{
+        margin-bottom: 60px;
+    }
+
+    .ReviewBlock .RBHeader {
+        text-align: start;
+        line-height: 1;
+    }
+
+    .ReviewBlock p.RBHeader:not(:first-child).MobileOnly {
+        margin-top: 0;
+    }
+
+    #Skills {
+        margin-top: 160px !important;
+        margin-bottom: 160px !important;
+    }
+
+    div.BigLine {
+        gap: 30px;
+    }
+
+    #MyBlogTable {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .MyBlogTableItem {
+        justify-self: start !important;
+    }
+
+    .MyBlogTableItem > p:first-child {
+        font-size: 30px;
+    }
+
+    .MyBlogTableItem > p:last-child {
+        font-size: 16px;
+        width: 80%;
+    }
+
+    .BR {
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+
+    .FullScreenModule p.Blocked {
+        font-size: 60px !important;
+    }
+
+    .Seventy {
+        font-size: 60px !important;
+    }
+
+    .FullScreenModule .Button2 {
+        background-color: var(--black);
+    }
+
+    footer > div {
+        display: flex;
+        flex-direction: column;
+        margin-top: 40px ;
+        gap: 80px;
+        justify-content: flex-start;
+    }
+
+    footer > div > div {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    footer > div > div {
+        align-self: flex-start !important;
+    }
+
+    .LinkHover::before {
+        height: 2px;
+    }
+
+    header {
+        display: none;
+    }
+
+    #BHeader {
+        display: flex;
+        flex-direction: column;
+        width: 10vw;
+        gap: 5px;
+        position: absolute;
+        right: var(--safeDesktop);
+        top: var(--safeDesktop);
+        z-index: 2;
+    }
+
+    .ChangeAppearance {
+         z-index: 2;
+    }
+
+    #BHeader span {
+        height: 5px;
+        background-color: var(--black);
+        width: 100%;
+    }
+
+    .LightTheme #BHeader span {
+        background-color: var(--white) !important;
+    }
+
+    .Cross {
+        position: absolute;
+        right: var(--safeDesktop);
+        top: var(--safeDesktop);
+        width: 10vw;
+        z-index: 2;
+        aspect-ratio: 1/1;
+        display: inline-block;
+    }
+
+    .Cross::before,
+    .Cross::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: 3px; /* Толщина линии */
+        background: white; /* Цвет крестика */
+    }
+
+    .Cross::before {
+        transform: rotate(45deg);
+    }
+
+    .Cross::after {
+        transform: rotate(-45deg);
+    }
+
+    #Navigation #FSMLinks {
+        position: absolute;
+        top: 0;
+        align-items: center;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-bottom: 100px;
+        gap:50px;
+    }
+
+    #Navigation #FSMLinks a.LinkHover::before {
+        background-color: white;
+        height: 3px;
+    }
+
+    .FullScreenModule {
+        overflow-y: scroll;
+    }
+
+    .FullScreenModule #FSMBigHeader {
+        flex-direction: column !important;
+    }
+
+    .FullScreenModule #FSMLinks {
+        position: relative;
+        margin: 0;
+        gap: 10px;
+    }
+
+    .FullScreenModule {
+        gap: 80px;
+    }
+
+    .FullScreenModule #FSMLinks[right] {
+        align-items: start;
+    }
+    #FSMInformation > div > div.Actived {
+        position: relative;
+        margin: 0;
+    }
+
+    .FSMGrid {
+        white-space: nowrap;
+    }
+
+    .FSMGrid button {
+        padding: 1.5em 0;
+
+    }
+
+    #FSMInformation > div:first-child > div > div:first-child > p:last-child {
+        width: 100%;
+        text-align: justify;
+    }
+
+    #FSMInformation > div:first-child > div > div:first-child {
+        gap: 20px;
+    }
+
+    .FullScreenModule p.Blocked {
+        text-align: left;
+    }
+
+    #MyBlog #FSMHeader {
+        order: 1;
+        margin-bottom: -50px;
+    }
+
+    #MyBlog #FSMLinks {
+        order: 2;
+    }
+
+    #MyBlog #FSMInformation {
+        order: 3;
+    }
+
+    .FullScreenModule:has(#FSMI1:not(.Actived)) #FSMLinks {
+        display: none;
+    }
+
+    #FSMI1:not(.Actived) ~ div {
+        position: absolute !important;
+        top: 0;
+        box-sizing: border-box;
+        padding: var(--safeDesktop);
+    }
+
+    .Back {
+        position: absolute;
+        top: var(--safeDesktop);
+        right: 0;
+        margin: var(--safeDesktop);
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        line-height: 1;
+    }
+
+    .Back span {
+        width: 8vw;
+        background-color: white;
+        height: 3px;
+        position: relative;
+    }
+
+    .Back span::before,
+    .Back span::after {
+        content: "";
+        position: absolute;
+        width: 3vw;
+        height: 3px;
+        background: white;
+    }
+
+    .Back span:before {
+        top: 0;
+        left: 0;
+        transform: rotate(45deg);
+        transform-origin: left center;
+    }
+
+   .Back span::after {
+        bottom: 0;
+        left: 0;
+        transform: rotate(-45deg);
+        transform-origin: left center;
+    }
+
+    .FullScreenModule:has(#FSMI1:not(.Actived)) .Cross,
+    .FullScreenModule:has(#FSMI1:not(.Actived)) .Cross::after,
+    .FullScreenModule:has(#FSMI1:not(.Actived)) .Cross::before,
+    
+    .FullScreenModule:has(#FSMI1.Actived) .Back,
+    .FullScreenModule:has(#FSMI1.Actived) .Back span::after,
+    .FullScreenModule:has(#FSMI1.Actived) .Back span::before {
+        display: none !important;
+        pointer-events: none !important;
+    }
+
+    .FullScreenModule:has(#FSMI1.Actived) .Cross,
+    .FullScreenModule:has(#FSMI1.Actived) .Cross::after,
+    .FullScreenModule:has(#FSMI1.Actived) .Cross::before {
+        display: inline-block;
+        pointer-events:all;
+    }
+
+    input {
+        padding: 18px;
+    }
+
+    .FullScreenModule .FSMIInputs {
+        width: 100%;
+    }
+    
+    #FSMI2 {
+        gap: 100px !important;
+    }
+
+    .FullScreenModule .FSMIInputs > p {
+        text-align: left;
+        width: 80%;
+    }
+
+    #FSMIButtons {
+        width: calc(100vw - 2 * var(--safeDesktop));
+        left: 0;
+    }
+
+    div.TFFont > input {
+        font-size: 16px;
+    }
+
+    .Category {
+        width: fit-content;
+        font-size: 40px !important;
+        background-color: white;
+        color: var(--black);
+        padding-right: 2%;
+        padding-left: 2%;
+        padding-bottom: 1%;
+    }
+    
+    .HundredThirty {
+        font-size: 70px !important;
+    }
+
+    div.BigLine {
+        padding: 0;
+    }
+
+    #HeaderMain  {
+        position: relative;
+        margin-top: calc(2*var(--safeDesktop) + 25px);
+    }
+
+    #BHeader {
+        position: absolute;
+    }
+
+    #Navigation .ChangeAppearance {
+        height: 50px;
+        padding: 8px;
+        min-height: auto;
+        aspect-ratio: 1/1;
+        border-color: var(--white);
+    }
+
+    #Navigation .ChangeAppearance:hover {
+        padding: 6px;
+    }
+
+    #Navigation .ChangeAppearance:hover:active {
+        padding: 10px;
+    }
+
+    #Navigation .ChangeAppearance > div {
+        background-color: var(--white);
+    }
+}
+

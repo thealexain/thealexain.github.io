@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Алексайн Отзывы</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/review.css">
+</head>
+<body style="--colorAccent: var(--black);" data-language="ru">
+    <div class="LightTheme">
+        <header>
+                        <div id="HeaderLinks">
+                            <a href="MAIN.html" class="DrukCyr LinkHover" data-lang="HeaderMain">Главная</a>
+                            <a href="REVIEWS.html" class="DrukCyr LinkHover Active" data-lang="HeaderReviews">Отзывы</a>
+                            <a href="PORTFOLIO.html" class="DrukCyr LinkHover" data-lang="HeaderPortfolio">Портфолио</a>
+                            <a href="" class="DrukCyr LinkHover" data-lang="HeaderContacts">Контакты</a>
+                        </div>
+
+                        
+
+                        <div id="HeaderLanguage">
+                            <div class="ChangeAppearance" moon onclick="change(this)">
+                                <div></div>
+                            </div>
+
+                            <div class="LanguageButtons">
+                                <span class="DrukCyr Actived" onclick="languageButton(this)" id2="RU">РУ</span>
+                                <span class="DrukCyr" onclick="languageButton(this)" id2="EN">EN</span>
+                                <div></div>
+                            </div>
+                        </div>
+            </header>
+            <div id="BHeader" class="MobileOnly FSMButtonOpen" popup="Navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+    </div>
+
+            <div id="Navigation" class="FullScreenModule DrukCyr">
+
+            <div id="FSMLinks" class="Seventy Italic">
+                <a href="MAIN.html" class="DrukCyr LinkHover" data-lang="HeaderMain">Главная</a>
+                <a href="REVIEWS.html" class="DrukCyr LinkHover Active" data-lang="HeaderReviews">Отзывы</a>
+                <a href="PORTFOLIO.html" class="DrukCyr LinkHover" data-lang="HeaderPortfolio">Портфолио</a>
+                <a href="" class="DrukCyr LinkHover" data-lang="HeaderContacts">Контакты</a>
+            </div>
+            
+            <element class="ChangeAppearance" moon onclick="change(this)">
+                <div></div>
+            </element>
+
+             <div class="LanguageButtons">
+                <span class="DrukCyr Actived" onclick="languageButton(this)" id2="RU">РУ</span>
+                <span class="DrukCyr" onclick="languageButton(this)" id2="EN">EN</span>
+                <div></div>
+            </div>
+
+            <span class="MobileOnly FSMButtonClose Cross"></span>
+            </div>
+
+        <div id="HeaderMain" class="DrukCyr Italic BigLine HundredThirty">
+                <p data-lang="HeaderReviews">Отзывы</p>
+                <!-- <p class="NoSelect Transparent">...........................</p> -->
+        </div>
+
+        <div id="Content">
+            <div class=" NMarginR SafeMargin" id="Information" style="--HIScale: 1.03;  --colorAccent3: var(--secondgray);" >
+            </div>
+        </div>
+            </div>
+        </div>
+
+        <footer class="DrukCyr SafeMargin" >
+            <p class="HundredFifty DesktopOnly" data-lang="MainFooter">Связь со мной</p>
+            <p class="HundredFifty MobileOnly Line1" data-lang="MainFooterMobile">Связь<br> со мной</p>
+            <div class="Hundred">
+                <div>
+                    <a href="" class="LinkHover" invert>Telegram</a>
+                    <a href="" class="LinkHover" invert>Vk</a>
+                    <a href="" class="LinkHover" invert>Email</a>
+                </div>
+                <div>
+                    <a href="" class="LinkHover" invert>YouTube</a>
+                    <a href="" class="LinkHover" invert>TikTok</a>
+                    <a href="" class="LinkHover" invert>Instagram</a>
+                </div>
+            </div>
+        </footer>
+
+        <script src="../js/main.js"></script>
+</body>
+</html>

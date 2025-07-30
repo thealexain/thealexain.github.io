@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>404 Алексайн</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/404.css">
+</head>
+
+<body>
+
+    <div id="Start" style="--colorAccent: var(--black)" class="LightTheme">
+            <header>
+                        <div id="HeaderLinks">
+                            <a href="MAIN.html" class="DrukCyr LinkHover Active" data-lang="HeaderMain">Главная</a>
+                            <a href="REVIEWS.html" class="DrukCyr LinkHover" data-lang="HeaderReviews">Отзывы</a>
+                            <a href="PORTFOLIO.html" class="DrukCyr LinkHover" data-lang="HeaderPortfolio">Портфолио</a>
+                            <a href="" class="DrukCyr LinkHover" data-lang="HeaderContacts">Контакты</a>
+                        </div>
+
+                        
+
+                        <div id="HeaderLanguage">
+                            <div class="ChangeAppearance" moon onclick="change(this)">
+                                <div></div>
+                            </div>
+
+                            <div class="LanguageButtons">
+                                <span class="DrukCyr Actived" onclick="languageButton(this)" id2="RU">РУ</span>
+                                <span class="DrukCyr" onclick="languageButton(this)" id2="EN">EN</span>
+                                <div></div>
+                            </div>
+                        </div>
+            </header>
+            <div id="BHeader" class="MobileOnly FSMButtonOpen" popup="Navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div id="Navigation" class="FullScreenModule DrukCyr">
+
+            <div id="FSMLinks" class="Seventy Italic">
+                <a href="" class="DrukCyr LinkHover Active" data-lang="HeaderMain">Главная</a>
+                <a href="" class="DrukCyr LinkHover" data-lang="HeaderReviews">Отзывы</a>
+                <a href="" class="DrukCyr LinkHover" data-lang="HeaderPortfolio">Портфолио</a>
+                <a href="" class="DrukCyr LinkHover" data-lang="HeaderContacts">Контакты</a>
+            </div>
+            
+            <element class="ChangeAppearance" moon onclick="change(this)">
+                <div></div>
+            </element>
+
+             <div class="LanguageButtons">
+                <span class="DrukCyr Actived" onclick="languageButton(this)" id2="RU">РУ</span>
+                <span class="DrukCyr" onclick="languageButton(this)" id2="EN">EN</span>
+                <div></div>
+            </div>
+
+            <span class="MobileOnly FSMButtonClose Cross"></span>
+            </div>
+
+            <div id="Main">
+                <div id="Back"  style="--bg-url: white">
+                    <p class="DrukCyr">404</p>
+                </div>
+
+                        <div id="NameBlock" class="OktaNeue">
+                            <div id="NBName">
+                                <p data-lang="404Header1">Здесь мог быть</p>
+                                <div>
+                                    <p data-lang="404Header2">дизайн для вас</p>
+                                </div>
+                            </div>
+                            <div id="NBButtons">
+                                <button class="OktaNeue Twenty HoveringItem FSMButtonOpen" popup="GetWork" filled notAnimation data-lang="MainButtonOrder">Заказать работу</button>
+                                <button class="OktaNeue Twenty HoveringItem FSMButtonOpen" popup="MyBlog" notAnimation data-lang="MainButtonMyBlog">Мой блог</button>
+                            </div>
+                        </div>
+            </div>
+        </div>
+        
+        <div id="MyBlog" class="FullScreenModule DrukCyr">
+            <div id="FSMHeader">
+                <p class="Blocked" purple data-lang="MainButtonMyBlog">Мой блог</p>
+            </div>
+
+            <div id="FSMLinks" right>
+                <a href="" class="LinkHover Hundred" invert>VK</a>
+                <a href="" class="LinkHover Hundred" invert>TikTok</a>
+                <a href="" class="LinkHover Hundred" invert>YouTube</a>
+                <a href="" class="LinkHover Hundred" invert>Instagram</a>
+            </div>
+
+            <div id="FSMInformation">
+                <div>
+                    <p class="DrukCyr NoCaps Hundred">106<span data-lang="MainK"> тыс.</span></p>
+                    <p class="OktaNeue NoCaps Thirty" data-lang="MainMyBlogSubs">подписчиков со всех сетей</p>
+                </div>
+
+                <div>
+                    <p class="DrukCyr NoCaps Hundred">33<span data-lang="MainM"> млн.</span></p>
+                    <p class="OktaNeue NoCaps Thirty" data-lang="MainMyBlogViews">просмотров по всему миру</p>
+                </div>
+
+                <div>
+                    <p class="DrukCyr NoCaps Hundred Line1">∞</p>
+                    <p class="OktaNeue NoCaps Thirty" data-lang="MainMyBlogContent">много полезного контента</p>
+                </div>
+            </div>
+
+            <p class="OktaNeue HoveringItem Button2 NoCaps TFFont FSMButton FSMButtonClose DesktopOnly" data-lang="MainButtonClose">Закрыть</p>
+            <span class="MobileOnly FSMButtonClose Cross"></span>
+        </div>
+
+    <div id="GetWork" class="FullScreenModule DrukCyr">
+        <div id="FSMBigHeader">
+                <div id="FSMHeader" rotated class="Hundred">
+                    <p class="Blocked DesktopOnly" purple data-lang="MainGetWorkTell">свяжитесь и расскажите</p>
+                    <p class="Blocked MobileOnly" purple data-lang="MainGetWorkTellMobile">свяжитесь <br>и расскажите</p>
+                    <p class="Blocked" pink data-lang="MainGetWorkProject">о своем проекте</p>
+                </div>
+
+                <div id="FSMLinks" class="Hundred" right>
+                        <a href="" class="LinkHover " invert>VK</a>
+                        <a href="" class="LinkHover " invert>TikTok</a>
+                        <a href="" class="LinkHover " invert>YouTube</a>
+                        <a href="" class="LinkHover " invert>Instagram</a>
+                </div>
+        </div>
+            
+            <div id="FSMInformation">
+                <div>
+                    <div id="FSMI1" class="Actived">
+                        <div>
+                            <p class="DrukCyr Seventy" data-lang="MainGetWorkDescribing">Не знаете как описать?</p>
+                            <p class="OktaNeue NoCaps TFFont" data-lang="MainGetWorkDescribingText">Выберите подходящую задачу из списка и получите готовый набор стартовых вопросов</p>
+                        </div>
+                        
+                        <div style="--BOpacity: 0.1;"  class="FSMGrid">
+                            <button class="OktaNeue Inverted TFFont HoveringItem" style="--HIScale: 1;" id2="FSMI2">Бренд-бук</button>
+                            <button class="OktaNeue Inverted TFFont HoveringItem" style="--HIScale: 1;">Логотип</button>
+                            <button class="OktaNeue Inverted TFFont HoveringItem" style="--HIScale: 1;">Логотип</button>
+                            <button class="OktaNeue Inverted TFFont HoveringItem" style="--HIScale: 1;">Логотип</button>
+                            <button class="OktaNeue Inverted TFFont HoveringItem" style="--HIScale: 1;">Логотип</button>
+                            <button class="OktaNeue Inverted TFFont HoveringItem" style="--HIScale: 1;">Логотип</button>
+                            <button class="OktaNeue Inverted TFFont HoveringItem" style="--HIScale: 1;">Логотип</button>
+                            <button class="OktaNeue Inverted TFFont HoveringItem" style="--HIScale: 1;">Логотип</button>
+                        </div>
+                    </div>
+
+                    <div id="FSMI2">
+                        <div>
+                            <p class="DrukCyr Seventy Blocked" orange>Бренд-бук</p>
+                            <p class="OktaNeue NoCaps TFFont" data-lang="MainGetWorkCategoryText">Вы можете ответить на вопросы и сразу скопировать готовые ответы</p>
+                        </div>
+
+                        <div style="--BOpacity: 0.1;" class="FSMIInputs OktaNeue TFFont NoCaps">
+                            <p>Как называется ваша компания и чем занимается?</p>
+                            <input type="text" name="" id="" placeholder="Например"  class="Inverted">
+                        </div>
+                    </div>
+                </div>
+
+                <p class="OktaNeue HoveringItem Button2 NoCaps TFFont FSMButtonClose FSMButton DesktopOnly" id="FSMIClose" data-lang="MainButtonClose">Закрыть</p>
+                <span class="MobileOnly FSMButtonClose Cross"></span>
+                <div class="MobileOnly Back OktaNeue NoCaps TFFont FSMIBack" id2="FSMI2">
+                    <span></span>
+                    <p data-lang="MainButtonBack">Назад</p>
+                </div>
+
+                <div id="FSMIButtons" id2="FSMI2" none>
+                    <div class="DesktopOnly">
+                        <p class="OktaNeue HoveringItem Button2 NoCaps TFFont FSMButton Active" id="FSMICopy" data-lang="MainButtonCopy">Копировать</p>
+                        <p class="OktaNeue HoveringItem Button2 NoCaps TFFont FSMButton FSMIBack" id2="FSMI2" data-lang="MainButtonBack">Назад</p>
+                    </div>
+
+                    <div class="MobileOnly">
+                         <p class="OktaNeue HoveringItem Button2 NoCaps TFFont FSMButton Active" id="FSMICopy" data-lang="MainButtonCopy">Копировать</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+            <footer class="DrukCyr">
+            <p class="HundredFifty DesktopOnly" data-lang="MainFooter">Связь со мной</p>
+            <p class="HundredFifty MobileOnly Line1" data-lang="MainFooterMobile">Связь<br> со мной</p>
+            <div class="Hundred">
+                <div>
+                    <a href="" class="LinkHover" invert>Telegram</a>
+                    <a href="" class="LinkHover" invert>Vk</a>
+                    <a href="" class="LinkHover" invert>Email</a>
+                </div>
+                <div>
+                    <a href="" class="LinkHover" invert>YouTube</a>
+                    <a href="" class="LinkHover" invert>TikTok</a>
+                    <a href="" class="LinkHover" invert>Instagram</a>
+                </div>
+            </div>
+        </footer>
+
+        <script src="../js/main.js"></script>
+</body>
+</html>

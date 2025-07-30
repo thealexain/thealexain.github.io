@@ -1,0 +1,58 @@
+header {
+    position: relative;
+}
+
+#HeaderMain {
+    padding-left: var(--safeDesktop) ;
+}
+
+.Link2 {
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 7px;
+}
+
+.NoUnderline {
+    pointer-events: none;
+    cursor: default;
+    text-decoration: none;
+}
+
+.ReviewBlock.ColorAccent a.Link2 {
+    color: var(--colorAccent2);
+}
+
+.ReviewBlock.ColorAccent #JSTranslated {
+    color: var(--colorAccent3);
+    mix-blend-mode: multiply;
+}
+
+.ReviewBlock.ColorAccent[notBlend] #JSTranslated {
+    mix-blend-mode: normal;
+}
+
+
+
+#Content {
+    padding: var(--safeDesktop) 0;
+}
+
+#Content > div {
+    display: flex;
+    flex-direction:column;
+    gap: 20px;
+}
+
+@media (max-width: 480px) {
+    .ReviewBlock .RBHeader {
+        margin-bottom: 40px;
+    }
+
+    .Seventy {
+        font-size: 50px !important;
+    }
+
+    #Content > div {
+        gap: calc(0.5 * var(--safeDesktop));
+    }
+}

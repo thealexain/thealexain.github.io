@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Алексайн</title>
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+
+<body>
+        <div id="Start" style="--colorAccent: var(--black);">
+            <header>
+                        <div id="HeaderLinks">
+                            <a href="MAIN.html" class="DrukCyr LinkHover Active" data-lang="HeaderMain">Главная</a>
+                            <a href="REVIEWS.html" class="DrukCyr LinkHover" data-lang="HeaderReviews">Отзывы</a>
+                            <a href="PORTFOLIO.html" class="DrukCyr LinkHover" data-lang="HeaderPortfolio">Портфолио</a>
+                            <a href="" class="DrukCyr LinkHover" data-lang="HeaderContacts">Контакты</a>
+                        </div>
+
+                        
+
+                        <div id="HeaderLanguage">
+                            <div class="ChangeAppearance" moon onclick="change(this)">
+                                <div></div>
+                            </div>
+
+                            <div class="LanguageButtons">
+                                <span class="DrukCyr Actived" onclick="languageButton(this)" id2="RU">РУ</span>
+                                <span class="DrukCyr" onclick="languageButton(this)" id2="EN">EN</span>
+                                <div></div>
+                            </div>
+                        </div>
+            </header>
+            <div id="BHeader" class="MobileOnly FSMButtonOpen" popup="Navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div id="Navigation" class="FullScreenModule DrukCyr">
+
+            <div id="FSMLinks" class="Seventy Italic">
+                <a href="MAIN.html" class="DrukCyr LinkHover Active" data-lang="HeaderMain">Главная</a>
+                <a href="REVIEWS.html" class="DrukCyr LinkHover" data-lang="HeaderReviews">Отзывы</a>
+                <a href="PORTFOLIO.html" class="DrukCyr LinkHover" data-lang="HeaderPortfolio">Портфолио</a>
+                <a href="" class="DrukCyr LinkHover" data-lang="HeaderContacts">Контакты</a>
+            </div>
+            
+            <element class="ChangeAppearance" moon onclick="change(this)">
+                <div></div>
+            </element>
+
+             <div class="LanguageButtons">
+                <span class="DrukCyr Actived" onclick="languageButton(this)" id2="RU">РУ</span>
+                <span class="DrukCyr" onclick="languageButton(this)" id2="EN">EN</span>
+                <div></div>
+            </div>
+
+            <span class="MobileOnly FSMButtonClose Cross"></span>
+            </div>
+
+            <div id="Main">
+                <div id="Back"  style="--bg-url: url('../../img/back.png')"></div>
+                        <div id="RunningLine">
+                            <div>
+                                <div>
+                                    <p class="DrukCyr">Графика</p>
+                                    <p class="DrukCyr">Веб</p>
+                                    <p class="DrukCyr">UI/UX</p>
+                                    <p class="DrukCyr">Motion</p>
+                                </div>
+                                <div>
+                                    <p class="DrukCyr">Дизайнер</p>
+                                    <p class="DrukCyr">Блогер</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="backMe" style="--bg-url: url('../../img/me.png')"></div>
+
+                        <div id="NameBlock" class="OktaNeue">
+                            <div id="NBName">
+                                <p data-lang="MainName">Александр</p>
+                                <div>
+                                    <p data-lang="MainLastname">Совалев</p>
+                                    <a href="#MyBlogBlock" class="HoveringItem" data-lang="MainBlog">Алексайн</a>
+                                </div>
+                            </div>
+                            <div id="NBButtons">
+                                <!-- <a href="" class="HoveringItem">Мой блог</a> -->
+                                 <button class="OktaNeue Twenty HoveringItem FSMButtonOpen" popup="GetWork" filled notAnimation data-lang="MainButtonOrder">Заказать работу</button>
+                                <button class="OktaNeue Twenty HoveringItem FSMButtonOpen" popup="MyBlog" notAnimation data-lang="MainButtonMyBlog">Мой блог</button>
+                            </div>
+                        </div>
+            </div>
+        </div>
+
+        <div id="Content">
+            <p class="OktaNeue" data-lang="MainContentAboutMe">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo </p>
+        
+            <div id="Experience" class="NMargin DesktopOnly">
+                <div>
+                    <p class="DrukCyr Blocked IABreathe" data-lang="MainExperienceYears">3 года опыта</p>
+                    <p class="DrukCyr" data-lang="MainExperienceFreelance">Во фрилансе</p>
+                </div>
+
+                <div>
+                    <p class="DrukCyr" data-lang="MainExperienceWorldwide">Международного</p>
+                    <p class="DrukCyr Blocked IABreathe" purple data-lang="MainExperienceLevel">уровня</p>
+                </div>
+
+                <div>
+                    <div>
+                        <p class="DrukCyr" data-lang="MainExperienceWith">c</p>
+                        <p class="DrukCyr Circled IARotated">10+</p>
+                        <p class="DrukCyr" data-lang="MainExperienceClients">клиентами</p>
+                    </div>
+                    
+                    <div>
+                        <svg  viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg" class="IARotated">
+                            <g clip-path="url(#clip0_48_4826)">
+                            <rect width="128" height="128" fill="#FE53CB"/>
+                            <rect x="-28.1602" y="-1.70667" width="184.098" height="131.238" rx="13.0196" fill="white"/>
+                            <mask id="mask0_48_4826" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="-29" y="-2" width="185" height="132">
+                            <rect x="-28.1602" y="-1.70667" width="184.098" height="131.238" rx="13.0196" fill="white"/>
+                            </mask>
+                            <g mask="url(#mask0_48_4826)">
+                            <path d="M155.938 129.532H-28.1602V120.783H155.938V129.532ZM155.938 112.034H-28.1602V103.285H155.938V112.034ZM155.938 94.5345H-28.1602V85.7845H155.938V94.5345ZM155.938 77.0355H-28.1602V68.2865H155.938V77.0355ZM155.938 59.5375H-28.1602V50.7885H155.938V59.5375ZM155.938 42.0394H-28.1602V33.2904H155.938V42.0394ZM155.938 24.5404H-28.1602V15.7914H155.938V24.5404ZM155.938 7.04236H-28.1602V-1.70667H155.938V7.04236Z" fill="#E53B35"/>
+                            <rect x="-28.1602" y="-1.70667" width="92.16" height="69.9733" fill="#0C47B7"/>
+                            </g>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_48_4826">
+                            <rect width="128" height="128" fill="white"/>
+                            </clipPath>
+                            </defs>
+                        </svg>
+
+                        <svg viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg" class="IARotated">
+                            <g clip-path="url(#clip0_48_4932)">
+                            <rect x="-17.5117" y="-2.51174" width="163.708" height="129.051" rx="10.4178" fill="white" stroke="#F5F5F5" stroke-width="2.97652"/>
+                            <mask id="mask0_48_4932" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="-19" y="-4" width="167" height="133">
+                            <rect x="-17.5117" y="-2.51174" width="163.708" height="129.051" rx="10.4178" fill="white" stroke="white" stroke-width="2.97652"/>
+                            </mask>
+                            <g mask="url(#mask0_48_4932)">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M-19 84.0181H147.685V40.0089H-19V84.0181Z" fill="#0C47B7"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M-19.1401 127.842H147.545V83.8324H-19.1401V127.842Z" fill="#E53B35"/>
+                            </g>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_48_4932">
+                            <rect width="127.5" height="127.5" fill="white"/>
+                            </clipPath>
+                            </defs>
+                        </svg>
+
+                        <svg viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg" class="IARotated">
+                            <rect width="127.5" height="127.5" fill="#0C47B7"/>
+                            <path d="M67.0615 98.1194L68.4912 102.999L63.6104 101.571L58.7305 102.999L60.1592 98.1194L58.7305 93.2385L63.6104 94.6682L68.4912 93.2385L67.0615 98.1194ZM49.8057 93.4963L51.2354 98.3772L46.3545 96.9475L41.4746 98.3772L42.9033 93.4963L41.4746 88.6155L46.3545 90.0452L51.2354 88.6155L49.8057 93.4963ZM84.3154 93.4963L85.7441 98.3772L80.8643 96.9475L75.9834 98.3772L77.4131 93.4963L75.9834 88.6155L80.8643 90.0452L85.7441 88.6155L84.3154 93.4963ZM37.1729 80.8645L38.6025 85.7454L33.7217 84.3157L28.8418 85.7454L30.2705 80.8645L28.8418 75.9846L33.7217 77.4133L38.6025 75.9846L37.1729 80.8645ZM96.9482 80.8645L98.377 85.7454L93.4971 84.3157L88.6162 85.7454L90.0459 80.8645L88.6162 75.9846L93.4971 77.4133L98.377 75.9846L96.9482 80.8645ZM32.5498 63.6096L33.9795 68.4895L29.0986 67.0608L24.2188 68.4895L25.6475 63.6096L24.2188 58.7288L29.0986 60.1584L33.9795 58.7288L32.5498 63.6096ZM101.571 63.6096L103 68.4895L98.1201 67.0608L93.2393 68.4895L94.6689 63.6096L93.2393 58.7288L98.1201 60.1584L103 58.7288L101.571 63.6096ZM37.1729 46.3538L38.6025 51.2346L33.7217 49.8049L28.8418 51.2346L30.2705 46.3538L28.8418 41.4739L33.7217 42.9036L38.6025 41.4739L37.1729 46.3538ZM96.9482 46.3538L98.377 51.2346L93.4971 49.8049L88.6162 51.2346L90.0459 46.3538L88.6162 41.4739L93.4971 42.9036L98.377 41.4739L96.9482 46.3538ZM49.8057 33.7229L51.2354 38.6038L46.3545 37.1741L41.4746 38.6038L42.9033 33.7229L41.4746 28.843L46.3545 30.2717L51.2354 28.843L49.8057 33.7229ZM84.3154 33.7229L85.7441 38.6038L80.8643 37.1741L75.9834 38.6038L77.4131 33.7229L75.9834 28.843L80.8643 30.2717L85.7441 28.843L84.3154 33.7229ZM67.0615 29.0999L68.4912 33.9797L63.6104 32.55L58.7305 33.9797L60.1592 29.0999L58.7305 24.219L63.6104 25.6487L68.4912 24.219L67.0615 29.0999Z" fill="#FED653"/>
+                        </svg>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="Experience" class="NMargin MobileOnly">
+                <p class="DrukCyr Blocked IABreathe" orange data-lang="MainExperienceYears">3 года опыта</p>
+                <p class="DrukCyr" data-lang="MainExperienceFreelanceMobile">Во фрилансе</p>
+
+                <div>
+                        <p class="DrukCyr Blocked IABreathe" pink>10+</p>
+                        <p class="DrukCyr" data-lang="MainExperienceClientsMobile">клиентов</p>
+                    </div>
+
+                <div>
+                    <p class="DrukCyr" data-lang="MainExperienceAroundMobile">по</p>
+                    <p class="DrukCyr Blocked IABreathe" purple data-lang="MainExperienceGloballyMobile">всему</p>
+                    <p class="DrukCyr" data-lang="MainExperienceWorldMobile">миру,</p>
+                </div>
+
+                <div>
+                    <svg  viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg" class="IARotated">
+                        <g clip-path="url(#clip0_48_4826)">
+                        <rect width="128" height="128" fill="#FE53CB"/>
+                        <rect x="-28.1602" y="-1.70667" width="184.098" height="131.238" rx="13.0196" fill="white"/>
+                        <mask id="mask0_48_4826" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="-29" y="-2" width="185" height="132">
+                        <rect x="-28.1602" y="-1.70667" width="184.098" height="131.238" rx="13.0196" fill="white"/>
+                        </mask>
+                        <g mask="url(#mask0_48_4826)">
+                        <path d="M155.938 129.532H-28.1602V120.783H155.938V129.532ZM155.938 112.034H-28.1602V103.285H155.938V112.034ZM155.938 94.5345H-28.1602V85.7845H155.938V94.5345ZM155.938 77.0355H-28.1602V68.2865H155.938V77.0355ZM155.938 59.5375H-28.1602V50.7885H155.938V59.5375ZM155.938 42.0394H-28.1602V33.2904H155.938V42.0394ZM155.938 24.5404H-28.1602V15.7914H155.938V24.5404ZM155.938 7.04236H-28.1602V-1.70667H155.938V7.04236Z" fill="#E53B35"/>
+                        <rect x="-28.1602" y="-1.70667" width="92.16" height="69.9733" fill="#0C47B7"/>
+                        </g>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_48_4826">
+                        <rect width="128" height="128" fill="white"/>
+                        </clipPath>
+                        </defs>
+                    </svg>
+
+                    <svg viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg" class="IARotated">
+                        <g clip-path="url(#clip0_48_4932)">
+                        <rect x="-17.5117" y="-2.51174" width="163.708" height="129.051" rx="10.4178" fill="white" stroke="#F5F5F5" stroke-width="2.97652"/>
+                        <mask id="mask0_48_4932" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="-19" y="-4" width="167" height="133">
+                        <rect x="-17.5117" y="-2.51174" width="163.708" height="129.051" rx="10.4178" fill="white" stroke="white" stroke-width="2.97652"/>
+                        </mask>
+                        <g mask="url(#mask0_48_4932)">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M-19 84.0181H147.685V40.0089H-19V84.0181Z" fill="#0C47B7"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M-19.1401 127.842H147.545V83.8324H-19.1401V127.842Z" fill="#E53B35"/>
+                        </g>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_48_4932">
+                        <rect width="127.5" height="127.5" fill="white"/>
+                        </clipPath>
+                        </defs>
+                    </svg>
+
+                    <svg viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg" class="IARotated">
+                        <rect width="127.5" height="127.5" fill="#0C47B7"/>
+                        <path d="M67.0615 98.1194L68.4912 102.999L63.6104 101.571L58.7305 102.999L60.1592 98.1194L58.7305 93.2385L63.6104 94.6682L68.4912 93.2385L67.0615 98.1194ZM49.8057 93.4963L51.2354 98.3772L46.3545 96.9475L41.4746 98.3772L42.9033 93.4963L41.4746 88.6155L46.3545 90.0452L51.2354 88.6155L49.8057 93.4963ZM84.3154 93.4963L85.7441 98.3772L80.8643 96.9475L75.9834 98.3772L77.4131 93.4963L75.9834 88.6155L80.8643 90.0452L85.7441 88.6155L84.3154 93.4963ZM37.1729 80.8645L38.6025 85.7454L33.7217 84.3157L28.8418 85.7454L30.2705 80.8645L28.8418 75.9846L33.7217 77.4133L38.6025 75.9846L37.1729 80.8645ZM96.9482 80.8645L98.377 85.7454L93.4971 84.3157L88.6162 85.7454L90.0459 80.8645L88.6162 75.9846L93.4971 77.4133L98.377 75.9846L96.9482 80.8645ZM32.5498 63.6096L33.9795 68.4895L29.0986 67.0608L24.2188 68.4895L25.6475 63.6096L24.2188 58.7288L29.0986 60.1584L33.9795 58.7288L32.5498 63.6096ZM101.571 63.6096L103 68.4895L98.1201 67.0608L93.2393 68.4895L94.6689 63.6096L93.2393 58.7288L98.1201 60.1584L103 58.7288L101.571 63.6096ZM37.1729 46.3538L38.6025 51.2346L33.7217 49.8049L28.8418 51.2346L30.2705 46.3538L28.8418 41.4739L33.7217 42.9036L38.6025 41.4739L37.1729 46.3538ZM96.9482 46.3538L98.377 51.2346L93.4971 49.8049L88.6162 51.2346L90.0459 46.3538L88.6162 41.4739L93.4971 42.9036L98.377 41.4739L96.9482 46.3538ZM49.8057 33.7229L51.2354 38.6038L46.3545 37.1741L41.4746 38.6038L42.9033 33.7229L41.4746 28.843L46.3545 30.2717L51.2354 28.843L49.8057 33.7229ZM84.3154 33.7229L85.7441 38.6038L80.8643 37.1741L75.9834 38.6038L77.4131 33.7229L75.9834 28.843L80.8643 30.2717L85.7441 28.843L84.3154 33.7229ZM67.0615 29.0999L68.4912 33.9797L63.6104 32.55L58.7305 33.9797L60.1592 29.0999L58.7305 24.219L63.6104 25.6487L68.4912 24.219L67.0615 29.0999Z" fill="#FED653"/>
+                    </svg>
+                </div>
+            </div>
+
+            <div id="Reviews" class="NMarginR SafeMargin">
+                <div id="Companies" class="ReviewBlock">
+                    <p class="DrukCyr RBHeader DesktopOnly" data-lang="MainReviewsCompanies">ЧТО ГОВОРЯТ КОМПАНИИ, ГДЕ Я РАБОТАЮ</p>
+                    <p class="DrukCyr RBHeader MobileOnly" data-lang="MainReviewsCompaniesMobile">ЧТО ГОВОРЯТ КОМПАНИИ<br> обо мне</p>
+                    <div class="OktaNeue">
+
+                        <input type="radio" name="RWCompaniesTabs" id="tab1" checked>
+                        <input type="radio" name="RWCompaniesTabs" id="tab2">
+                        
+                        <div class="TFFont RBLinks">
+
+                            <label href="" class="LinkHoverWrapper Active" for="tab1"><span class="LinkHover Active">Continental</span></label>
+                            <label href="" class="LinkHoverWrapper" for="tab2"><span class="LinkHover">ФотоМастер</span></label>
+                        </div>
+
+                        <div class="TabsContents">
+                            <div class="TabContent">
+                                <div>
+                                    <p isHeader>Digital-дизайнер</p>
+                                    <p class="Italic TFFont JustifyFont RBText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                                </div>
+
+                                <p class="TFFont" data-lang="MainReviewsCompaniesCity1">Москва, 2025</p>
+                            </div>
+
+                            <div class="TabContent">
+                                <div>
+                                    <p isHeader>Digital-дизайнер2</p>
+                                    <p class="Italic TFFont JustifyFont RBText">ввв</p>
+                                </div>
+
+                                <p class="TFFont" data-lang="MainReviewsCompaniesCity2">Ульяновск, 2025</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div id="Clients" class="ReviewBlock Inverted">
+                    <p class="DrukCyr RBHeader" data-lang="MainReviewsClients">Отзывы <br> клиентов</p>
+                    <div class="OktaNeue">
+
+                        <input type="radio" name="RWClientsTabs" id="tab21" checked>
+                        <input type="radio" name="RWClientsTabs" id="tab22">
+                        <input type="radio" name="RWClientsTabs" id="tab23">
+                        <input type="radio" name="RWClientsTabs" id="tab24">
+
+                        <div class="TFFont RBLinks">
+                            <label href="" class="LinkHoverWrapper Active" for="tab21"><span class="LinkHover Active">FluidPrompter</span></label>
+                            <label href="" class="LinkHoverWrapper" for="tab22"><span class="LinkHover">SA47</span></label>
+                            <label href="" class="LinkHoverWrapper" for="tab23"><span class="LinkHover">Капа</span></label>
+                            <label href="" class="LinkHoverWrapper" for="tab24"><span class="LinkHover">Шале «Мультинское»</span></label>
+                        </div>
+                        
+                        <div class="TabsContents">
+
+                            <div class="TabContent">
+                                <div class="TFFont Italic RBText">
+                                    <p class="Secondary NoSelect">(перевод с англ.)</p>
+                                    <p class="JustifyFont">Мы работали с Алексом над созданием логотипа для нашего приложения. Было много обсуждений и правок, пока мы не получили дизайн, который нам понравился. Мы оценили четкую и открытую коммуникацию, быстрые ответы и готовность вносить изменения в дизайн даже в последний момент. Алекс создал множество эскизов, пока мы не нашли то, что нам понравилось. Очень профессионально и уважительно.</p>
+                                </div>
+
+                                <!-- <p class="TFFont">Москва, 2025</p> -->
+                                <a class="OktaNeue TFFont HoveringItem Button" right data-lang="MainReviewsClientsButton">Все отзывы</a>
+                            </div>
+
+                            <div class="TabContent">
+                                <div class="TFFont Italic RBText">
+                                    <p class="Secondary NoSelect">(перевод с англ.)</p>
+                                    <p class="JustifyFont">Мы работали с Алексом над созданием логотипа для нашего приложения. Было много обсуждений и правок, пока мы не получили дизайн, который нам понравился. Мы оценили четкую и открытую коммуникацию, быстрые ответы и готовность вносить изменения в дизайн даже в последний момент. Алекс создал множество эскизов, пока мы не нашли то, что нам понравилось. Очень профессионально и уважительно.</p>
+                                </div>
+
+                                <!-- <p class="TFFont">Москва, 2025</p> -->
+                                <a class="OktaNeue TFFont HoveringItem Button" right data-lang="MainReviewsClientsButton">Все отзывы</a>
+                            </div>
+
+                            <div class="TabContent">
+                                <div class="TFFont Italic RBText">
+                                    <p class="Secondary NoSelect">(перевод с англ.)</p>
+                                    <p class="JustifyFont">Мы работали с Алексом над созданием логотипа для нашего приложения. Было много обсуждений и правок, пока мы не получили дизайн, который нам понравился. Мы оценили четкую и открытую коммуникацию, быстрые ответы и готовность вносить изменения в дизайн даже в последний момент. Алекс создал множество эскизов, пока мы не нашли то, что нам понравилось. Очень профессионально и уважительно.</p>
+                                </div>
+
+                                <!-- <p class="TFFont">Москва, 2025</p> -->
+                                <a class="OktaNeue TFFont HoveringItem Button" right data-lang="MainReviewsClientsButton">Все отзывы</a>
+                            </div>
+
+                            <div class="TabContent">
+                                <div class="TFFont Italic RBText">
+                                    <p class="Secondary NoSelect">(перевод с англ.)</p>
+                                    <p class="JustifyFont">Мы работали с Алексом над созданием логотипа для нашего приложения. Было много обсуждений и правок, пока мы не получили дизайн, который нам понравился. Мы оценили четкую и открытую коммуникацию, быстрые ответы и готовность вносить изменения в дизайн даже в последний момент. Алекс создал множество эскизов, пока мы не нашли то, что нам понравилось. Очень профессионально и уважительно.</p>
+                                </div>
+
+                                <!-- <p class="TFFont">Москва, 2025</p> -->
+                                <a class="OktaNeue TFFont HoveringItem Button" right data-lang="MainReviewsClientsButton">Все отзывы</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            
+            <div id="Skills" class="DrukCyr NMargin HundredFifty">
+                <p data-lang="MainSkills">МОИ НАВЫКИ</p>
+                <div class="Italic Background BigLine">
+                    <p>креативность</p>
+                    <p class="ColorfulRandom">отвественность</p>
+                    <p class="ColorfulRandom">быстродействие</p>
+                    <p class="ColorfulRandom">быстродействие</p>
+                    <p class="ColorfulRandom">быстродействие</p>
+                    <p class="NoSelect Transparent">...........................</p>
+                </div>
+            </div>
+
+            <div id="MyBlogBlock">
+                <div>
+                    <p class="DrukCyr HundredFifty" data-lang="MainBlog">Алексайн</p>
+                    <p class="OktaNeue TFFont" >Из-за того, что я напрямую связан с медиа-контентом, то лучшим, как по мне, вариантом показа работ является видео</p>
+                </div>
+                
+                <div class="OktaNeue" id="MyBlogTable">
+                    <div class="MyBlogTableItem">
+                        <p>91<span data-lang="MainK"> тыс.</span></p>
+                        <p>YouTube <span data-lang="MainSubs">подписчиков</span></p>
+                    </div>
+
+                    <div class="MyBlogTableItem">
+                        <p>15<span data-lang="MainK"> тыс.</span></p>
+                        <p>TikTok <span data-lang="MainSubs">подписчиков</span></p>
+                    </div>
+
+                    <div class="MyBlogTableItem">
+                        <p>200</p>
+                        <p>VK <span data-lang="MainSubs">подписчиков</span></p>
+                    </div>
+
+                    <div class="MyBlogTableItem">
+                        <p>28<span data-lang="MainM"> млн.</span></p>
+                        <p>YouTube <span data-lang="MainViews">просмотров</span></p>
+                    </div>
+
+                    <div class="MyBlogTableItem">
+                        <p>5<span data-lang="MainM"> млн.</span></p>
+                        <p>TikTok <span data-lang="MainViews">просмотров</span></p>
+                    </div>
+
+                    <div class="MyBlogTableItem">
+                        <p>200<span data-lang="MainK"> тыс.</span></p>
+                        <p>VK <span data-lang="MainViews">просмотров</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="Portfolio">
+                <div class="DrukCyr Headers HundredFifty">
+                    <p class="Background BR">МОЕ ПОРТФОЛИО</p>
+                    <p class="Italic DesktopOnly">ЛУЧШЕЕ ИЗ ЛУЧШИХ</p>
+                    <p class="Italic MobileOnly">ЛУЧШЕЕ<br> ИЗ ЛУЧШИХ</p>
+                </div>
+                <p class="OktaNeue TFFont">Из-за того, что я напрямую связан с медиа-контентом, то лучшим, как по мне, вариантом показа работ является видео</p>
+            </div>
+
+        </div>
+
+        <footer class="DrukCyr">
+            <p class="HundredFifty DesktopOnly" data-lang="MainFooter">Связь со мной</p>
+            <p class="HundredFifty MobileOnly Line1" data-lang="MainFooterMobile">Связь<br> со мной</p>
+            <div class="Hundred">
+                <div>
+                    <a href="" class="LinkHover" invert>Telegram</a>
+                    <a href="" class="LinkHover" invert>Vk</a>
+                    <a href="" class="LinkHover" invert>Email</a>
+                </div>
+                <div>
+                    <a href="" class="LinkHover" invert>YouTube</a>
+                    <a href="" class="LinkHover" invert>TikTok</a>
+                    <a href="" class="LinkHover" invert>Instagram</a>
+                </div>
+            </div>
+        </footer>
+
+        <div id="MyBlog" class="FullScreenModule DrukCyr">
+            <div id="FSMHeader">
+                <p class="Blocked" purple data-lang="MainButtonMyBlog">Мой блог</p>
+            </div>
+
+            <div id="FSMLinks" right>
+                <a href="" class="LinkHover Hundred" invert>VK</a>
+                <a href="" class="LinkHover Hundred" invert>TikTok</a>
+                <a href="" class="LinkHover Hundred" invert>YouTube</a>
+                <a href="" class="LinkHover Hundred" invert>Instagram</a>
+            </div>
+
+            <div id="FSMInformation">
+                <div>
+                    <p class="DrukCyr NoCaps Hundred">106<span data-lang="MainK"> тыс.</span></p>
+                    <p class="OktaNeue NoCaps Thirty" data-lang="MainMyBlogSubs">подписчиков со всех сетей</p>
+                </div>
+
+                <div>
+                    <p class="DrukCyr NoCaps Hundred">33<span data-lang="MainM"> млн.</span></p>
+                    <p class="OktaNeue NoCaps Thirty" data-lang="MainMyBlogViews">просмотров по всему миру</p>
+                </div>
+
+                <div>
+                    <p class="DrukCyr NoCaps Hundred Line1">∞</p>
+                    <p class="OktaNeue NoCaps Thirty" data-lang="MainMyBlogContent">много полезного контента</p>
+                </div>
+            </div>
+
+            <p class="OktaNeue HoveringItem Button2 NoCaps TFFont FSMButton FSMButtonClose DesktopOnly" data-lang="MainButtonClose">Закрыть</p>
+            <span class="MobileOnly FSMButtonClose Cross"></span>
+        </div>
+
+    <div id="GetWork" class="FullScreenModule DrukCyr">
+        <div id="FSMBigHeader">
+                <div id="FSMHeader" rotated class="Hundred">
+                    <p class="Blocked DesktopOnly" purple data-lang="MainGetWorkTell">свяжитесь и расскажите</p>
+                    <p class="Blocked MobileOnly" purple data-lang="MainGetWorkTellMobile">свяжитесь <br>и расскажите</p>
+                    <p class="Blocked" pink data-lang="MainGetWorkProject">о своем проекте</p>
+                </div>
+
+                <div id="FSMLinks" class="Hundred" right>
+                        <a href="" class="LinkHover " invert>VK</a>
+                        <a href="" class="LinkHover " invert>TikTok</a>
+                        <a href="" class="LinkHover " invert>YouTube</a>
+                        <a href="" class="LinkHover " invert>Instagram</a>
+                </div>
+        </div>
+            
+            <div id="FSMInformation">
+                <div>
+                    <div id="FSMI1" class="Actived">
+                        <div>
+                            <p class="DrukCyr Seventy" data-lang="MainGetWorkDescribing">Не знаете как описать?</p>
+                            <p class="OktaNeue NoCaps TFFont" data-lang="MainGetWorkDescribingText">Выберите подходящую задачу из списка и получите готовый набор стартовых вопросов</p>
+                        </div>
+                        
+                        <div style="--BOpacity: 0.1;"  class="FSMGrid">
+                            <button class="OktaNeue Inverted TFFont HoveringItem" style="--HIScale: 1;" id2="FSMI2">Бренд-бук</button>
+                            <button class="OktaNeue Inverted TFFont HoveringItem" style="--HIScale: 1;">Логотип</button>
+                            <button class="OktaNeue Inverted TFFont HoveringItem" style="--HIScale: 1;">Логотип</button>
+                            <button class="OktaNeue Inverted TFFont HoveringItem" style="--HIScale: 1;">Логотип</button>
+                            <button class="OktaNeue Inverted TFFont HoveringItem" style="--HIScale: 1;">Логотип</button>
+                            <button class="OktaNeue Inverted TFFont HoveringItem" style="--HIScale: 1;">Логотип</button>
+                            <button class="OktaNeue Inverted TFFont HoveringItem" style="--HIScale: 1;">Логотип</button>
+                            <button class="OktaNeue Inverted TFFont HoveringItem" style="--HIScale: 1;">Логотип</button>
+                        </div>
+                    </div>
+
+                    <div id="FSMI2">
+                        <div>
+                            <p class="DrukCyr Seventy Blocked" orange>Бренд-бук</p>
+                            <p class="OktaNeue NoCaps TFFont" data-lang="MainGetWorkCategoryText">Вы можете ответить на вопросы и сразу скопировать готовые ответы</p>
+                        </div>
+
+                        <div style="--BOpacity: 0.1;" class="FSMIInputs OktaNeue TFFont NoCaps">
+                            <p>Как называется ваша компания и чем занимается?</p>
+                            <input type="text" name="" id="" placeholder="Например"  class="Inverted">
+                        </div>
+                    </div>
+                </div>
+
+                <p class="OktaNeue HoveringItem Button2 NoCaps TFFont FSMButtonClose FSMButton DesktopOnly" id="FSMIClose" data-lang="MainButtonClose">Закрыть</p>
+                <span class="MobileOnly FSMButtonClose Cross"></span>
+                <div class="MobileOnly Back OktaNeue NoCaps TFFont FSMIBack" id2="FSMI2">
+                    <span></span>
+                    <p data-lang="MainButtonBack">Назад</p>
+                </div>
+
+                <div id="FSMIButtons" id2="FSMI2" none>
+                    <div class="DesktopOnly">
+                        <p class="OktaNeue HoveringItem Button2 NoCaps TFFont FSMButton Active" id="FSMICopy" data-lang="MainButtonCopy">Копировать</p>
+                        <p class="OktaNeue HoveringItem Button2 NoCaps TFFont FSMButton FSMIBack" id2="FSMI2" data-lang="MainButtonBack">Назад</p>
+                    </div>
+
+                    <div class="MobileOnly">
+                         <p class="OktaNeue HoveringItem Button2 NoCaps TFFont FSMButton Active" id="FSMICopy" data-lang="MainButtonCopy">Копировать</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <script>
+
+
+
+           document.querySelectorAll('.IARotated').forEach(obj => {
+            let currentRotation = 0;
+            let direction = Math.random() > 0.5 ? 1 : -1;
+            let animationId = null;
+            const speed = 1; // градусов за кадр
+
+            function animate() {
+                currentRotation += speed * direction;
+                obj.style.transform = `rotate(${currentRotation}deg)`;
+                animationId = requestAnimationFrame(animate);
+            }
+
+            // Начальная анимация
+            animate();
+
+            // Обработчик наведения
+            obj.addEventListener('mouseenter', () => {
+                direction *= -1; // Меняем направление
+            });
+            });
+
+            let colors = ["orange", "yellow", "pink", "purple"];
+
+            document.querySelectorAll('.ColorfulRandom').forEach(item => {
+                var ri = colors[Math.floor(Math.random()*colors.length)];
+                const colorValue = getComputedStyle(document.documentElement).getPropertyValue(`--${ri}`);
+                console.log(ri);
+                item.style.color = colorValue;
+            });
+        </script>
+        <script src="../js/main.js"></script>
+</body>
+</html>

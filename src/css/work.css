@@ -1,0 +1,513 @@
+#HeaderMain {
+    position: absolute;
+    margin-top: 100px;
+    padding-left: var(--safeDesktop) ;
+    background-color: var(--colorAccent);
+}
+
+header .LinkHover {
+    color: var(--colorAccent) !important;
+}
+
+header {
+    position: absolute;
+    top: 0px;
+}
+
+#HeaderLanguage a {
+    color: var(--colorAccent);
+}
+
+#HeaderLanguage #HLRus {
+    background-color: var(--colorAccent);
+    color: var(--colorAccent2) !important;
+}
+
+#JSDescription {
+    color: var(--colorAccent)
+}
+
+#JSLink {
+    color: var(--colorAccent) !important;
+    border-color: var(--colorAccent) !important;
+}
+
+.Link2 {
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 7px;
+}
+
+#JSName {
+    color: var(--colorAccent2)
+}
+
+#JSCategory {
+    font-size: 110px !important;
+    color: var(--colorAccent);
+    background-color: var(--colorAccent2);
+    /* flex-grow: 1; */
+    align-items: center;
+    text-align: center;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    line-height: 1;
+}
+
+#backMe {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#Main {
+    /* background-image: url('../img/back.png'); */
+    background-image: transparent !important;
+}
+
+
+
+#MainLogo {
+    position: relative;
+    bottom: -60px;
+}
+
+#MainLogo > svg {
+    height: 20vw;
+}
+
+#MainLogo > img {
+    height: 20vw;
+}
+
+#MainLogo.horizontal > svg {
+    width: 25vw;
+}
+
+#ProccesOfWork {
+    margin-top: var(--safeDesktop);
+}
+
+#Apps {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+#Apps > div {
+    background-color: var(--dynamicText);
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+#Apps > div > svg, #Apps > div > svg * {
+    fill: var(--dynamicTextInverted);
+}
+
+.Disabled {
+  pointer-events: none;  /* Отключает клики */
+  cursor: default;       /* Меняет курсор на обычный */
+  opacity: 0.3;
+}
+
+#Back {
+    background-color: var(--bg_c1);
+    mask-clip:view-box ;
+    overflow: hidden;
+}
+
+#Back .Rectangle {
+    position: absolute;
+    background-color: var(--bg_c2);
+    width: 60%;
+}
+
+#Back .Circle {
+    position: absolute;
+    background-color: var(--bg_c2);
+    width: 30vw;
+    height: 30vw;
+    border-radius: 100%;
+}
+
+#Back .Triangle {
+    position: absolute;
+    width: 30vw;
+    height: 30vw;
+    background-color: var(--bg_c2);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+
+#Back *[topLeft] {
+    top: 0;
+    left: 0;
+}
+
+#Back *[topRight] {
+    top: 0;
+    right: 0;
+}
+
+#Back *[bottomLeft] {
+    bottom: 0;
+    left: 0;
+}
+
+#Back *[bottomRight] {
+    bottom: 0;
+    right: 0;
+}
+
+
+#Back .Rectangle[topRight] {
+    border-bottom-left-radius: 1000px;
+    height: 50%;
+}
+
+#Back .Triangle[topLeft], .Triangle[topRight] {
+    scale: 1.2;
+    rotate: -130deg;
+}
+
+#Back .Rectangle[bottomLeft] {
+    height: 30%;
+    width: 40%;
+    border-top-left-radius: 200px;
+    border-top-right-radius: 200px;
+}
+
+#Back .Triangle[bottomLeft] .Triangle[bottomRight], .Circle[bottomLeft], .Circle[bottomRight] {
+    height: 60%;
+}
+
+
+#Back .Circle[bottomLeft], .Circle[bottomRight] {
+    bottom: -50% !important;
+    scale: 2.5;
+}
+
+
+
+
+#Back::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle,farthest-side,
+        rgba(0,0,0,1),
+        rgba(0,0,0,1),
+    );
+    mask: radial-gradient(
+        circle,
+        rgba(0, 0, 0, 0) 0%, 
+        rgba(0, 0, 0, 1) 70%
+    );
+    backdrop-filter: blur(10px);
+}
+
+#Main #Noise {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #C0C0C0;
+    background-size:contain;       /* Заполняет весь контейнер */
+    mix-blend-mode: multiply;
+    opacity: 0.3;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+#Main #Noise img {
+    width: 100%;
+    object-fit: contain; /* Сохраняет пропорции, добавляет пустые области */
+  object-position: center; /* Выравнивание */
+}
+
+#Main #Darker {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg_c2);
+    filter: brightness(0.5);
+    mix-blend-mode: multiply;
+    opacity: 0.5;
+}
+
+
+
+#Content {
+    padding: var(--safeDesktop) 0;
+    gap: var(--safeDesktop);
+}
+
+#Gallery {
+    display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 равных столбца */
+  gap: 10px;
+  grid-auto-rows: 1fr;
+  grid-template-rows: subgrid;
+  align-items: center;
+  grid-auto-flow: dense;
+}
+
+.GalleryBlock {
+    background-color: rgba(255, 255, 255, 0.1);
+    min-height: 0; /* Важно: позволяет сжиматься */
+    min-width: 0;  /* Важно: позволяет сжиматься */
+    overflow: hidden;
+    align-items: center;
+    z-index: 1;
+    height: calc( (100vw - 2 * var(--safeDesktop) - 20px)/3 );
+    cursor: pointer;
+}
+
+.GalleryBlock[none] {
+    background: none;
+    pointer-events: none;
+}
+
+.GalleryBlock::before {
+  content: '';
+  position: absolute;
+  background: var(--backUrl); /* Наследует фоновое изображение */
+  width: 100%;
+  height: 100%;
+  background-size: 100% auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.GalleryBlock::after {
+    content: attr(data-content);
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: multiply;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    font-family: "Okta Neue";
+    color: white;
+    display: flex;              /* Включаем Flexbox */
+    justify-content: center;    /* Горизонтальное центрирование */
+    align-items: center; 
+    font-size: 25px;
+}
+
+.GalleryBlock.HoveringItem::before {
+    background-size: 100%;
+
+    transition: background-size 0.3s ease ;
+}
+
+.GalleryBlock.HoveringItem:hover::before {
+    background-size: 105%;
+
+    transition: background-size 0.3s ease ;
+}
+
+.GalleryBlock.HoveringItem::after {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.GalleryBlock.HoveringItem:hover::after {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.GalleryBlock[square] {
+    aspect-ratio: 1 / 1;
+}
+
+.GalleryBlock[contrast] {
+    background-color: red;
+}
+
+.GalleryBlock[empty] {
+    width: 0;
+}
+
+.GalleryBlock[horizontal] {
+    grid-column: span 2;
+}
+
+.GalleryBlock[vertical] {
+    grid-row: span 2;
+    height: auto;
+}
+
+#FullscreenGallery {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    position: absolute;
+    background: rgba(0,0,0,0.8);
+    z-index: 10;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#FullscreenGallery > #FGImg {
+    height: 70vh;
+    position: relative;
+    animation: start 0.3s ease;
+}
+
+#FullscreenGallery > p {
+    color: rgba(255, 255, 255, 0.3);
+    position: absolute;
+    top: 40px;
+    animation: topbottom 0.5s ease forwards;
+    animation-delay: 0.5s;
+    opacity: 0;
+}
+
+@keyframes start {
+  0% { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
+
+@keyframes topbottom {
+  0% { transform: translateY(-10px); opacity: 0; }
+  30% { opacity: 0.8; }
+  100% { transform: translateY(10px);  opacity: 1; }
+}
+
+.ChangeAppearance {
+    border-color: var(--colorAccent);
+}
+
+.ChangeAppearance > div {
+    background-color: var(--colorAccent);
+}
+
+.LanguageButtons span {
+    box-shadow: inset 0 0 0 3px var(--colorAccent);
+    color: var(--colorAccent);
+    transition: box-shadow 0.3s ease;
+}
+
+.LanguageButtons span.Actived {
+    color: var(--colorAccent2);
+}
+
+.LanguageButtons div::after {
+    background-color: var(--colorAccent);
+}
+
+.LanguageButtons span:not(.Actived):hover {
+    box-shadow: inset 0 0 0 4px var(--colorAccent) ;
+    transition: box-shadow 0.3s ease;
+}
+
+
+@media (max-width: 480px) {
+
+    #BHeader span {
+        background-color: var(--colorAccent) !important;
+    }
+
+    #HeaderMain {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0px;
+        padding-top: var(--safeDesktop);
+        margin-top: calc(2*var(--safeDesktop) + 25px);
+    }
+
+    #JSCategory {
+        font-size: 60px !important;
+    }
+    
+    #JSDescription {
+        font-size: 20px !important;
+    }
+
+    #MainLogo {
+        bottom: -20px;
+    }
+
+    #MainLogo > svg {
+        height: 40vw;
+    }
+
+    #Main::after {
+        transform: scale(5);
+    }
+
+    #Main {
+        overflow: hidden;
+    }
+
+    #Apps {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    #Apps > div {
+        width: 1fr;
+        aspect-ratio: 1/1;
+    }
+
+    #Apps > div > svg {
+        height: 40%;
+    }
+
+    #Apps > #figma > svg {
+        height: 50%;
+    }
+
+    #JSVideo {
+        width: 100%;
+        height: 100%;
+    }
+
+    .ReviewBlock .RBAddInfo {
+        flex-direction: column;
+        gap: 10px
+    }
+
+    .Tooltip, .Tooltip::after {
+        display: none;
+    }
+
+    .Sixty {
+        font-size: 45px !important;
+    }
+
+    .GalleryBlock[horizontal] {
+        height: calc( (100vw - 2*var(--safeDesktop))/2 );
+        grid-column: span 3;
+    }
+
+    .GalleryBlock[square] {
+        height: calc(100vw - 2*var(--safeDesktop));
+        grid-column: span 3;
+    }
+
+    .GalleryBlock[square][none] {
+        display: none;
+    }
+
+    .GalleryBlock::after {
+        font-size: 16px;
+    }
+
+    #FullscreenGallery > #FGImg {
+        width: 98vw;
+        height: auto;
+    }
+}

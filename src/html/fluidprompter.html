@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>FluidPrompter Алексайн</title>
+<link href="../css/main.css" rel="stylesheet"/>
+<link href="../css/work.css" rel="stylesheet"/>
+</head>
+<body style="--colorAccent: #FFFFFF; --colorAccent2: rgb(25, 80, 113)">
+<div id="Start">
+<header>
+<div id="HeaderLinks">
+<a class="DrukCyr LinkHover" data-lang="HeaderMain" href="MAIN.html">Главная</a>
+<a class="DrukCyr LinkHover" data-lang="HeaderReviews" href="REVIEWS.html">Отзывы</a>
+<a class="DrukCyr LinkHover Active" data-lang="HeaderPortfolio" href="PORTFOLIO.html">Портфолио</a>
+<a class="DrukCyr LinkHover" data-lang="HeaderContacts" href="">Контакты</a>
+</div>
+<div id="HeaderLanguage">
+<div class="ChangeAppearance" moon="" onclick="change(this)">
+<div></div>
+</div>
+<div class="LanguageButtons">
+<span class="DrukCyr Actived" id2="RU" onclick="languageButton(this)">РУ</span>
+<span class="DrukCyr" id2="EN" onclick="languageButton(this)">EN</span>
+<div></div>
+</div>
+</div>
+</header>
+<div class="MobileOnly FSMButtonOpen" id="BHeader" popup="Navigation">
+<span></span>
+<span></span>
+<span></span>
+</div>
+<div class="FullScreenModule DrukCyr" id="Navigation">
+<div class="Seventy Italic" id="FSMLinks">
+<a class="DrukCyr LinkHover" data-lang="HeaderMain" href="MAIN.html">Главная</a>
+<a class="DrukCyr LinkHover" data-lang="HeaderReviews" href="REVIEWS.html">Отзывы</a>
+<a class="DrukCyr LinkHover Active" data-lang="HeaderPortfolio" href="PORTFOLIO.html">Портфолио</a>
+<a class="DrukCyr LinkHover" data-lang="HeaderContacts" href="">Контакты</a>
+</div>
+<element class="ChangeAppearance" moon="" onclick="change(this)">
+<div></div>
+</element>
+<div class="LanguageButtons">
+<span class="DrukCyr Actived" id2="RU" onclick="languageButton(this)">РУ</span>
+<span class="DrukCyr" id2="EN" onclick="languageButton(this)">EN</span>
+<div></div>
+</div>
+<span class="MobileOnly FSMButtonClose Cross"></span>
+</div>
+<div id="Main" style="--bg_c1: #35A8EF; --bg_c2: #0070BC;">
+<div id="Back">
+<!-- <div class="Rectangle" topRight></div>
+                    <div class="Rectangle" bottomLeft></div> -->
+<div class="Rectangle" topRight=""></div><div bottomLeft="" class="Rectangle"></div></div>
+<!-- <div id="Noise"><img src="../img/noise.png" alt=""></div> -->
+<div id="Noise"></div>
+<div id="Darker"></div>
+<div class="DrukCyr BigLine HundredThirty" id="HeaderMain">
+<p data-lang="CategoryLogotype" id="JSCategory">Логотип</p>
+<p class="Italic" id="JSName">FluidPrompter</p>
+<!-- <p class="NoSelect Transparent">...........................</p> -->
+</div>
+<div id="backMe">
+<div class="" id="MainLogo"><svg style="border-radius: 5vw;" viewbox="0 0 132.51 132.51" xmlns="http://www.w3.org/2000/svg">
+<g>
+<g>
+<rect height="132.51" style="fill: #4a9bed;" width="132.51"></rect>
+<g>
+<path d="m24.28,29.7l18.88,18.88c2.45,2.45,2.45,6.42,0,8.87l-18.88,18.88" style="fill: none; stroke: #fff; stroke-miterlimit: 10; stroke-width: 5px;"></path>
+<path d="m38.85,29.7l14.94,14.94c1.63,1.63,3.84,2.54,6.14,2.54h40.5c4.29,0,7.78-3.48,7.78-7.78v-9.71H38.85Z" style="fill: none; stroke: #fff; stroke-miterlimit: 10; stroke-width: 5px;"></path>
+<path d="m38.85,76.33l14.43-14.43c1.96-1.96,4.61-3.06,7.38-3.06h21.32v9.71c0,4.29-3.48,7.78-7.78,7.78h-35.35Z" style="fill: none; stroke: #fff; stroke-miterlimit: 10; stroke-width: 5px;"></path>
+<path d="m40.4,87.99h10.69v9.71c0,4.29-3.48,7.78-7.78,7.78h-9.71v-10.69c0-3.75,3.04-6.8,6.8-6.8Z" style="fill: none; stroke: #fff; stroke-miterlimit: 10; stroke-width: 5px;"></path>
+</g>
+<g>
+<path d="m60.42,94.47v13.59h40.69c5.36,0,9.7-4.06,9.7-9.08v-13.59h-40.69c-5.36,0-9.7,4.06-9.7,9.08Z" style="fill: #52b1ff;"></path>
+<path d="m22.07,123.85v8.66h22.35c.68-1.24,1.08-2.65,1.08-4.15v-13.59h-13.73c-5.36,0-9.7,4.06-9.7,9.08Z" style="fill: #52b1ff;"></path>
+<path d="m25.02,0c-1.59,1.62-2.57,3.77-2.57,6.14v13.59h37.16c5.36,0,9.7-4.06,9.7-9.08V0H25.02Z" style="fill: #52b1ff;"></path>
+<path d="m78.18,0c-1.59,1.62-2.57,3.77-2.57,6.14v13.59h25.49c5.36,0,9.7-4.06,9.7-9.08V0h-32.62Z" style="fill: #52b1ff;"></path>
+<path d="m50.97,123.85v8.66h58.75c.68-1.24,1.08-2.65,1.08-4.15v-13.59h-50.13c-5.36,0-9.7,4.06-9.7,9.08Z" style="fill: #52b1ff;"></path>
+<path d="m90.4,65.46v13.59h11.33c5.01,0,9.08-4.06,9.08-9.08v-13.59h-11.33c-5.01,0-9.08,4.06-9.08,9.08Z" style="fill: #52b1ff;"></path>
+</g>
+</g>
+</g>
+</svg></div>
+</div>
+<div class="OktaNeue" id="NameBlock">
+<p class="Thirty" id="JSDescription" text="">Приложение для теле-суфлера с управляющей педалью скорости</p>
+<div id="NBButtons">
+<button class="OktaNeue Twenty HoveringItem" coloraccent="" data-lang="WorksSite" href="https://www.fluidprompter.com" id="JSLink" notanimation="" onclick="openLink(this)">Сайт</button>
+</div>
+</div>
+</div>
+</div>
+<div id="FullscreenGallery" onclick="closeFullscreen()">
+<p class="OktaNeue Twenty DesktopOnly" data-lang="WorksClose">Нажмите в любое место для закрытия</p>
+<p class="OktaNeue Twenty MobileOnly" data-lang="WorksCloseMobile">Нажмите в любое место для закрытия</p>
+<img alt="" id="FGImg" src=""/>
+</div>
+<div id="Content">
+
+<div class="NMarginR SafeMargin" id="Information">
+<div class="ReviewBlock">
+<p class="DrukCyr RBHeader Category" data-lang="WorksTask">Задача</p>
+<div class="OktaNeue TFFont Italic RBText">
+<p class="JustifyFont" id="JSTask">Очень сложная задача</p>
+</div>
+</div>
+<div class="ReviewBlock Inverted">
+<p class="DrukCyr RBHeader Category" data-lang="WorksSolution" id="RBSolutionName">Решение</p>
+<div class="OktaNeue TFFont Italic RBText">
+<p class="JustifyFont" id="JSSolution">Очень крутое решение</p>
+</div>
+<p class="RBHeader HoveringItem"><a class="Link2 DrukCyr Sixty" data-lang="WorksReview" href="REVIEWS.html#fluidprompter">Отзыв</a></p>
+<div class="OktaNeue TFFont RBText Italic">
+<!-- <p id="JSTranslated" class="Secondary NoSelect">(перевод с англ.)</p>
+                        <p id="JSReview" class="JustifyFont"></p> -->
+<p class="Secondary NoSelect RuOnly" id="JSTranslated">(перевод с англ.)</p>
+
+<p class="JustifyFont RuOnly" id="JSReview">Мы работали с Алексом над созданием логотипа для нашего приложения. Было много обсуждений и правок, пока мы не получили дизайн, который нам понравился. Мы оценили четкую и открытую коммуникацию, быстрые ответы и готовность вносить изменения в дизайн даже в последний момент. Алекс создал множество эскизов, пока мы не нашли то, что нам понравилось. Очень профессионально и уважительно.</p>
+<p class="JustifyFont EnOnly" id="JSReviewTranslated">We’ve been working with Alex to create a logo for our app. There was a lot of back and forth until we got the design we liked. We appreciated clear and open communication, fast response and willingness to modify the design even at the very last second. Alex generated a ton of sketches until we found something we liked. Very professional and respectful.</p>
+</div>
+</div>
+<div class="ReviewBlock Inverted" id="ProccesOfWork">
+<p class="DrukCyr RBHeader Category" data-lang="WorksProccessOfWork">Процесс работы</p>
+<div class="OktaNeue TFFont Italic RBText">
+<p class="JustifyFont" id="JSProcess">Процесс работы...</p>
+</div>
+<div class="RBAddInfo">
+<div id="Apps">
+<div class="HoveringItem Tooltip" id="figma" tooltip="Figma">
+<svg fill="none" height="44" viewbox="0 0 30 44" width="30" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M15 21.9639C15 18.1178 18.1178 15 21.9639 15C25.8099 15 28.9277 18.1178 28.9277 21.9639C28.9277 25.8099 25.8099 28.9277 21.9639 28.9277C18.1178 28.9277 15 25.8099 15 21.9639Z" fill="#F9F9F9" fill-rule="evenodd"></path>
+<path clip-rule="evenodd" d="M0.662598 36.7461C0.662598 32.9001 3.78042 29.7822 7.62645 29.7822H14.5903V36.7461C14.5903 40.5921 11.4725 43.7099 7.62645 43.7099C3.78042 43.7099 0.662598 40.5921 0.662598 36.7461Z" fill="#F9F9F9" fill-rule="evenodd"></path>
+<path clip-rule="evenodd" d="M15.4097 0.289062V14.2168H22.3735C26.2196 14.2168 29.3374 11.0989 29.3374 7.25292C29.3374 3.40689 26.2196 0.289063 22.3735 0.289062H15.4097Z" fill="#F9F9F9" fill-rule="evenodd"></path>
+<path clip-rule="evenodd" d="M0.662598 7.25292C0.662598 11.0989 3.78042 14.2168 7.62645 14.2168H14.5903V0.289062H7.62645C3.78042 0.289062 0.662598 3.40689 0.662598 7.25292Z" fill="#F9F9F9" fill-rule="evenodd"></path>
+<path clip-rule="evenodd" d="M0.662598 22C0.662598 25.846 3.78042 28.9638 7.62645 28.9638H14.5903V15.0361H7.62645C3.78042 15.0361 0.662598 18.154 0.662598 22Z" fill="#F9F9F9" fill-rule="evenodd"></path></svg>
+</div>
+
+
+<div class="HoveringItem Tooltip" id="ai" tooltip="Adobe Illustator">
+<svg fill="none" height="30" viewbox="0 0 33 30" width="33" xmlns="http://www.w3.org/2000/svg">
+<path d="M16.705 23.2172H7.54754L5.68436 29.1534C5.63262 29.374 5.42953 29.5302 5.20861 29.5194H0.570441C0.305939 29.5194 0.213438 29.3703 0.292942 29.0721L8.22142 5.65243C8.30077 5.40852 8.38008 5.13068 8.45935 4.8189C8.56305 4.27643 8.61615 3.72507 8.61792 3.17227C8.5952 3.00896 8.73874 2.86471 8.89542 2.88761H15.1985C15.3832 2.88761 15.4889 2.95539 15.5157 3.09095L24.5147 29.1127C24.5939 29.384 24.5146 29.5196 24.2767 29.5193H19.1231C18.9424 29.5399 18.7698 29.416 18.7267 29.2347L16.705 23.2172ZM8.97465 18.0941H15.2382C14.2091 14.5776 13.0478 11.1073 12.1065 7.56343C11.0909 11.1133 9.98289 14.6489 8.97465 18.0941Z" fill="#F9F9F9"></path>
+<path d="M29.8659 7.19737C29.4615 7.21403 29.0583 7.14296 28.6826 6.98882C28.3069 6.83468 27.9671 6.60093 27.6855 6.30287C27.4047 5.99189 27.1866 5.62705 27.0437 5.22932C26.9008 4.83159 26.836 4.40882 26.853 3.9853C26.8386 3.56598 26.9105 3.14826 27.0642 2.75942C27.2179 2.37058 27.4499 2.01936 27.7449 1.72871C28.0371 1.44107 28.382 1.2157 28.7597 1.06566C29.1373 0.915612 29.5402 0.843862 29.9451 0.854557C30.8966 0.854557 31.6432 1.14594 32.185 1.72871C32.4584 2.03157 32.671 2.38678 32.8104 2.774C32.9498 3.16121 33.0134 3.57284 32.9976 3.9853C33.0142 4.41047 32.9473 4.83471 32.8008 5.23284C32.6544 5.63096 32.4315 5.99485 32.1453 6.30287C31.8461 6.60531 31.4892 6.84092 31.0969 6.99487C30.7046 7.14882 30.2854 7.21777 29.8659 7.19737ZM27.1304 29.1126V9.67753C27.1304 9.43362 27.2358 9.3116 27.4476 9.3116H32.3237C32.5349 9.3116 32.6407 9.43358 32.6409 9.67753V29.1126C32.6409 29.3839 32.5351 29.5194 32.3237 29.5192H27.4873C27.2495 29.5192 27.1305 29.3837 27.1304 29.1126Z" fill="#F9F9F9"></path>
+</svg>
+</div>
+</div>
+<button class="OktaNeue Twenty HoveringItem FSMButtonOpen Disabled" data-lang="WorksVideo" id="JSVideo" notanimation="" popup="VideoForWork" right="">Видео к работе</button>
+</div>
+</div>
+</div>
+</div>
+<div class="FullScreenModule DrukCyr" id="VideoForWork">
+<div id="FSMHeader">
+<p class="Blocked" data-lang="WorksVideo">Видео к работе</p>
+<p class="NoCaps" id="FSMName">Название работы</p>
+</div>
+<div id="FSMLinks">
+<a class="LinkHover" href="" invert="">VK</a>
+<a class="LinkHover" href="" invert="">TikTok</a>
+<a class="LinkHover" href="" invert="">YouTube</a>
+<a class="LinkHover" href="" invert="">Instagram</a>
+</div>
+<p class="OktaNeue HoveringItem Button2 NoCaps TFFont FSMButtonClose" data-lang="MainButtonClose">Закрыть</p>
+</div>
+<footer class="DrukCyr">
+<p class="HundredFifty DesktopOnly" data-lang="MainFooter">Связь со мной</p>
+<p class="HundredFifty MobileOnly Line1" data-lang="MainFooterMobile">Связь<br/> со мной</p>
+<div class="Hundred">
+<div>
+<a class="LinkHover" href="" invert="">Telegram</a>
+<a class="LinkHover" href="" invert="">Vk</a>
+<a class="LinkHover" href="" invert="">Email</a>
+</div>
+<div>
+<a class="LinkHover" href="" invert="">YouTube</a>
+<a class="LinkHover" href="" invert="">TikTok</a>
+<a class="LinkHover" href="" invert="">Instagram</a>
+</div>
+</div>
+</footer>
+<script src="../js/main.js"></script>
+<script>
+            function openFullscreen(element) {
+                const fullscreen = document.getElementById('FullscreenGallery');
+                const fullscreenImg = document.getElementById('FGImg');
+                
+                // Берем URL большого изображения из data-атрибута
+                const fullsizeUrl = element.getAttribute('style').split("url(")[1].split(")")[0].replace(/['"]/g, "");
+                console.log(fullsizeUrl);
+                
+                fullscreenImg.src = fullsizeUrl;
+                fullscreen.style.display = 'flex';
+            }
+
+            function closeFullscreen() {
+                const fullscreen = document.getElementById('FullscreenGallery');
+                fullscreen.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Возвращаем прокрутку
+            }
+
+            function openLink(element) {
+                const url = element.getAttribute('href'); // Берём ссылку из data-атрибута
+                window.open(url, '_blank');
+            }
+        </script>
+</body>
+</html>

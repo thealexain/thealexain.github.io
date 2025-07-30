@@ -1,0 +1,270 @@
+{
+    "HeaderMain": [
+        "Главная",
+        "Home"
+    ],
+    "HeaderReviews": [
+        "Отзывы",
+        "Reviews"
+    ],
+    "HeaderPortfolio": [
+        "Портфолио",
+        "Portfolio"
+    ],
+    "HeaderContacts": [
+        "Контакты",
+        "Contacts"
+    ],
+    "MainName": [
+        "Александр",
+        "Alexander"
+    ],
+    "MainLastname": [
+        "Совалев",
+        "Sovalev"
+    ],
+    "MainBlog": [
+        "Алексайн",
+        "Alexain"
+    ],
+    "MainButtonMyBlog": [
+        "Мой блог",
+        "My blog"
+    ],
+    "MainButtonOrder": [
+        "Заказать работу",
+        "Order now"
+    ],
+    "MainContentAboutMe": [
+        "текст обо мне ",
+        "text about me"
+    ],
+    "MainExperienceYears": [
+        "3 года опыта",
+        "3 years"
+    ],
+    "MainExperienceFreelance": [
+        "во фрилансе",
+        "of freelance"
+    ],
+    "MainExperienceWorldwide": [
+        "международного",
+        "worldwide"
+    ],
+    "MainExperienceLevel": [
+        "уровня",
+        "experience"
+    ],
+    "MainExperienceWith": [
+        "c",
+        "with"
+    ],
+    "MainExperienceClients": [
+        "клиентами",
+        "clients"
+    ],
+    "MainExperienceFreelanceMobile": [
+        "во фрилансе",
+        "freelancing for"
+    ],
+    "MainExperienceGloballyMobile": [
+        "всему",
+        "level"
+    ],
+    "MainExperienceWorldMobile": [
+        "миру",
+        "--"
+    ],
+    "MainExperienceAroundMobile": [
+        "по",
+        "globally"
+    ],
+    "MainExperienceClientsMobile": [
+        "клиентов",
+        "clients"
+    ],
+    "MainReviewsCompanies": [
+        "Что говорят компании, где я работаю",
+        "What companies say about my work"
+    ],
+    "MainReviewsCompaniesMobile": [
+        "Что говорят компании <br> обо мне",
+        "What companies<br> say about<br> my work"
+    ],
+    "MainReviewsCompaniesCity1": [
+        "Москва, 2025",
+        "Moscow, 2025"
+    ],
+    "MainReviewsCompaniesCity2": [
+        "Ульяновск, 2025",
+        "Ulyanovsk, 2025"
+    ],
+    "MainReviewsClients": [
+        "Отзывы<br> клиентов",
+        "Client<br> testimonials"
+    ],
+    "MainReviewsClientsButton": [
+        "Все отзывы",
+        "All reviews"
+    ],
+    "MainSkills": [
+        "Мои навыки",
+        "My soft-skills"
+    ],
+    "MainAlexainText": [
+        "на русском",
+        "english"
+    ],
+    "MainViews": [
+        "просмотров",
+        "views"
+    ],
+    "MainSubs": [
+        "подписчиков",
+        "subscribers"
+    ],
+    "MainK": [
+        " тыс.",
+        "K"
+    ],
+    "MainM": [
+        " млн.",
+        "M"
+    ],
+    "MainFooter": [
+        "связь со мной",
+        "Connect With Me"
+    ],
+    "MainFooterMobile": [
+        "связь<br> со мной",
+        "Connect<br> With Me"
+    ],
+    "MainMyBlogSubs": [
+        "подписчиков со всех сетей",
+        "all-platform followers"
+    ],
+    "MainMyBlogViews": [
+        "просмотров по всему миру",
+        "worldwide views"
+    ],
+    "MainMyBlogContent": [
+        "много полезного контента",
+        "high-value content"
+    ],
+    "MainGetWorkTell": [
+        "свяжитесь и расскажите",
+        "Get in touch and share"
+    ],
+    "MainGetWorkTellMobile": [
+        "свяжитесь<br>и расскажите",
+        "Get in touch<br> and share"
+    ],
+    "MainGetWorkProject": [
+        "о своем проекте",
+        "your project details"
+    ],
+    "MainButtonClose": [
+        "Закрыть",
+        "Close"
+    ],
+    "MainButtonBack": [
+        "Назад",
+        "Back"
+    ],
+    "MainButtonCopy": [
+        "Копировать",
+        "Copy"
+    ],
+    "MainGetWorkDescribing": [
+        "Не знаете как описать?",
+        "Stuck describing your project?"
+    ],
+    "MainGetWorkDescribingText": [
+        "Выберите подходящую задачу из списка и получите готовый набор стартовых вопросов",
+        "Pick a task category and get instant starter questions"
+    ],
+    "MainGetWorkCategoryText": [
+        "Вы можете ответить на вопросы и сразу скопировать готовые ответы",
+        "You can answer the questions and copy the ready responses right away"
+    ],
+    "404Header1": [
+        "Здесь мог быть",
+        "Your design"
+    ],
+    "404Header2": [
+        "дизайн для вас",
+        " could be here"
+    ],
+    "CategoryCompany": [
+        "Компания",
+        "Company"
+    ],
+    "CategoryLogotype": [
+        "Логотип",
+        "Logotype"
+    ],
+    "CategoryBrandbook": [
+        "Бренд-бук",
+        "Brand book"
+    ],
+    "CategoryThumbnails": [
+        "Превью",
+        "Thumbnails"
+    ],
+    "CategoryMotion": [
+        "Motion",
+        "Motion"
+    ],
+    "CategoryInfographic": [
+        "Инфографика",
+        "Infographic"
+    ],
+    "CategoryDigitalproducts": [
+        "Продукция",
+        "Digital Products"
+    ],
+    "CategoryPrintproducts": [
+        "Печать",
+        "Print"
+    ],
+    "TranslatedRussian": [
+        "переведено с рус.",
+        "translated from russian"
+    ],
+    "WorksTask": [
+        "Задача",
+        "Task"
+    ],
+    "WorksSolution": [
+        "Решение",
+        "Solution"
+    ],
+    "WorksReview": [
+        "Отзыв",
+        "Review"
+    ],
+    "WorksProccessOfWork": [
+        "Процесс работы ",
+        "Proccess of work"
+    ],
+    "WorksVideo": [
+        "Видео к работе",
+        "Proccess video"
+    ],
+    "WorksClose": [
+        "Нажмите в любое место для закрытия",
+        "Click anywhere to close"
+    ],
+     "WorksCloseMobile": [
+        "Нажмите в любое место для закрытия",
+        "Tap anywhere to close"
+    ],
+    "WorksSite": [
+        "Сайт",
+        "Website"
+    ],
+    "WorksShowAttributeContent": [
+        "Посмотреть в полном разрешении",
+        "View in full resolution"
+    ]
+}

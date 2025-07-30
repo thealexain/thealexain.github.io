@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Название работы Алексайн</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/work.css">
+</head>
+<body style="--colorAccent: #ffffff; --colorAccent2: var(--black)">
+    <div id="Start">
+            <header>
+                        <div id="HeaderLinks">
+                            <a href="MAIN.html" class="DrukCyr LinkHover" data-lang="HeaderMain">Главная</a>
+                            <a href="REVIEWS.html" class="DrukCyr LinkHover" data-lang="HeaderReviews">Отзывы</a>
+                            <a href="PORTFOLIO.html" class="DrukCyr LinkHover Active" data-lang="HeaderPortfolio">Портфолио</a>
+                            <a href="" class="DrukCyr LinkHover" data-lang="HeaderContacts">Контакты</a>
+                        </div>
+
+                        
+
+                        <div id="HeaderLanguage">
+                            <div class="ChangeAppearance" moon onclick="change(this)">
+                                <div></div>
+                            </div>
+
+                            <div class="LanguageButtons">
+                                <span class="DrukCyr Actived" onclick="languageButton(this)" id2="RU">РУ</span>
+                                <span class="DrukCyr" onclick="languageButton(this)" id2="EN">EN</span>
+                                <div></div>
+                            </div>
+                        </div>
+            </header>
+            <div id="BHeader" class="MobileOnly FSMButtonOpen" popup="Navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div id="Navigation" class="FullScreenModule DrukCyr">
+
+            <div id="FSMLinks" class="Seventy Italic">
+                <a href="MAIN.html" class="DrukCyr LinkHover" data-lang="HeaderMain">Главная</a>
+                            <a href="REVIEWS.html" class="DrukCyr LinkHover" data-lang="HeaderReviews">Отзывы</a>
+                            <a href="PORTFOLIO.html" class="DrukCyr LinkHover Active" data-lang="HeaderPortfolio">Портфолио</a>
+                            <a href="" class="DrukCyr LinkHover" data-lang="HeaderContacts">Контакты</a>
+            </div>
+            
+            <element class="ChangeAppearance" moon onclick="change(this)">
+                <div></div>
+            </element>
+
+             <div class="LanguageButtons">
+                <span class="DrukCyr Actived" onclick="languageButton(this)" id2="RU">РУ</span>
+                <span class="DrukCyr" onclick="languageButton(this)" id2="EN">EN</span>
+                <div></div>
+            </div>
+
+            <span class="MobileOnly FSMButtonClose Cross"></span>
+            </div>
+
+            <div id="Main"  style="--bg_c1: #35A8EF; --bg_c2: #0070BC;">
+                <div id="Back">
+                    <!-- <div class="Rectangle" topRight></div>
+                    <div class="Rectangle" bottomLeft></div> -->
+                </div>
+
+                <!-- <div id="Noise"><img src="../img/noise.png" alt=""></div> -->
+                <div id="Noise"></div>
+                <div id="Darker"></div>
+
+                    <div id="HeaderMain" class="DrukCyr BigLine HundredThirty">
+                        <p id="JSCategory">Категория</p>
+                        <p id="JSName" class="Italic">Название</p>
+                        <!-- <p class="NoSelect Transparent">...........................</p> -->
+                    </div>  
+
+                        <div id="backMe">
+                            <div id="MainLogo" class=""></div>
+                        </div>
+
+                        <div id="NameBlock" class="OktaNeue">
+                            <p id="JSDescription" class="Thirty" text>Описание</p>
+                            <div id="NBButtons">
+                                <button id="JSLink" class="OktaNeue Twenty HoveringItem" notAnimation colorAccent onclick="openLink(this)" data-lang="WorksSite">Сайт</button>
+                            </div>
+                        </div>
+            </div>
+        </div>
+
+    <div id="FullscreenGallery" onclick="closeFullscreen()">
+        <p class="OktaNeue Twenty DesktopOnly" data-lang="WorksClose">Нажмите в любое место для закрытия</p>
+        <p class="OktaNeue Twenty MobileOnly" data-lang="WorksCloseMobile">Нажмите в любое место для закрытия</p>
+        <img id="FGImg" src="" alt="">
+    </div>
+
+    <div id="Content">
+        <div id="Gallery" class="NMargin SafeMargin" style="--HIScale: 1.01;">
+        </div>
+        <div id="Information" class="NMarginR SafeMargin">
+            <div class="ReviewBlock">
+                    <p class="DrukCyr RBHeader Category" data-lang="WorksTask">Задача</p>
+                    <div class="OktaNeue TFFont Italic RBText">
+                        <p id="JSTask" class="JustifyFont"></p>
+                    </div>
+                    
+            </div>
+
+            <div class="ReviewBlock Inverted">
+                    <p class="DrukCyr RBHeader Category" id="RBSolutionName" data-lang="WorksSolution">Решение</p>
+                    <div class="OktaNeue TFFont Italic RBText">
+                        <p id="JSSolution" class="JustifyFont"></p>
+                    </div>
+
+                    <p class="RBHeader HoveringItem"><a href="" class="Link2 DrukCyr Sixty" data-lang="WorksReview">Отзыв</a></p>
+                    <div class="OktaNeue TFFont RBText Italic">
+                        <!-- <p id="JSTranslated" class="Secondary NoSelect">(перевод с англ.)</p>
+                        <p id="JSReview" class="JustifyFont"></p> -->
+
+                        <p class="Secondary NoSelect RuOnly" id="JSTranslated">(перевод с англ.)</p>
+                        <p class="Secondary NoSelect EnOnly" id="JSTranslatedRussian" data-lang="TranslatedRussian">(перевод с рус.)</p>
+                        <p class="JustifyFont RuOnly" id="JSReview">Русский отзыв</p>
+                        <p class="JustifyFont EnOnly" id="JSReviewTranslated">Английский</p>
+                    </div>
+                    
+            </div>
+
+            <div class="ReviewBlock Inverted" id="ProccesOfWork">
+                    <p class="DrukCyr RBHeader Category" data-lang="WorksProccessOfWork">Процесс работы</p>
+                    <div class="OktaNeue TFFont Italic RBText">
+                        <p id="JSProcess" class="JustifyFont"></p>
+                    </div>
+
+                    <div class="RBAddInfo">
+                        <div id="Apps">
+                            <div id="figma" class="HoveringItem Tooltip" tooltip="Figma">
+                                <svg width="30" height="44" viewBox="0 0 30 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M15 21.9639C15 18.1178 18.1178 15 21.9639 15C25.8099 15 28.9277 18.1178 28.9277 21.9639C28.9277 25.8099 25.8099 28.9277 21.9639 28.9277C18.1178 28.9277 15 25.8099 15 21.9639Z" fill="#F9F9F9"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0.662598 36.7461C0.662598 32.9001 3.78042 29.7822 7.62645 29.7822H14.5903V36.7461C14.5903 40.5921 11.4725 43.7099 7.62645 43.7099C3.78042 43.7099 0.662598 40.5921 0.662598 36.7461Z" fill="#F9F9F9"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M15.4097 0.289062V14.2168H22.3735C26.2196 14.2168 29.3374 11.0989 29.3374 7.25292C29.3374 3.40689 26.2196 0.289063 22.3735 0.289062H15.4097Z" fill="#F9F9F9"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0.662598 7.25292C0.662598 11.0989 3.78042 14.2168 7.62645 14.2168H14.5903V0.289062H7.62645C3.78042 0.289062 0.662598 3.40689 0.662598 7.25292Z" fill="#F9F9F9"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0.662598 22C0.662598 25.846 3.78042 28.9638 7.62645 28.9638H14.5903V15.0361H7.62645C3.78042 15.0361 0.662598 18.154 0.662598 22Z" fill="#F9F9F9"/></svg>
+                            </div>
+
+                            <div id="ae" class="HoveringItem Tooltip" tooltip="After Effects">
+                                <svg width="42" height="27" viewBox="0 0 42 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M16.4271 19.9537H7.71208L5.93891 25.614C5.88967 25.8239 5.6964 25.9726 5.48615 25.9623H1.07206C0.820336 25.9623 0.732305 25.8204 0.807968 25.5366L8.35341 3.34047C8.42893 3.10834 8.50432 2.8814 8.57985 2.58449C8.67854 2.06823 8.72907 1.5435 8.73076 1.01741C8.70913 0.861951 8.84328 0.724343 8.99485 0.746494H14.9934C15.1692 0.746494 15.2698 0.811 15.2953 0.940012L23.8595 25.5753C23.9349 25.8335 23.8594 25.9625 23.6331 25.9623H18.7285C18.5564 25.9818 18.3922 25.8639 18.3512 25.6914L16.4271 19.9537ZM9.07026 15.1811H15.0312C14.0518 11.8345 12.9466 8.53186 12.0508 5.15916C11.0356 8.65773 10.0983 11.9023 9.07026 15.1811Z" fill="#F9F9F9"/>
+<path d="M30.229 17.7681C30.5758 20.6422 32.9892 22.0125 35.6617 21.9541C37.1687 21.9244 38.7792 21.6905 40.1873 21.1207C40.3128 21.0179 40.376 21.082 40.376 21.3142V24.9902C40.3878 25.1814 40.3079 25.3523 40.1495 25.4545C38.3994 26.2496 36.3903 26.4893 34.4921 26.4589C28.8324 26.4589 24.9455 22.471 24.9471 16.669C24.9323 11.1708 28.4993 6.53218 34.0394 6.53218C38.7355 6.41043 41.9868 10.1704 41.9999 14.8504C41.9999 15.7028 41.9523 16.5581 41.849 17.4042C41.829 17.5786 41.6805 17.7139 41.5094 17.7138C37.7588 17.7138 33.9899 17.7681 30.229 17.7681ZM30.229 14.2431C32.3192 14.2431 34.4215 14.317 36.5105 14.2238C36.8245 14.1916 37.0577 14.1321 37.0577 13.8056C37.014 12.0705 35.5499 10.6436 33.8508 10.71C31.7979 10.5828 30.4841 12.3156 30.229 14.2431Z" fill="#F9F9F9"/>
+</svg>
+
+                            </div>
+
+                            <div id="ps" class="HoveringItem Tooltip" tooltip="Photoshop">
+                                <svg width="33" height="26" viewBox="0 0 33 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.244873 24.4878V0.523835C0.244873 0.360815 0.312992 0.267661 0.471936 0.267661C2.8184 0.267661 5.1638 0.12793 7.5109 0.12793C11.3194 0.12793 15.4432 1.43016 16.8886 5.41443C17.2292 6.39255 17.4109 7.39396 17.4109 8.44195C17.4109 10.4448 16.9567 12.0983 16.0485 13.4024C13.5114 17.0455 9.11397 16.9888 5.17215 16.9888V24.4645C5.20297 24.6858 5.01437 24.7905 4.83155 24.7905H0.517349C0.335699 24.7905 0.244873 24.6974 0.244873 24.4878ZM5.19486 4.76235V12.5873C6.7578 12.7018 8.39333 12.7142 9.89507 12.2147C11.5529 11.7365 12.4609 10.3013 12.4609 8.58168C12.507 7.11634 11.7085 5.71036 10.3492 5.18155C8.86556 4.56465 6.79638 4.5277 5.19486 4.76235Z" fill="#F9F9F9"/>
+<path d="M31.5731 11.0413C30.8861 10.6793 30.1544 10.4144 29.3979 10.2539C28.4259 10.0252 24.5921 9.22416 24.5907 11.2288C24.6247 12.348 26.4012 12.8963 27.1862 13.216C29.9418 14.162 33.0601 15.8531 32.9988 19.2526C33.0831 23.4846 28.9828 25.1764 25.468 25.1768C23.6383 25.1957 21.7321 24.9123 20.0575 24.1269C19.8977 24.0423 19.7948 23.8613 19.8016 23.6769V19.6276C19.7836 19.4652 19.9579 19.3233 20.0941 19.4401C21.7348 20.4324 23.6796 20.9141 25.5777 20.9399C26.4156 20.9399 28.0762 20.8586 28.0636 19.6276C28.0636 18.4461 26.0771 17.903 25.2852 17.6028C24.1373 17.1931 23.049 16.6255 22.0499 15.9156C20.6537 14.9197 19.7778 13.3229 19.8017 11.5662C19.7935 7.58149 23.5678 5.79291 26.9669 5.79207C28.5559 5.77897 30.2623 5.89664 31.7415 6.54195C31.9542 6.60458 31.9983 6.82862 31.9974 7.02939V10.8163C32.0109 11.0514 31.7498 11.1315 31.5731 11.0413Z" fill="#F9F9F9"/>
+</svg>
+
+                            </div>
+
+                            <div id="ai" class="HoveringItem Tooltip" tooltip="Adobe Illustator">
+                                <svg width="33" height="30" viewBox="0 0 33 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M16.705 23.2172H7.54754L5.68436 29.1534C5.63262 29.374 5.42953 29.5302 5.20861 29.5194H0.570441C0.305939 29.5194 0.213438 29.3703 0.292942 29.0721L8.22142 5.65243C8.30077 5.40852 8.38008 5.13068 8.45935 4.8189C8.56305 4.27643 8.61615 3.72507 8.61792 3.17227C8.5952 3.00896 8.73874 2.86471 8.89542 2.88761H15.1985C15.3832 2.88761 15.4889 2.95539 15.5157 3.09095L24.5147 29.1127C24.5939 29.384 24.5146 29.5196 24.2767 29.5193H19.1231C18.9424 29.5399 18.7698 29.416 18.7267 29.2347L16.705 23.2172ZM8.97465 18.0941H15.2382C14.2091 14.5776 13.0478 11.1073 12.1065 7.56343C11.0909 11.1133 9.98289 14.6489 8.97465 18.0941Z" fill="#F9F9F9"/>
+<path d="M29.8659 7.19737C29.4615 7.21403 29.0583 7.14296 28.6826 6.98882C28.3069 6.83468 27.9671 6.60093 27.6855 6.30287C27.4047 5.99189 27.1866 5.62705 27.0437 5.22932C26.9008 4.83159 26.836 4.40882 26.853 3.9853C26.8386 3.56598 26.9105 3.14826 27.0642 2.75942C27.2179 2.37058 27.4499 2.01936 27.7449 1.72871C28.0371 1.44107 28.382 1.2157 28.7597 1.06566C29.1373 0.915612 29.5402 0.843862 29.9451 0.854557C30.8966 0.854557 31.6432 1.14594 32.185 1.72871C32.4584 2.03157 32.671 2.38678 32.8104 2.774C32.9498 3.16121 33.0134 3.57284 32.9976 3.9853C33.0142 4.41047 32.9473 4.83471 32.8008 5.23284C32.6544 5.63096 32.4315 5.99485 32.1453 6.30287C31.8461 6.60531 31.4892 6.84092 31.0969 6.99487C30.7046 7.14882 30.2854 7.21777 29.8659 7.19737ZM27.1304 29.1126V9.67753C27.1304 9.43362 27.2358 9.3116 27.4476 9.3116H32.3237C32.5349 9.3116 32.6407 9.43358 32.6409 9.67753V29.1126C32.6409 29.3839 32.5351 29.5194 32.3237 29.5192H27.4873C27.2495 29.5192 27.1305 29.3837 27.1304 29.1126Z" fill="#F9F9F9"/>
+</svg>
+
+                            </div>
+                        </div>
+                        
+                        <button id="JSVideo" class="OktaNeue Twenty HoveringItem FSMButtonOpen" popup="VideoForWork" notAnimation  right data-lang="WorksVideo">Видео к работе</button>
+                    </div>
+                    
+            </div>
+        </div>
+    </div>
+
+    <div id="VideoForWork" class="FullScreenModule DrukCyr">
+            <div id="FSMHeader">
+                 <p class="Blocked" data-lang="WorksVideo">Видео к работе</p>
+                <p class="NoCaps" id="FSMName">Название работы</p>
+            </div>
+
+            <div id="FSMLinks">
+                <a href="" class="LinkHover " invert>VK</a>
+                <a href="" class="LinkHover " invert>TikTok</a>
+                <a href="" class="LinkHover " invert>YouTube</a>
+                <a href="" class="LinkHover " invert>Instagram</a>
+            </div>
+
+            <p class="OktaNeue HoveringItem Button2 NoCaps TFFont FSMButtonClose" data-lang="MainButtonClose">Закрыть</p>
+    </div>
+
+   <footer class="DrukCyr">
+            <p class="HundredFifty DesktopOnly" data-lang="MainFooter">Связь со мной</p>
+            <p class="HundredFifty MobileOnly Line1" data-lang="MainFooterMobile">Связь<br> со мной</p>
+            <div class="Hundred">
+                <div>
+                    <a href="" class="LinkHover" invert>Telegram</a>
+                    <a href="" class="LinkHover" invert>Vk</a>
+                    <a href="" class="LinkHover" invert>Email</a>
+                </div>
+                <div>
+                    <a href="" class="LinkHover" invert>YouTube</a>
+                    <a href="" class="LinkHover" invert>TikTok</a>
+                    <a href="" class="LinkHover" invert>Instagram</a>
+                </div>
+            </div>
+        </footer>
+
+        <script src="../js/main.js"></script>
+        <script>
+            function openFullscreen(element) {
+                const fullscreen = document.getElementById('FullscreenGallery');
+                const fullscreenImg = document.getElementById('FGImg');
+                
+                // Берем URL большого изображения из data-атрибута
+                const fullsizeUrl = element.getAttribute('style').split("url(")[1].split(")")[0].replace(/['"]/g, "");
+                console.log(fullsizeUrl);
+                
+                fullscreenImg.src = fullsizeUrl;
+                fullscreen.style.display = 'flex';
+            }
+
+            function closeFullscreen() {
+                const fullscreen = document.getElementById('FullscreenGallery');
+                fullscreen.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Возвращаем прокрутку
+            }
+
+            function openLink(element) {
+                const url = element.getAttribute('href'); // Берём ссылку из data-атрибута
+                window.open(url, '_blank');
+            }
+        </script>
+</body>
+</html>

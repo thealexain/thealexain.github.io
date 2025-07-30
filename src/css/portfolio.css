@@ -1,0 +1,299 @@
+:root {
+    --PWPadding: 40px;
+}
+
+header {
+    position: relative;
+}
+
+body[darkTheme] {
+    --temp: var(--colorAccent);
+    --colorAccent: red;
+    --colorAccent2: var(--temp);
+}
+
+[darkTheme] #HeaderMain {
+    background-color: var(--colorAccent2);
+    color: var(--colorAccent);
+}
+
+[darkTheme] header .LinkHover {
+    color: var(--colorAccent2) !important;
+}
+
+[darkTheme] #HeaderLanguage #HLRus {
+    background-color: var(--colorAccent2);
+    color: var(--colorAccent) !important;
+}
+
+[darkTheme] #HeaderLanguage a {
+    color: var(--colorAccent2);
+    
+}
+
+[darkTheme] #HeaderLanguage .HoveringBorder {
+    box-shadow: inset 0 0 0 2px var(--colorAccent2);
+}
+
+[darkTheme] #HeaderLanguage .HoveringBorder:hover {
+    box-shadow: inset 0 0 0 4px var(--colorAccent2);
+}
+
+#HeaderMain {
+    position: relative;
+    margin: 0;
+}
+
+#Сontent {
+    margin: var(--safeDesktop)
+}
+
+#Works {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    grid-auto-rows: 1fr;
+  grid-template-rows: subgrid;
+}
+
+.PortfolioWork {
+    cursor: pointer;
+    padding: 40px;
+    position: relative;
+    background-color: var(--bg_c1);
+    height: calc(100% - 80px);
+}
+
+.PortfolioWork:hover .PWText p.NoCaps {
+    /* font-size: 55px; */
+}
+
+.PortfolioWork[square] {
+    aspect-ratio: 1/1;
+}
+
+.PortfolioWork[horizontal] {
+     grid-column: span 2;
+}
+
+.PortfolioWork[vertical] {
+    grid-row: span 2;
+}
+
+
+.PortfolioWork[horizontal] .PWForeground {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+     top: 50%;
+     transform: translate(-100%, -50%);
+  rotate: -2deg;
+}
+
+.PortfolioWork[square] .PWForeground {
+    position: absolute;
+    z-index: 1;
+    top: 50%;  /* Смещаем на 50% от высоты родителя */
+  left: 50%; /* Смещаем на 50% от ширины родителя */
+  transform: translate(-50%, -50%);
+  rotate: -2deg;
+}
+
+.PWForeground > svg {
+    width: 100%;
+    transform: scale(0.7);
+}
+
+.PWForeground > img {
+    width: 100%;
+}
+
+.PortfolioWork .PWDarker {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg_c2);
+    filter: brightness(0.5);
+    mix-blend-mode: multiply;
+    opacity: 0.5;
+}
+
+.PWNoise {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #C0C0C0;
+    background-size:contain;       /* Заполняет весь контейнер */
+    mix-blend-mode: multiply;
+    opacity: 0.3;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.PWDarker, .PWNoise {
+    margin-left: calc(0px - var(--PWPadding));
+    margin-top: calc(0px - var(--PWPadding));
+}
+
+.PWText {
+    color: var(--colorAccent);
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.PWText p.Category {
+    line-height: 1;
+    padding: 1% 2% !important;
+    font-size: 40px !important;
+    color: var(--colorAccent2);
+    background-color: var(--colorAccent);
+}
+
+.PWText p.NoCaps {
+    font-size: 50px;
+}
+
+.PWBackground {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    mask-clip:view-box ;
+    overflow: hidden;
+    margin-left: calc(0px - var(--PWPadding));
+    margin-top: calc(0px - var(--PWPadding));
+}
+
+.PWBackground .Rectangle {
+    position: absolute;
+    background-color: var(--bg_c2);
+    width: 60%;
+}
+
+.PWBackground .Circle {
+    position: absolute;
+    background-color: var(--bg_c2);
+    aspect-ratio: 1/1;
+    width: 30%;
+    border-radius: 100%;
+}
+
+.PWBackground .Triangle {
+    position: absolute;
+    aspect-ratio: 1/1;
+    width: 60%;
+    background-color: var(--bg_c2);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+
+.PWBackground *[topLeft] {
+    top: 0;
+    left: 0;
+}
+
+.PWBackground *[topRight] {
+    top: 0;
+    right: 0;
+}
+
+.PWBackground *[bottomLeft] {
+    bottom: 0;
+    left: 0;
+}
+
+.PWBackground *[bottomRight] {
+    bottom: 0;
+    right: 0;
+}
+
+
+.PWBackground .Rectangle[topRight] {
+    border-bottom-left-radius: 1000px;
+    height: 50%;
+}
+
+.PWBackground .Triangle[topLeft], .Triangle[topRight] {
+    scale: 1.2;
+    rotate: -130deg;
+}
+
+.PWBackground .Rectangle[bottomLeft] {
+    height: 30%;
+    width: 40%;
+    border-top-left-radius: 200px;
+    border-top-right-radius: 200px;
+}
+
+.PWBackground .Triangle[bottomLeft] .Triangle[bottomRight], .Circle[bottomLeft], .Circle[bottomRight] {
+    height: 60%;
+}
+
+
+.PWBackground .Circle[bottomLeft], .Circle[bottomRight] {
+    bottom: -50% !important;
+    scale: 2.5;
+}
+
+
+
+
+.PWBackground::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle,farthest-side,
+        rgba(0,0,0,1),
+        rgba(0,0,0,1),
+    );
+    mask: radial-gradient(
+        circle,
+        rgba(0, 0, 0, 0) 0%, 
+        rgba(0, 0, 0, 1) 70%
+    );
+    backdrop-filter: blur(10px);
+}
+
+.PortfolioWork .PWName {
+    color: var(--colorAccent) !important;
+}
+
+.PortfolioWork .Category {
+    color: var(--colorAccent2) !important;
+}
+
+@media (max-width: 480px) {
+    :root {
+        --PWPadding: 20px;
+    }
+
+    #HeaderMain {
+        margin-top: calc(2*var(--safeDesktop) + 25px);
+        padding-top: 0;
+    }
+
+    #Works {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .PortfolioWork {
+        box-sizing: border-box;
+        padding: 20px;
+        height: calc(100vw - 2* var(--safeDesktop));
+    }
+
+    .PortfolioWork[square] {
+        aspect-ratio: 1/1;
+    }
+/* 
+    .PWDarker, .PWNoise, .PWBackground {
+        margin-left: -20px;
+        margin-top: -20px;
+    } */
+    
+}
