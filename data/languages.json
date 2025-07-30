@@ -19,6 +19,22 @@
         "Александр",
         "Alexander"
     ],
+    "MainGraphic": [
+        "Графика",
+        "Graphic"
+    ],
+    "MainWeb": [
+        "Веб",
+        "Web"
+    ],
+    "MainDesigner": [
+        "Дизайнер",
+        "Designer"
+    ],
+    "MainBlogger": [
+        "Блогер",
+        "Bloger"
+    ],
     "MainLastname": [
         "Совалев",
         "Sovalev"
