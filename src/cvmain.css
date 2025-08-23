@@ -1,0 +1,599 @@
+:root {
+    --black: #171717;
+    --yellow: #FFC822;
+    --orange: #FF6625;
+    --purple: #B453FE;
+    --pink: #FE53CB;
+    --lightgray: #F9F9F9;
+    --secondgray: #D9D9D9;
+    --safeDesktop: 50px;
+    --contentDesktop: 130px;
+}
+
+@font-face {
+    font-family: 'DrukCyr'; /* Название, которое будет использоваться в CSS */
+    src: url('../fonts/drukcyr/DrukCyr-Medium.ttf') format('truetype');
+    font-weight: medium; /* Обычное начертание (normal) */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DrukCyr'; /* Название, которое будет использоваться в CSS */
+    src: url('../fonts/drukcyr/DrukCyr-MediumItalic.ttf') format('truetype');
+    font-weight: medium; /* Обычное начертание (normal) */
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'DrukCyr'; /* Название, которое будет использоваться в CSS */
+    src: url('../fonts/drukcyr/DrukCyr-Bold.ttf') format('truetype');
+    font-weight: bold; /* Обычное начертание (normal) */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DrukCyr'; /* Название, которое будет использоваться в CSS */
+    src: url('../fonts/drukcyr/DrukCyr-BoldItalic.ttf') format('truetype');
+    font-weight: bold; /* Обычное начертание (normal) */
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Okta Neue'; /* Название, которое будет использоваться в CSS */
+    src: url('../fonts/oktaneue/OktaNeue-Bold.ttf') format('truetype');
+    font-weight: bold; /* Обычное начертание (normal) */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Okta Neue'; /* Название, которое будет использоваться в CSS */
+    src: url('../fonts/oktaneue/OktaNeue-SemiBold.ttf') format('truetype');
+    font-weight: 600; /* Обычное начертание (normal) */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Okta Neue'; /* Название, которое будет использоваться в CSS */
+    src: url('../fonts/oktaneue/OktaNeue-SemiBoldItalic.ttf') format('truetype');
+    font-weight: 600; /* Обычное начертание (normal) */
+    font-style: italic;
+}
+
+.DrukCyr {
+    font-family: 'DrukCyr';
+    text-transform: uppercase;
+}
+
+.OktaNeue {
+    font-family: 'Okta Neue';
+}
+
+.Italic {
+    font-style: italic;
+}
+
+.JustifyFont {
+     text-align: justify !important; /* Равномерное выравнивание */
+  hyphens: auto;       /* Перенос слов при необходимости */
+  text-align-last: justify;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
+
+html, body {
+    overflow-x: hidden;
+  height: 100%; /* Важно для iOS */
+  position: flex; /* Фикс для Safari 14+ */
+  overscroll-behavior-x: none; /* Блокирует "отскок" на iOS */
+  -webkit-overflow-scrolling: auto; /* Отключает инерционный скролл */
+}
+
+.TFFont { /* 25 px */
+    font-size: 25px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.HoveringItem {
+    transform: scale(1);
+    transition: transform 0.3s ease;
+}
+
+.HoveringItem:Hover {
+    transform: scale(1.1);
+}
+
+.HoveringBorder {
+    transition: box-shadow 0.3s ease;
+    box-shadow: inset 0 0 0 2px var(--black);
+}
+
+.HoveringBorder:hover {
+    box-shadow: inset 0 0 0 4px var(--black);
+}
+
+.Inverted .Secondary {
+    color: var(--secondgray) !important;
+}
+
+/* body > div:first-child {
+    position: relative;
+    flex: 1 0 auto;
+} */
+
+
+/* ############### HEADER ############### */
+
+
+
+header {
+    display: flex;
+    justify-content: space-between; /* Распределяет пространство между элементами */
+    align-items: center;
+    margin: 20px;
+    margin-left: var(--safeDesktop);
+    margin-right: var(--safeDesktop);
+    z-index: 2;
+}
+
+#HeaderLinks {
+    display: flex;
+    gap: 80px;
+}
+
+#HeaderLinks a {
+    text-decoration: none;
+    color: var(--black);
+    font-style: italic;
+    font-size: 30px;
+    position: relative; /* Создаем контекст для псевдоэлемента */
+    display: inline-block;
+}
+
+.LinkHover::before {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: var(--black);
+  transition: width 0.2s ease-in-out;
+}
+
+.LinkHover:hover::before {
+  width: 100%;
+}
+
+.LinkHoverWrapper:hover > .LinkHover::before {
+  width: 100%;
+}
+
+.Active.LinkHover::before {
+    width: 100%;
+}
+
+#HeaderLanguage {
+    display: flex;
+}
+
+#HeaderLanguage a {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-decoration: none;
+    font-style: bold;
+    font-size: 30px;
+    color: var(--black);
+}
+
+#HeaderLanguage #HLRus {
+    background-color: var(--black);
+    color: white;
+}
+
+/* ############### MAIN ############### */
+
+
+
+#Main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;    
+    height: 100vh;   
+    background-image: url('../img/back.png');
+    background-size: cover;       /* Заполняет весь контейнер */
+    background-position: center;  /* Центрируем изображение */
+    background-repeat: no-repeat; /* Убираем повторение */
+    z-index: 0;
+    flex: 1;
+    min-height: 0;
+}
+
+#backMe {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 80%;   /* 100% высоты viewport */
+    background-image: url('../img/me.png');
+    background-size:contain;       /* Заполняет весь контейнер */
+    background-position: center;  /* Центрируем изображение */
+    background-repeat: no-repeat; /* Убираем повторение */
+    z-index: 0;
+}
+
+
+#RunningLine {
+    margin-top: 100px;
+    padding-left: var(--safeDesktop);
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: var(--black);
+}
+
+#RunningLine p {
+    margin: 0;
+    padding: 0;         /* На всякий случай */
+}
+
+#RunningLine > div {
+    display: flex;       /* Горизонтальное расположение */
+    gap: 50px;          /* Расстояние между элементами */
+    align-items: center;
+    font-size: 50px;
+    height: min-content;
+}
+
+#RunningLine > div > div {
+    display: flex;       /* Горизонтальное расположение */
+    gap: 25px;
+    align-items: center;
+}
+
+#RunningLine > div > div:first-child {
+    color: white;
+}
+
+#RunningLine > div > div:last-child {
+    color: var(--yellow);
+}
+
+#NameBlock {
+    position: absolute;
+    bottom: 0;
+    margin: var(--safeDesktop);
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between; /* Распределяет пространство между элементами */
+    align-items: end;
+    width: calc(100% - var(--safeDesktop)*2);;
+}
+
+#NameBlock a {
+    text-decoration: none;
+    color: var(--black);
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+#NameBlock #NBName p {
+    font-size: 70px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+#NameBlock #NBName {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#NameBlock #NBName > div {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+
+
+#NameBlock #NBName > div > a {
+    font-weight: 600;
+    font-size: 30px;
+    background-color: white;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 100px;
+    rotate: -2deg;
+    align-items: center;
+}
+
+#NameBlock #NBButtons {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+}
+
+#NameBlock #NBButtons a {
+    padding-left: 55px;
+    padding-right: 55px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#NameBlock #NBButtons > a:first-child {
+    background-color: var(--black);
+    color: white;
+}
+
+
+#NameBlock #NBButtons > a:last-child {
+    border: 3px solid var(--black);
+}
+
+/* ############### CONTENT ############### */
+
+#Content {
+    position: absolute;
+    top:  calc(100vh + 50px);
+    width: 100vw;
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+    height: 100%;
+}
+
+#Content > *:not(.NMargin) {
+    margin: var(--contentDesktop);
+}
+
+#Content > *.NMargin {
+    margin: 0px;
+}
+
+#Content > *.SafeMargin {
+    margin: var(--safeDesktop);
+}
+
+#Content > *.NMarginR {
+    margin-right: 0;
+}
+
+#Experience {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 180px !important;
+}
+
+#Experience > div {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: -40px;
+}
+
+#Experience p.DrukCyr {
+    font-size: 150px;
+}
+
+
+#Experience .Blocked {
+    font-size: 110px !important;
+    color: white;
+    background-color: var(--black);
+    /* flex-grow: 1; */
+    align-items: center;
+    text-align: center;
+    /* padding-top: 25px; */
+    padding-bottom: 15px;
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    line-height: 1;
+}
+
+#Experience .Circled {
+    font-size: 110px !important;
+    color: white;
+    background-color: var(--pink);
+    /* flex-grow: 1; */
+    align-items: center;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    border-radius: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
+    line-height: 1;
+    rotate: -7deg;
+}
+
+#Experience > div:first-child > .Blocked {
+    background-color: var(--orange);
+    rotate: -1deg;
+}
+
+#Experience > div:nth-child(2) > .Blocked {
+    background-color: var(--purple);
+    rotate: 1deg;
+}
+
+#Experience svg {
+    border-radius: 100px;
+}
+
+#Reviews {
+    margin-bottom: 180px !important;
+}
+
+#Reviews .ReviewBlock {
+    background-color: var(--black);
+    color: white;
+    /* padding: calc( (var(--contentDesktop) / var(--safeDesktop)) * var(--safeDesktop) ); */
+    padding: calc( var(--contentDesktop) - var(--safeDesktop));
+    padding-right: var(--contentDesktop);
+}
+
+#Reviews .ReviewBlock > p {
+    font-size: 100px;
+    margin-bottom: 60px;
+}
+
+#Reviews .ReviewBlock > div > div:first-child {
+    margin-bottom: 60px;
+}
+
+#Reviews .ReviewBlock > div > div:first-child a {
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+#Reviews .ReviewBlock > div > div:first-child a.Active {
+    background-color: white;
+    color: var(--black);
+}
+
+#Reviews .ReviewBlock:not(.Inverted) > div > div:first-child a:not(.Active) > span.LinkHover::before {
+    background-color: white;
+}
+
+#Reviews .ReviewBlock.Inverted > div > div:first-child a.Active  {
+    background-color: var(--black);
+    color: white;
+}
+
+#Reviews .ReviewBlock.Inverted > div > div:first-child a.Active > span.LinkHover::before  {
+    background-color: white;
+}
+
+#Reviews .ReviewBlock.Inverted > div > div:first-child a:not(.Active)  {
+    background-color: transparent;
+}
+
+#Reviews .ReviewBlock > div > div:first-child a > span {
+    position: relative; /* Создаем контекст для псевдоэлемента */
+    display: inline-block;
+}
+
+#Reviews .ReviewBlock.Inverted > div > div:first-child a > span {
+    position: relative; /* Создаем контекст для псевдоэлемента */
+    display: inline-block;
+}
+
+#Reviews .ReviewBlock > div > div:last-child > div:first-child > p[isHeader]{
+    margin-bottom: 30px;
+}
+
+#Reviews .ReviewBlock > div > div:last-child > div:first-child > p:not([isHeader]){
+    display: inline;
+}
+
+#Reviews .ReviewBlock > div > div:last-child {
+    display: flex;
+    flex-direction: column;
+}
+
+#Reviews .ReviewBlock > div > div:last-child > div:first-child {
+    align-self: flex-start;
+}
+
+#Reviews .ReviewBlock > div > div:last-child > *:last-child {
+    align-self: flex-end;
+}
+
+#Reviews .ReviewBlock > div > div:last-child > div:first-child{
+    margin-bottom: 150px;
+}
+
+.Inverted {
+    background-color: var(--lightgray) !important;
+    color: var(--black) !important;
+}
+
+*.Inverted a {
+    color: var(--black);
+}
+
+#Skills {
+    font-size: 150px;
+    margin-bottom: 180px !important;
+}
+#Skills > p {
+    margin-left: var(--contentDesktop);
+}
+
+#Skills > div {
+    width: 100%;
+    background-color: black;
+    color:white;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    padding-left: var(--contentDesktop) ;
+}
+
+#Portfolio > div:first-child {
+    font-size: 150px;
+    display: flex;
+    flex-direction: column;
+}
+
+.Headers {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+#Portfolio > div:first-child > p {
+    line-height: 1;
+}
+
+.Background {
+    background-color: var(--black);
+    color: white;
+    width: fit-content;
+    line-height: 1;
+    padding-bottom: 0.8%;
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+.BR {
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+/* ################ FOOTER ###########. */
+
+#footer {
+    z-index: 5;
+    width: 100vw;
+    padding: var(--contentDesktop);
+    background-color: var(--black);
+    color: white;
+}
