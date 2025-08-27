@@ -1533,15 +1533,15 @@ footer > div > div:last-child {
 }
 
     .Hundred {
-        font-size: 60px !important;
+        font-size: 3rem !important;
     }
 
     .HundredFifty {
-        font-size: 70px !important;
+        font-size: 3.25rem !important;
     }
 
     .TFFont {
-        font-size: 16px;
+        font-size: 1rem;
     }
 
     .Twenty {
@@ -1554,8 +1554,16 @@ footer > div > div:last-child {
     }
 
     .ReviewBlock p.RBHeader {
-         font-size: 60px;
+        font-size: 3.25rem;
         margin-bottom: 30px;
+    }
+
+    .ReviewBlock  {
+        padding: var(--contentDesktop) !important;
+    }
+
+    .ReviewBlock p {
+        line-height: 1.5;
     }
 
     #Experience p.DrukCyr {
@@ -1688,7 +1696,7 @@ footer > div > div:last-child {
     }
 
     .ReviewBlock > div > .RBLinks > * {
-        font-size: 18px;
+        font-size: 1.1rem;
         padding: 20px 30px;
         line-height: 1;
         white-space: nowrap;
@@ -2046,6 +2054,10 @@ footer > div > div:last-child {
 
     #Navigation .ChangeAppearance > div {
         background-color: var(--white);
+    }
+
+    #Content > *.SafeMargin.NMarginR {
+        margin: 0 !important;
     }
 }
 
