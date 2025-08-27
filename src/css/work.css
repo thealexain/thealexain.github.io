@@ -43,7 +43,7 @@ header {
 }
 
 #JSCategory {
-    font-size: 110px !important;
+    font-size: 80px !important;
     color: var(--colorAccent);
     background-color: var(--colorAccent2);
     /* flex-grow: 1; */

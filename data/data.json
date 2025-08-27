@@ -199,7 +199,6 @@
             "video": ""
         },
         "image": "svg",
-        "effects": ["horizontal"],
         "back": {
             "map": ["", "rectangle", 
                             "triangle", ""],
@@ -284,7 +283,7 @@
             "text": "Процесс работы...",
             "apps": ["ps"]
         },
-        "image": "",
+        "image": "img",
         "back": {
             "map": ["", "rectangle", 
                             "triangle", ""],
@@ -309,7 +308,7 @@
             "text": "Процесс работы...",
             "apps": ["ps"]
         },
-        "image": "",
+        "image": "img",
         "back": {
             "map": ["", "rectangle", 
                             "triangle", ""],
@@ -343,6 +342,7 @@
             "apps": ["ai"]
         },
         "image": "img",
+        "effects": ["horizontal"],
         "back": {
             "map": ["", "rectangle", 
                             "triangle", ""],
@@ -369,7 +369,7 @@
             "text": "Процесс работы...",
             "apps": ["ps"]
         },
-        "image": "",
+        "image": "img",
         "back": {
             "map": ["", "rectangle", 
                             "triangle", ""],

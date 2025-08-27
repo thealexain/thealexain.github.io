@@ -18,51 +18,65 @@
 
 @font-face {
     font-family: 'DrukCyr'; /* Название, которое будет использоваться в CSS */
-    src: url('../../fonts/drukcyr/DrukCyr-Medium.ttf') format('truetype');
+    src: url('../../fonts/drukcyr/DrukCyr-Medium.woff2') format('woff2'),
+        url('../../fonts/drukcyr/DrukCyr-Medium.woff') format('woff');
     font-weight: medium; /* Обычное начертание (normal) */
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'DrukCyr'; /* Название, которое будет использоваться в CSS */
-    src: url('../../fonts/drukcyr/DrukCyr-MediumItalic.ttf') format('truetype');
+    src: url('../../fonts/drukcyr/DrukCyr-MediumItalic.woff2') format('woff2'),
+        url('../../fonts/drukcyr/DrukCyr-MediumItalic.woff') format('woff');
     font-weight: medium; /* Обычное начертание (normal) */
     font-style: italic;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'DrukCyr'; /* Название, которое будет использоваться в CSS */
-    src: url('../../fonts/drukcyr/DrukCyr-Bold.ttf') format('truetype');
+    src: url('../../fonts/drukcyr/DrukCyr-Bold.woff2') format('woff2'),
+        url('../../fonts/drukcyr/DrukCyr-Bold.woff') format('woff');
     font-weight: bold; /* Обычное начертание (normal) */
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'DrukCyr'; /* Название, которое будет использоваться в CSS */
-    src: url('../../fonts/drukcyr/DrukCyr-BoldItalic.ttf') format('truetype');
+    src: url('../../fonts/drukcyr/DrukCyr-BoldItalic.woff2') format('woff2'),
+        url('../../fonts/drukcyr/DrukCyr-BoldItalic.woff') format('woff');
     font-weight: bold; /* Обычное начертание (normal) */
     font-style: italic;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Okta Neue'; /* Название, которое будет использоваться в CSS */
-    src: url('../../fonts/oktaneue/OktaNeue-Bold.ttf') format('truetype');
+    src: url('../../fonts/oktaneue/OktaNeue-Bold.woff2') format('woff2'),
+        url('../../fonts/oktaneue/OktaNeue-Bold.woff') format('woff');
     font-weight: bold; /* Обычное начертание (normal) */
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Okta Neue'; /* Название, которое будет использоваться в CSS */
-    src: url('../../fonts/oktaneue/OktaNeue-SemiBold.ttf') format('truetype');
+    src: url('../../fonts/oktaneue/OktaNeue-SemiBold.woff2') format('woff2'),
+        url('../../fonts/oktaneue/OktaNeue-SemiBold.woff') format('woff');
     font-weight: 600; /* Обычное начертание (normal) */
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Okta Neue'; /* Название, которое будет использоваться в CSS */
-    src: url('../../fonts/oktaneue/OktaNeue-SemiBoldItalic.ttf') format('truetype');
+    src: url('../../fonts/oktaneue/OktaNeue-SemiBoldItalic.woff2') format('woff2'),
+        url('../../fonts/oktaneue/OktaNeue-SemiBoldItalic.woff') format('woff');
     font-weight: 600; /* Обычное начертание (normal) */
     font-style: italic;
+    font-display: swap;
 }
 
 p {
