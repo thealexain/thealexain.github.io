@@ -60,7 +60,7 @@
 
 <div class="DrukCyr BigLine HundredThirty" id="HeaderMain">
 <p data-lang="CategoryLogotype" id="JSCategory">Логотип</p>
-<p class="Italic" id="JSName">Мой Сладкий</p>
+<p class="Italic" data-inf="name" id="JSName">Мой Сладкий</p>
 <!-- <p class="NoSelect Transparent">...........................</p> -->
 </div>
 <div id="backMe">
@@ -210,7 +210,7 @@
 </svg></div>
 </div>
 <div class="OktaNeue" id="NameBlock">
-<p class="Thirty" id="JSDescription" text="">Кондитерские изделия, продаваемые в банках</p>
+<p class="Thirty" data-inf="description" id="JSDescription" text="">Кондитерский бренд</p>
 <div id="NBButtons">
 <button class="OktaNeue Twenty HoveringItem Disabled Disabled Disabled" coloraccent="" data-lang="WorksSite" id="JSLink" notanimation="" onclick="openLink(this)">Сайт</button>
 </div>
@@ -228,13 +228,13 @@
 <div class="ReviewBlock">
 <p class="DrukCyr RBHeader Category" data-lang="WorksTask">Задача</p>
 <div class="OktaNeue TFFont Italic RBText">
-<p class="JustifyFont" id="JSTask">Задача заключалась в доработке изображения, созданного нейросетью, которое клиент хотел видеть в более дружелюбном и мягком стиле. Изначальная концепция была сильной с маркетинговой точки зрения, но требовала адаптации: нужно было перевести изображение в вектор, упростить детали, смягчить линии и убрать излишнюю резкость, сохранив при этом основную идею и узнаваемость.</p>
+<p class="JustifyFont" data-inf="task" id="JSTask">Задача состояла в доработке изображения от нейросети, чтобы сделать его более дружелюбным и мягким. Исходная концепция была сильной, но требовала адаптации: нужно было перевести изображение в вектор, упростить детали, смягчить линии и убрать лишнюю резкость, сохранив при этом основную идею и узнаваемость.</p>
 </div>
 </div>
 <div class="ReviewBlock Inverted">
 <p class="DrukCyr RBHeader Category" data-lang="WorksSolution" id="RBSolutionName">Решение</p>
 <div class="OktaNeue TFFont Italic RBText">
-<p class="JustifyFont" id="JSSolution">В результате был создан векторный логотип с мягкими плавными линиями, где сохранилась узнаваемая концепция медвежонка, но убрана излишняя детализация и резкость.</p>
+<p class="JustifyFont" data-inf="solution" id="JSSolution">В результате был создан векторный логотип с мягкими плавными линиями, где сохранилась узнаваемая концепция медвежонка, но убрана излишняя детализация и резкость.</p>
 </div>
 
 
@@ -319,6 +319,9 @@
                 const url = element.getAttribute('href'); // Берём ссылку из data-атрибута
                 window.open(url, '_blank');
             }
+
+
+
         </script>
 </body>
 </html>

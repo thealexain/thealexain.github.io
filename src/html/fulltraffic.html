@@ -60,7 +60,7 @@
 
 <div class="DrukCyr BigLine HundredThirty" id="HeaderMain">
 <p data-lang="CategoryLogotype" id="JSCategory">Логотип</p>
-<p class="Italic" id="JSName">FullTraffic</p>
+<p class="Italic" data-inf="name" id="JSName">FullTraffic</p>
 <!-- <p class="NoSelect Transparent">...........................</p> -->
 </div>
 <div id="backMe">
@@ -70,7 +70,7 @@
 </div>
 </div>
 <div class="OktaNeue" id="NameBlock">
-<p class="Thirty" id="JSDescription" text="">Фулфилмент-сервис</p>
+<p class="Thirty" data-inf="description" id="JSDescription" text="">Фулфилмент-сервис</p>
 <div id="NBButtons">
 <button class="OktaNeue Twenty HoveringItem Disabled" coloraccent="" data-lang="WorksSite" href="https://fulltraffic.clients.site" id="JSLink" notanimation="" onclick="openLink(this)">Сайт</button>
 </div>
@@ -88,13 +88,13 @@
 <div class="ReviewBlock">
 <p class="DrukCyr RBHeader Category" data-lang="WorksTask">Задача</p>
 <div class="OktaNeue TFFont Italic RBText">
-<p class="JustifyFont" id="JSTask">Клиенту требовалось разработать логотип для компании FullTraffic, которая занимается фулфилментом — то есть берет на себя всю рутинную работу по упаковке, печати этикеток, хранению и логистике товаров для интернет-магазинов. Название проекта соединяет два понятия: Full (полный цикл услуг) и Traffic (поток товаров или движение). Задача была — визуально показать эту идею полного контроля над товаропотоком: надёжность, скорость и комплексный подход. Клиент хотел, чтобы логотип выглядел современно и технологично, передавал ощущение движения и порядка. Обязательными элементами должны были стать абстрактные графические элементы, связанные с логистикой: например, стрелки, коробки, конвейер или пути. При этом логотип не должен был быть перегруженным или слишком буквальным (например, просто грузовик или склад).</p>
+<p class="JustifyFont" data-inf="task" id="JSTask">Нужен был логотип для компании, которая занимается фулфилментом — полным циклом услуг для интернет-магазинов: упаковкой, хранением и доставкой товаров. Название отражает полный контроль над товаропотоком. Задача состояла в том, чтобы показать в логотипе надёжность, скорость и комплексный подход, придав ему современный и технологичный вид. Важно было передать движение и порядок, используя абстрактные элементы логистики — например, стрелки или пути, но без перегруженности.</p>
 </div>
 </div>
 <div class="ReviewBlock Inverted">
 <p class="DrukCyr RBHeader Category" data-lang="WorksSolution" id="RBSolutionName">Решение</p>
 <div class="OktaNeue TFFont Italic RBText">
-<p class="JustifyFont" id="JSSolution">В основе финального логотипа лежит лаконичный и простой образ, который сразу решает несколько задач. Мы стилизовали графическое представление коробки — ключевого объекта в логистике — и превратили её грани в линии, которые образуют буквы F и T. Это не только абстрактная форма: за счёт чётких углов и уверенных линий логотип передаёт ощущение надёжности, порядка и структуры, но и скрытые в нём инициалы названия FullTraffic усиливают запоминаемость бренда.</p>
+<p class="JustifyFont" data-inf="solution" id="JSSolution">В основе логотипа — стилизованное изображение коробки, ключевого объекта в логистике. Её грани образуют буквы F и T, что создает абстрактную форму, но при этом передает надежность, порядок и структуру. Скрытые в логотипе инициалы FullTraffic помогают лучше запомнить бренд, сохраняя современный и технологичный вид.</p>
 </div>
 
 
@@ -174,6 +174,9 @@
                 const url = element.getAttribute('href'); // Берём ссылку из data-атрибута
                 window.open(url, '_blank');
             }
+
+
+
         </script>
 </body>
 </html>

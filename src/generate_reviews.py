@@ -16,10 +16,8 @@ code = """<div class="ReviewBlock Inverted">
                         <p class="HoveringItem" id="JSTitle"><a href="" class="Link2 DrukCyr NoCaps Seventy">FluidPrompter</a></p>
                     </div>
                     <div class="OktaNeue TFFont Italic RBText">
-                        <p class="Secondary NoSelect RuOnly" id="JSTranslated">(перевод с англ.)</p>
-                        <p class="Secondary NoSelect EnOnly" id="JSTranslatedRussian" data-lang="TranslatedRussian">(перевод с рус.)</p>
-                        <p class="JustifyFont RuOnly" id="JSText">Русский отзыв</p>
-                        <p class="JustifyFont EnOnly" id="JSTextTranslated">Английский</p>
+                        <p class="Secondary NoSelect" id="JSTranslated" data-lang="ReviewTranslated" data-id="">(перевод с англ.)</p>
+                        <p class="JustifyFont" id="JSText" data-inf="review" data-id="">Русский отзыв</p>
                     </div>
                 </div>"""
                 
@@ -30,22 +28,13 @@ for i in works:
     
     card_soup = BeautifulSoup(code, 'html.parser')
     card = card_soup.find('div', {"class": "ReviewBlock"})
-    card["id"] = i
+    card.find("p", {"id": "JSText"})["data-id"] = i
+    card.find("p", {"id": "JSTranslated"})["data-id"] = i
 
     card.find("p", {"id": "JSText"}).string = works[i]['review']
     
     if "company" not in works[i]:
         card.find("p", {"class": "Category"}).decompose()
-    
-    if ('translated' not in works[i]):
-            card.find("p", {"id": "JSTranslated"}).decompose()
-            
-    if "reviewEng" in works[i]:
-        card.find("p", {"id": "JSTextTranslated"}).string = works[i]['reviewEng']
-        card.find("p", {"id": "JSTranslatedRussian"}).decompose()
-    else:
-        card.find("p", {"id": "JSTextTranslated"}).string = works[i]["review"]
-        card.find("p", {"id": "JSTranslatedRussian"}).decompose()
             
     # if "back" in works[i]:
     #     card["class"].remove("Inverted")

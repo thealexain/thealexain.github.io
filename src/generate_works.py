@@ -60,8 +60,12 @@ def CreateFiles(work = ''):
         soupC.find("p", {"id": "JSCategory"})["data-lang"] = "Category" + str(works[i]['category']).capitalize()
         
         soupC.find("p", {"id": "JSDescription"}).string = works[i]['description']
+        
         if "task" in works[i]:
-            soupC.find("p", {"id": "JSTask"}).string = works[i]['task']
+            # soupC.find("p", {"id": "JSTask"}).string = works[i]['task']
+            
+            html_content = BeautifulSoup(works[i]['task'], 'html.parser')
+            soupC.find("p", {"id": "JSTask"}).append(html_content)
         else:
             soupC.find("p", {"id": "JSTask"}).find_parent('div', {"class": ["ReviewBlock"]}).decompose()
             
@@ -81,22 +85,14 @@ def CreateFiles(work = ''):
             if "review" in works[i]:
                 if SRBlock:
                     soupC.find("p", {"id": "JSReview"}).string = works[i]['review']
+                    soupC.find("p", {"id": "JSReview"})["data-id"] = i
+                    soupC.find("p", {"id": "JSTranslated"})["data-id"] = i
                     
                     soupC.select_one(".RBHeader a.Link2")["href"] = f"REVIEWS.html#{i}"
-                        
-                    if "reviewEng" in works[i]:
-                        soupC.find("p", {"id": "JSReviewTranslated"}).string = works[i]['reviewEng']
-                        soupC.find("p", {"id": "JSTranslatedRussian"}).decompose()
-                    else:
-                        soupC.find("p", {"id": "JSReviewTranslated"}).string = works[i]["review"]
-                        soupC.find("p", {"id": "JSTranslatedRussian"}).decompose()
+
             else:
                 soupC.find("p", {"id": "JSReview"}).find_parent("div", {"class": ["ReviewBlock"]}).select_one(".RBHeader > a").find_parent("p").decompose()
                 soupC.find("p", {"id": "JSReview"}).find_parent("div", {"class": ["RBText"]}).decompose()
-                
-            if 'translated' not in works[i]:
-                if "review" in works[i]:
-                    soupC.find("p", {"id": "JSTranslated"}).decompose() # установка параметра в отзыве переведено ли
                 
         soupC.find("p", {"id": "JSProcess"}).string = works[i]['workProcess']['text']
         

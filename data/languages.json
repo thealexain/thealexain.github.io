@@ -282,5 +282,9 @@
     "WorksShowAttributeContent": [
         "Посмотреть в полном разрешении",
         "View in full resolution"
+    ],
+    "ReviewTranslated": [
+        "(перевод с англ.)",
+        "(translated rus.)"
     ]
 }

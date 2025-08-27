@@ -60,7 +60,7 @@
 <div id="Darker"></div>
 <div class="DrukCyr BigLine HundredThirty" id="HeaderMain">
 <p data-lang="CategoryBrandbook" id="JSCategory">Бренд-бук</p>
-<p class="Italic" id="JSName">Шале «Мультинское»</p>
+<p class="Italic" data-inf="name" id="JSName">Шале «Мультинское»</p>
 <!-- <p class="NoSelect Transparent">...........................</p> -->
 </div>
 <div id="backMe">
@@ -121,7 +121,7 @@
 </svg></div>
 </div>
 <div class="OktaNeue" id="NameBlock">
-<p class="Thirty" id="JSDescription" text="">Алтайская база отдыха на одноименных горах</p>
+<p class="Thirty" data-inf="description" id="JSDescription" text="">Алтайская база отдыха на одноименных горах</p>
 <div id="NBButtons">
 <button class="OktaNeue Twenty HoveringItem Disabled" coloraccent="" data-lang="WorksSite" id="JSLink" notanimation="" onclick="openLink(this)">Сайт</button>
 </div>
@@ -140,22 +140,20 @@
 <div class="ReviewBlock">
 <p class="DrukCyr RBHeader Category" data-lang="WorksTask">Задача</p>
 <div class="OktaNeue TFFont Italic RBText">
-<p class="JustifyFont" id="JSTask">Клиенту нужно было создать логотип для проекта «Мультинское», вдохновлённый одноимёнными горами на Алтае. Главный и очень необычный образ — это силуэт горы, которая с первого взгляда узнаётся как профиль лежащей девушки. Задача была не просто нарисовать гору, а превратить её в узнаваемый и мистический символ. Важно было органично вплести в логотип ключевые мотивы алтайской культуры, чтобы он передавал дух свободы и природы этого места.</p>
+<p class="JustifyFont" data-inf="task" id="JSTask">Нужен был логотип для проекта «Мультинское» вдохновленный одноименными горами на Алтае. Главная идея — силуэт горы который похож на профиль лежащей девушки. Задача состояла в cоздании узнаваемого мистическего символа. Важно было органично добавить мотивы алтайской культуры, чтобы передать дух свободы и природы этого места.</p>
 </div>
 </div>
 <div class="ReviewBlock Inverted">
 <p class="DrukCyr RBHeader Category" data-lang="WorksSolution" id="RBSolutionName">Решение</p>
 <div class="OktaNeue TFFont Italic RBText">
-<p class="JustifyFont" id="JSSolution">За основу мы взяли главный образ — узнаваемый силуэт горы в виде лежащей девушки. Чтобы логотип был современным и запоминающимся, мы упростили его до минималистичных и плавных линий. Основная линия переходит в круг, внутри которого нарисовано солнце одной и простой линией — ключевой элемент алтайской символики. Внутри круга намечены традиционные орнаменты, что добавляет глубины и культурного кода. Особая роль уделена стилизации: все линии сужаются на концах, а круг сознательно оставлен незамкнутым. Это создает эффект рукотворности, как будто логотип нарисован тушью или высечен на камне, что отсылает к древним наскальным рисункам Алтая</p>
+<p class="JustifyFont" data-inf="solution" id="JSSolution">Взяли главный образ — силуэт горы в виде лежащей девушки. Упростили его до минималистичных плавных линий, чтобы сделать его современным и запоминающимся. Основная линия переходит в круг с солнцем внутри — ключевой символ Алтая. В круге добавлены традиционные орнаменты для культурной глубины. Все линии сужаются на концах, а круг незамкнут, что создает эффект ручной работы, как будто логотип высечен на камне, как древние рисунки Алтая.</p>
 </div>
 <p class="RBHeader HoveringItem"><a class="Link2 DrukCyr Sixty" data-lang="WorksReview" href="REVIEWS.html#multinskoe">Отзыв</a></p>
 <div class="OktaNeue TFFont RBText Italic">
 <!-- <p id="JSTranslated" class="Secondary NoSelect">(перевод с англ.)</p>
                         <p id="JSReview" class="JustifyFont"></p> -->
-
-
-<p class="JustifyFont RuOnly" id="JSReview">Отзыв на русском</p>
-<p class="JustifyFont EnOnly" id="JSReviewTranslated">Отзыв на русском</p>
+<p class="Secondary NoSelect" data-id="multinskoe" data-lang="ReviewTranslated" id="JSTranslated">(перевод с англ.)</p>
+<p class="JustifyFont" data-id="multinskoe" data-inf="review" id="JSReview">Отзыв на русском</p>
 </div>
 </div>
 <div class="ReviewBlock Inverted" id="ProccesOfWork">
@@ -245,6 +243,9 @@
                 const url = element.getAttribute('href'); // Берём ссылку из data-атрибута
                 window.open(url, '_blank');
             }
+
+
+
         </script>
 </body>
 </html>

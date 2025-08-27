@@ -60,7 +60,7 @@
 <div id="Darker"></div>
 <div class="DrukCyr BigLine HundredThirty" id="HeaderMain">
 <p data-lang="CategoryLogotype" id="JSCategory">Логотип</p>
-<p class="Italic" id="JSName">FluidPrompter</p>
+<p class="Italic" data-inf="name" id="JSName">FluidPrompter</p>
 <!-- <p class="NoSelect Transparent">...........................</p> -->
 </div>
 <div id="backMe">
@@ -87,7 +87,7 @@
 </svg></div>
 </div>
 <div class="OktaNeue" id="NameBlock">
-<p class="Thirty" id="JSDescription" text="">Приложение для теле-суфлера с управляющей педалью скорости</p>
+<p class="Thirty" data-inf="description" id="JSDescription" text="">Приложение для теле-суфлера с управляющей педалью скорости</p>
 <div id="NBButtons">
 <button class="OktaNeue Twenty HoveringItem" coloraccent="" data-lang="WorksSite" href="https://www.fluidprompter.com" id="JSLink" notanimation="" onclick="openLink(this)">Сайт</button>
 </div>
@@ -105,22 +105,20 @@
 <div class="ReviewBlock">
 <p class="DrukCyr RBHeader Category" data-lang="WorksTask">Задача</p>
 <div class="OktaNeue TFFont Italic RBText">
-<p class="JustifyFont" id="JSTask">Клиенту было важно, чтобы логотип визуально передавал три ключевые идеи. Во-первых, плавность и органичность — то самое ощущение лёгкого, текучего и беспроблемного опыта использования, которое заложено в названии Fluid. Во-вторых, прямая и понятная отсылка к тексту, речи или чтению, чтобы сразу было ясно, что это телесуфлер. И, в-третьих, современная технологичность, чтобы продукт воспринимался как продвинутое цифровое решение, а не просто электронный листок с заметками.</p>
+<p class="JustifyFont" data-inf="task" id="JSTask">Нужно было чтобы логотип отражал три идеи. Первое — плавность и естественность, чтобы передать легкий опыт использования, как в названии Fluid. Второе — ясная отсылка к тексту или речи, чтобы сразу было понятно, что это — телесуфлер. Третье — современный технологичный вид, чтобы продукт воспринимался, как продвинутое решение, а не просто заметки.</p>
 </div>
 </div>
 <div class="ReviewBlock Inverted">
 <p class="DrukCyr RBHeader Category" data-lang="WorksSolution" id="RBSolutionName">Решение</p>
 <div class="OktaNeue TFFont Italic RBText">
-<p class="JustifyFont" id="JSSolution">За основу мы взяли главный образ, который узнает любой, кто работал с телесуфлером — ровную стену бегущего текста. Чтобы передать ключевую идею плавности (Fluid), мы оформили блоки текста мягкими, обтекаемыми линиями, убрав любую резкость и создав ощущение легкого потока. Три центральных блока выделены — они формируют стилизованную букву F, которая одновременно служит и указателем на текущую строку. Это простое решение выполняет сразу две задачи: с первого взгляда обозначает название продукта и визуально объясняет его функцию — плавное ведение по тексту.</p>
+<p class="JustifyFont" data-inf="solution" id="JSSolution">За основу взяли главный образ бегущего текста как в телесуфлере. Чтобы передать плавность мы сделали текстовые блоки мягкими и обтекаемыми убрав всю резкость. Три центральных блока образуют букву F которая одновременно указывает на текущую строку. Это решение сразу показывает название продукта и объясняет его функцию — плавное ведение по тексту.</p>
 </div>
 <p class="RBHeader HoveringItem"><a class="Link2 DrukCyr Sixty" data-lang="WorksReview" href="REVIEWS.html#fluidprompter">Отзыв</a></p>
 <div class="OktaNeue TFFont RBText Italic">
 <!-- <p id="JSTranslated" class="Secondary NoSelect">(перевод с англ.)</p>
                         <p id="JSReview" class="JustifyFont"></p> -->
-<p class="Secondary NoSelect RuOnly" id="JSTranslated">(перевод с англ.)</p>
-
-<p class="JustifyFont RuOnly" id="JSReview">Мы работали с Алексом над созданием логотипа для нашего приложения. Было много обсуждений и правок, пока мы не получили дизайн, который нам понравился. Мы оценили четкую и открытую коммуникацию, быстрые ответы и готовность вносить изменения в дизайн даже в последний момент. Алекс создал множество эскизов, пока мы не нашли то, что нам понравилось. Очень профессионально и уважительно.</p>
-<p class="JustifyFont EnOnly" id="JSReviewTranslated">We’ve been working with Alex to create a logo for our app. There was a lot of back and forth until we got the design we liked. We appreciated clear and open communication, fast response and willingness to modify the design even at the very last second. Alex generated a ton of sketches until we found something we liked. Very professional and respectful.</p>
+<p class="Secondary NoSelect" data-id="fluidprompter" data-lang="ReviewTranslated" id="JSTranslated">(перевод с англ.)</p>
+<p class="JustifyFont" data-id="fluidprompter" data-inf="review" id="JSReview">Мы работали с Алексом над созданием логотипа для нашего приложения. Было много обсуждений и правок, пока мы не получили дизайн, который нам понравился. Мы оценили четкую и открытую коммуникацию, быстрые ответы и готовность вносить изменения в дизайн даже в последний момент. Алекс создал множество эскизов, пока мы не нашли то, что нам понравилось. Очень профессионально и уважительно.</p>
 </div>
 </div>
 <div class="ReviewBlock Inverted" id="ProccesOfWork">
@@ -205,6 +203,9 @@
                 const url = element.getAttribute('href'); // Берём ссылку из data-атрибута
                 window.open(url, '_blank');
             }
+
+
+
         </script>
 </body>
 </html>

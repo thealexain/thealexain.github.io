@@ -60,14 +60,14 @@
 
 <div class="DrukCyr BigLine HundredThirty" id="HeaderMain">
 <p data-lang="CategoryInfographic" id="JSCategory">Инфографика</p>
-<p class="Italic" id="JSName">Карточки</p>
+<p class="Italic" data-inf="name" id="JSName">Карточки</p>
 <!-- <p class="NoSelect Transparent">...........................</p> -->
 </div>
 <div id="backMe">
 <div class="horizontal horizontal horizontal" id="MainLogo"></div>
 </div>
 <div class="OktaNeue" id="NameBlock">
-<p class="Thirty" id="JSDescription" text="">Карточки для продуктов на маркетплейсы</p>
+<p class="Thirty" data-inf="description" id="JSDescription" text="">Карточки для продуктов на маркетплейсы</p>
 <div id="NBButtons">
 <button class="OktaNeue Twenty HoveringItem Disabled Disabled Disabled Disabled Disabled Disabled Disabled Disabled" coloraccent="" data-lang="WorksSite" id="JSLink" notanimation="" onclick="openLink(this)">Сайт</button>
 </div>
@@ -160,6 +160,9 @@
                 const url = element.getAttribute('href'); // Берём ссылку из data-атрибута
                 window.open(url, '_blank');
             }
+
+
+
         </script>
 </body>
 </html>

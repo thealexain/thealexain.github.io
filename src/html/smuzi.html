@@ -60,7 +60,7 @@
 
 <div class="DrukCyr BigLine HundredThirty" id="HeaderMain">
 <p data-lang="CategoryDigitalproducts" id="JSCategory">Продукция</p>
-<p class="Italic" id="JSName">Рецепты Смузи</p>
+<p class="Italic" data-inf="name" id="JSName">Рецепты Смузи</p>
 <!-- <p class="NoSelect Transparent">...........................</p> -->
 </div>
 <div id="backMe">
@@ -89,7 +89,7 @@
 </div>
 </div>
 <div class="OktaNeue" id="NameBlock">
-<p class="Thirty" id="JSDescription" text="">Каталог с рецептами смузи для фитнес-блогера Оксаны Артемовой </p>
+<p class="Thirty" data-inf="description" id="JSDescription" text="">Каталог с рецептами смузи от фитнес-блогера</p>
 <div id="NBButtons">
 <button class="OktaNeue Twenty HoveringItem Disabled Disabled Disabled Disabled Disabled" coloraccent="" data-lang="WorksSite" href="instagram" id="JSLink" notanimation="" onclick="openLink(this)">Сайт</button>
 </div>
@@ -108,22 +108,20 @@
 <div class="ReviewBlock">
 <p class="DrukCyr RBHeader Category" data-lang="WorksTask">Задача</p>
 <div class="OktaNeue TFFont Italic RBText">
-<p class="JustifyFont" id="JSTask">Клиенту требовалось разработать каталог смузи, начинающийся с краткого представления автора проекта и общего описания концепции напитков.</p>
+<p class="JustifyFont" data-inf="task" id="JSTask">Клиенту требовалось разработать каталог смузи, начинающийся с краткого представления автора проекта и общего описания концепции напитков.</p>
 </div>
 </div>
 <div class="ReviewBlock Inverted">
 <p class="DrukCyr RBHeader Category" data-lang="WorksSolution" id="RBSolutionName">Решение</p>
 <div class="OktaNeue TFFont Italic RBText">
-<p class="JustifyFont" id="JSSolution">В решении мы создали минималистичный и функциональный каталог, где каждая страница посвящена одному смузи и содержит только ключевые элементы: название, яркое фото, калорийность в стилизованном кружке, краткое описание и список ингредиентов с дозировками. Главной фишкой стала визуальная метафора приготовления: от ингредиентов к нарисованному стакану с надписью «Смешай всё» ведёт стрелка, создавая игровой и интуитивно понятный призыв к действию. Такой подход превратил обычный каталог в лёгкий и вовлекающий гайд, где даже повторяющиеся компоненты не перегружают внимание, а структура остаётся воздушной и удобной для быстрого просмотра.</p>
+<p class="JustifyFont" data-inf="solution" id="JSSolution">В решении мы создали минималистичный и функциональный каталог, где каждая страница посвящена одному смузи и содержит только ключевые элементы: название, яркое фото, калорийность, краткое описание и список ингредиентов с дозировками. Главной фишкой стала визуальная метафора приготовления: от ингредиентов к нарисованному стакану с надписью «Смешай всё» ведёт стрелка, создавая игровой и интуитивно понятный призыв к действию. Такой подход превратил обычный каталог в лёгкий и вовлекающий гайд, где даже структура остаётся воздушной и удобной для быстрого просмотра.</p>
 </div>
 <p class="RBHeader HoveringItem"><a class="Link2 DrukCyr Sixty" data-lang="WorksReview" href="REVIEWS.html#smuzi">Отзыв</a></p>
 <div class="OktaNeue TFFont RBText Italic">
 <!-- <p id="JSTranslated" class="Secondary NoSelect">(перевод с англ.)</p>
                         <p id="JSReview" class="JustifyFont"></p> -->
-
-
-<p class="JustifyFont RuOnly" id="JSReview">Все было выполнено в срок, согласно моему ТЗ. Я доволен выполненной работой , спасибо профессионалу</p>
-<p class="JustifyFont EnOnly" id="JSReviewTranslated">Все было выполнено в срок, согласно моему ТЗ. Я доволен выполненной работой , спасибо профессионалу</p>
+<p class="Secondary NoSelect" data-id="smuzi" data-lang="ReviewTranslated" id="JSTranslated">(перевод с англ.)</p>
+<p class="JustifyFont" data-id="smuzi" data-inf="review" id="JSReview">Все было выполнено в срок, согласно моему ТЗ. Я доволен выполненной работой , спасибо профессионалу</p>
 </div>
 </div>
 <div class="ReviewBlock Inverted" id="ProccesOfWork">
@@ -203,6 +201,9 @@
                 const url = element.getAttribute('href'); // Берём ссылку из data-атрибута
                 window.open(url, '_blank');
             }
+
+
+
         </script>
 </body>
 </html>

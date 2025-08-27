@@ -76,22 +76,56 @@ function change() {
 }
 
 var langData = {}; // Создаем переменную в глобальной области видимости
+var langData2 = {}; // Создаем переменную в глобальной области видимости
 
 fetch('../../data/languages.json')
   .then(response => response.json())
   .then(data => {
    langData = data; // Записываем данные в переменную
-
-    languageApplyLoaded()
-    
+   fetch('../../data/data.json')
+    .then(response => response.json())
+    .then(data => {
+        langData2 = data; // Записываем данные в переменную
+        languageApplyLoaded()
+        })
+    .catch(error => console.error('Ошибка загрузки:', error));
   })
   .catch(error => console.error('Ошибка загрузки:', error));
+
+function getCurrentPageName() {
+    const currentPath = window.location.pathname;
+    const filenameWithExtension = currentPath.split('/').pop();
+    return filenameWithExtension.replace(/\.[^/.]+$/, "");
+}
 
 function changeLanguage(language=0) {
     Array.from(document.querySelectorAll("[data-lang]")).forEach(a => {
         if (langData[a.getAttribute("data-lang")][language] == "--") {
             a.style.display = 'none';
         }
+
+        if (a.getAttribute("data-lang") == "ReviewTranslated") {
+            if (langData2[a.getAttribute("data-id")]["originalEnglish"] != undefined) {
+                if (language == 1) {
+                    a.style.display = 'none'
+                }
+                else {
+                    a.style.display = 'initial'
+                }
+            }
+            else {
+                if (language == 0) {
+                    a.style.display = 'none'
+                }
+
+                else {
+                    a.style.display = 'initial'
+                }
+            }
+
+            a.innerHTML = langData[a.getAttribute("data-lang")][language]
+        }
+
         else {
             if (a.getAttribute("data-lang").includes("AttributeContent")) {
                 a.setAttribute("data-content", langData[a.getAttribute("data-lang")][language])
@@ -99,6 +133,23 @@ function changeLanguage(language=0) {
             else {
                 a.innerHTML = langData[a.getAttribute("data-lang")][language];
             }
+        }
+    })
+
+    Array.from(document.querySelectorAll("[data-inf]")).forEach(a => {
+        var n = a.getAttribute("data-inf")
+        var page = getCurrentPageName()
+        if (a.hasAttribute("data-id")) {
+            var page = a.getAttribute("data-id")
+        }
+        if (langData2[page][n] != undefined) {
+            var i = n
+            if (language == 1) {
+                if (langData2[page][i + "Eng"] != undefined) {
+                    i += "Eng";
+                }
+            }
+            a.innerHTML = langData2[page][i]
         }
     })
 }

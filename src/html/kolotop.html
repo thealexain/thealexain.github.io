@@ -60,7 +60,7 @@
 
 <div class="DrukCyr BigLine HundredThirty" id="HeaderMain">
 <p data-lang="CategoryLogotype" id="JSCategory">Логотип</p>
-<p class="Italic" id="JSName">Колотоп</p>
+<p class="Italic" data-inf="name" id="JSName">Колотоп</p>
 <!-- <p class="NoSelect Transparent">...........................</p> -->
 </div>
 <div id="backMe">
@@ -106,7 +106,7 @@
 </svg></div>
 </div>
 <div class="OktaNeue" id="NameBlock">
-<p class="Thirty" id="JSDescription" text="">Сервис по наклейке натяжных потолков</p>
+<p class="Thirty" data-inf="description" id="JSDescription" text="">Сервис по установке натяжных потолков</p>
 <div id="NBButtons">
 <button class="OktaNeue Twenty HoveringItem Disabled Disabled Disabled Disabled Disabled" coloraccent="" data-lang="WorksSite" id="JSLink" notanimation="" onclick="openLink(this)">Сайт</button>
 </div>
@@ -124,22 +124,20 @@
 <div class="ReviewBlock">
 <p class="DrukCyr RBHeader Category" data-lang="WorksTask">Задача</p>
 <div class="OktaNeue TFFont Italic RBText">
-<p class="JustifyFont" id="JSTask">Клиенту требовалось разработать запоминающийся логотип для компании «Колотоп», которая специализируется на натяжных потолках. Основная идея заключалась в том, чтобы обыграть название — слово «потолок», прочитанное наоборот. Задачей было создать такой дизайн, в котором бы угадывалась исходная связь с потолками, но при этом акцент оставался на уникальном и броском названии «Колотоп». Цветовое решение должно было быть выдержано в светлых оттенках синего, чтобы вызывать ассоциации с чистотой, небом и простором. Креативная сложность состояла в том, чтобы сделать эту словесную игру визуальной и интуитивно понятной для клиентов.</p>
+<p class="JustifyFont" data-inf="task" id="JSTask">Основная идея — обыграть название, которое является словом «потолок» наоборот. Задача состояла в том, чтобы в дизайне угадывалась связь с потолками, но акцент оставался на уникальном названии. Цветовая гамма — светлые оттенки синего, чтобы вызывать ассоциации с чистотой и простором. Креативная сложность заключалась в том, чтобы сделать эту словесную игру визуальной и понятной для клиентов.</p>
 </div>
 </div>
 <div class="ReviewBlock Inverted">
 <p class="DrukCyr RBHeader Category" data-lang="WorksSolution" id="RBSolutionName">Решение</p>
 <div class="OktaNeue TFFont Italic RBText">
-<p class="JustifyFont" id="JSSolution">В финальном варианте логотипа мы обыграли главную идею клиента — отражение слова «потолок» в названии «Колотоп». Основное название выполнено в форме домика, где буквы «К» и «П» стали краями крыши, что создает ассоциацию с уютом и надежностью. Под словом «Колотоп» размещена легкая тень в виде слова «потолок», которая визуально связывает оба понятия и делает игру слов сразу заметной. Цветовая гамма решена в мягких синих тонах, что добавляет образу свежести и легкости, ассоциируясь с чистым небом и высотой. </p>
+<p class="JustifyFont" data-inf="solution" id="JSSolution">В финальном логотипе мы отразили идею отражения слова «потолок» в названии «Колотоп». Основное название выполнено в форме домика где буквы «К» и «П» стали краями крыши, создавая ощущение уюта и надежности. Под словом «Колотоп» добавлена легкая тень, в виде слова «потолок», что визуально связывает оба понятия и делает игру слов очевидной. Цветовая гамма из мягких синих тонов добавляет свежести и легкости, напоминая чистое небо и высоту. </p>
 </div>
 <p class="RBHeader HoveringItem"><a class="Link2 DrukCyr Sixty" data-lang="WorksReview" href="REVIEWS.html#kolotop">Отзыв</a></p>
 <div class="OktaNeue TFFont RBText Italic">
 <!-- <p id="JSTranslated" class="Secondary NoSelect">(перевод с англ.)</p>
                         <p id="JSReview" class="JustifyFont"></p> -->
-
-
-<p class="JustifyFont RuOnly" id="JSReview">Спасибо большое за лого! Все понравилось: оперативность, подход к работе, внимание к правкам и замечаниям.</p>
-<p class="JustifyFont EnOnly" id="JSReviewTranslated">Спасибо большое за лого! Все понравилось: оперативность, подход к работе, внимание к правкам и замечаниям.</p>
+<p class="Secondary NoSelect" data-id="kolotop" data-lang="ReviewTranslated" id="JSTranslated">(перевод с англ.)</p>
+<p class="JustifyFont" data-id="kolotop" data-inf="review" id="JSReview">Спасибо большое за лого! Все понравилось: оперативность, подход к работе, внимание к правкам и замечаниям.</p>
 </div>
 </div>
 <div class="ReviewBlock Inverted" id="ProccesOfWork">
@@ -222,6 +220,9 @@
                 const url = element.getAttribute('href'); // Берём ссылку из data-атрибута
                 window.open(url, '_blank');
             }
+
+
+
         </script>
 </body>
 </html>

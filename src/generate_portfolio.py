@@ -54,7 +54,7 @@ code = """<div class="PortfolioWork HoveringItem" square style="--bg_c1: #35A8EF
 
                             <div class="PWText DrukCyr">
                                 <p class="Category">Категория</p>
-                                <p class="NoCaps Italic PWName">Название</p>
+                                <p class="NoCaps Italic PWName" data-inf="name" data-id="">Название</p>
                             </div>
                         </a>
                 </div>"""
@@ -69,6 +69,7 @@ def CreatePortfolio():
         card.find("p", {"class": "Category"}).string = langs[f"Category{str(works[i]['category']).capitalize()}"][0]
         card.find("p", {"class": "Category"})["data-lang"] = "Category" + str(works[i]['category']).capitalize()
         card.find("p", {"class": "PWName"}).string = works[i]['name']
+        card.find("p", {"class": "PWName"})["data-id"] = i;
         card.find("a", {"class": "PWLink"})['href'] = f"{i}.html"
         
         card['style'] = f"--bg_c1: {works[i]['back']['color1']}; --bg_c2: {works[i]['back']['color2']}; --colorAccent: {works[i]['back']['color3']}; --HIScale: 1.01;"

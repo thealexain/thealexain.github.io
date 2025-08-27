@@ -60,7 +60,7 @@
 
 <div class="DrukCyr BigLine HundredThirty" id="HeaderMain">
 <p data-lang="CategoryLogotype" id="JSCategory">Логотип</p>
-<p class="Italic" id="JSName">Патриот</p>
+<p class="Italic" data-inf="name" id="JSName">Патриот</p>
 <!-- <p class="NoSelect Transparent">...........................</p> -->
 </div>
 <div id="backMe">
@@ -115,7 +115,7 @@
 </svg></div>
 </div>
 <div class="OktaNeue" id="NameBlock">
-<p class="Thirty" id="JSDescription" text="">Школьный кружок</p>
+<p class="Thirty" data-inf="description" id="JSDescription" text="">Школьная патриотическая организация</p>
 <div id="NBButtons">
 <button class="OktaNeue Twenty HoveringItem Disabled Disabled Disabled Disabled" coloraccent="" data-lang="WorksSite" id="JSLink" notanimation="" onclick="openLink(this)">Сайт</button>
 </div>
@@ -133,22 +133,20 @@
 <div class="ReviewBlock">
 <p class="DrukCyr RBHeader Category" data-lang="WorksTask">Задача</p>
 <div class="OktaNeue TFFont Italic RBText">
-<p class="JustifyFont" id="JSTask">Клиенту требовалось разработать лакотип-шеврон для школьной патриотической организации. Основной задачей было объединить в одном изображении ключевые символы: щит как защиту, меч как готовность к обороне и элементы российского флага. Сохранив при этом баланс между строгостью и понятной для школьников эстетикой, потому что его будут носить на форме ученики, участвующие в спортивных соревнованиях и военно-патриотических мероприятиях</p>
+<p class="JustifyFont" data-inf="task" id="JSTask">Нужен был дизайн шеврона для школьной патриотической организации. В нем требовалось объединить ключевые символы: щит как защиту, меч как готовность к обороне и элементы российского флага. Важно было сохранить баланс между строгостью и понятной для школьников эстетикой, так как шеврон будут носить на форме ученики во время спортивных соревнований и патриотических мероприятий.</p>
 </div>
 </div>
 <div class="ReviewBlock Inverted">
 <p class="DrukCyr RBHeader Category" data-lang="WorksSolution" id="RBSolutionName">Решение</p>
 <div class="OktaNeue TFFont Italic RBText">
-<p class="JustifyFont" id="JSSolution">В итоге мы сделали такой логотип: взяли щит, добавили за ним меч, а сверху всё аккуратно обернули российским флагом. Получилось просто, понятно и сразу видно, что речь идет о патриотизме и защите. Такой образ отлично смотрится на шевроне и сразу передает дух школьного кружка, а простая и слегка мультяшная стилизация явно отделяет его от сложных и детализированных логотипов.</p>
+<p class="JustifyFont" data-inf="solution" id="JSSolution">В итоге мы создали лаконичный логотип: объединили золотой щит, меч и российский флаг. Получилось просто, понятно и символично — сразу видна идея патриотизма и защиты. Образ отлично смотрится на шевроне, передает дух школьной организации, а легкая мультяшная стилизация отличает его от сложных логотипов и подходит для формы учеников.</p>
 </div>
 <p class="RBHeader HoveringItem"><a class="Link2 DrukCyr Sixty" data-lang="WorksReview" href="REVIEWS.html#patriot">Отзыв</a></p>
 <div class="OktaNeue TFFont RBText Italic">
 <!-- <p id="JSTranslated" class="Secondary NoSelect">(перевод с англ.)</p>
                         <p id="JSReview" class="JustifyFont"></p> -->
-
-
-<p class="JustifyFont RuOnly" id="JSReview">???</p>
-<p class="JustifyFont EnOnly" id="JSReviewTranslated">???</p>
+<p class="Secondary NoSelect" data-id="patriot" data-lang="ReviewTranslated" id="JSTranslated">(перевод с англ.)</p>
+<p class="JustifyFont" data-id="patriot" data-inf="review" id="JSReview">???</p>
 </div>
 </div>
 <div class="ReviewBlock Inverted" id="ProccesOfWork">
@@ -226,6 +224,9 @@
                 const url = element.getAttribute('href'); // Берём ссылку из data-атрибута
                 window.open(url, '_blank');
             }
+
+
+
         </script>
 </body>
 </html>
