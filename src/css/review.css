@@ -45,11 +45,19 @@ header {
 
 @media (max-width: 480px) {
     .ReviewBlock .RBHeader {
-        margin-bottom: 40px;
+        margin-bottom: 2rem;
+    }
+
+    .ReviewBlock .Category {
+        font-size: 2.25rem !important;
+    }
+
+    .ReviewBlock .RBHeader p {
+        line-height: 1 !important;
     }
 
     .Seventy {
-        font-size: 50px !important;
+        font-size: 2.5rem !important;
     }
 
     #Content > div {

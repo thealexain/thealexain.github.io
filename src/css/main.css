@@ -993,7 +993,8 @@ body[darkTheme]  {
     display: flex;
     flex-direction: column;
     flex: 1;
-}
+    margin: var(--contentDesktop) 0px;
+} 
 
 #Content p:not(.Secondary) {
     color: var(--dynamicText);
@@ -1004,7 +1005,7 @@ body[darkTheme]  {
 }
 
 #Content > *:not(.NMargin) {
-    margin: var(--contentDesktop);
+    margin: 0px var(--contentDesktop);
 }
 
 #Content > *.NMargin {
@@ -1177,6 +1178,7 @@ body[darkTheme]  {
 
 .ReviewBlock p.Category {
     margin-bottom: 0.5%;
+    line-height: 1;
 }
 
 .ReviewBlock.ColorAccent p:not(.Secondary) {
@@ -1262,7 +1264,7 @@ body[darkTheme]  {
 }
 
 .ReviewBlock > div .TabContent > div:first-child{
-    margin-bottom: 150px;
+    margin-bottom: var(--contentDesktop);
 }
 
 .TabContent {
@@ -1328,9 +1330,13 @@ body[darkTheme]  {
     
 }
 
-#Skills {
-    margin-bottom: 180px !important;
+#Skills, #MyBlogBlock, #Portfolio {
+    margin-top: calc(var(--contentDesktop) * 2) !important;
 }
+
+/* #Skills {
+    margin-bottom: 180px !important;
+} */
 #Skills > p {
     margin-left: var(--contentDesktop);
 }
@@ -1370,8 +1376,9 @@ div.BigLine {
     line-height: 1;
 }
 
-#Portfolio > p.OktaNeue.TFFont {
-        margin-top: 25px;
+#Portfolio > p.OktaNeue.TFFont,
+#MyBlogBlock > div:first-child > p:nth-child(2) {
+        margin-top: 1.5rem;
     }
 
 .Background {
@@ -1408,7 +1415,7 @@ div.BigLine {
 }
 
 #MyBlogBlock > div:first-child {
-    margin-bottom: 60px;
+    margin-bottom: calc(var(--contentDesktop) * 1.5);
 }
 
 .MyBlogTableItem {
@@ -1417,6 +1424,7 @@ div.BigLine {
     width: max-content;
     gap: 10px;
     line-height: 1;
+    line-height: 1;
 }
 
 .MyBlogTableItem > p:first-child {
@@ -1424,7 +1432,7 @@ div.BigLine {
 }
 
 .MyBlogTableItem > p:last-child {
-    font-size: 30px;
+    font-size: 1.75rem;
     color: var(--secondgray) !important;
     width: 100%;
 }
@@ -1554,8 +1562,8 @@ footer > div > div:last-child {
     }
 
     .ReviewBlock p.RBHeader {
-        font-size: 3.25rem;
-        margin-bottom: 30px;
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
     }
 
     .ReviewBlock  {
@@ -1563,15 +1571,15 @@ footer > div > div:last-child {
     }
 
     .ReviewBlock p {
-        line-height: 1.5;
+        line-height: 2;
     }
 
     #Experience p.DrukCyr {
-        font-size: 70px;
+        font-size: 3.5rem;
     }
 
     .Blocked {
-        font-size: 60px !important;
+        font-size: 3rem !important;
         rotate: -1deg;
         padding-bottom: 3%;
     padding-left: 4%;
@@ -1602,8 +1610,8 @@ footer > div > div:last-child {
         margin-bottom: 0px;
     }
 
-    #Experience > *:not(:last-child) {
-        margin-bottom: -10px;
+    #Skills, #MyBlogBlock, #Portfolio {
+        margin-top: calc(var(--contentDesktop) * 2.5) !important;
     }
 
     #Experience > div:last-child {
@@ -1638,6 +1646,10 @@ footer > div > div:last-child {
 
     #NameBlock a, #NameBlock #NBButtons button {
         font-size: 16px !important;
+    }
+
+    #Navigation .Seventy {
+        font-size: 3.5rem !important;
     }
 
     #Main::after {
@@ -1696,14 +1708,9 @@ footer > div > div:last-child {
     }
 
     .ReviewBlock > div > .RBLinks > * {
-        font-size: 1.1rem;
         padding: 20px 30px;
         line-height: 1;
         white-space: nowrap;
-    }
-
-    .ReviewBlock > div > div:last-child > div:first-child{
-        margin-bottom: 60px;
     }
 
     .ReviewBlock .RBHeader {
@@ -1714,11 +1721,11 @@ footer > div > div:last-child {
     .ReviewBlock p.RBHeader:not(:first-child).MobileOnly {
         margin-top: 0;
     }
-
+/* 
     #Skills {
-        margin-top: 160px !important;
-        margin-bottom: 160px !important;
-    }
+        margin-top: 1.5em !important;
+        margin-bottom: 1.5em !important;
+    } */
 
     div.BigLine {
         gap: 30px;
@@ -1730,15 +1737,23 @@ footer > div > div:last-child {
 
     .MyBlogTableItem {
         justify-self: start !important;
+        inline-size: 100%;
     }
 
     .MyBlogTableItem > p:first-child {
         font-size: 30px;
+        width: 100%;
     }
 
     .MyBlogTableItem > p:last-child {
-        font-size: 16px;
-        width: 80%;
+        font-size: 1rem;
+        width: min-content; /* Ширина по самому широкому слову */
+  max-width: 80%;
+  line-height: 1.5;
+    }
+
+    .ReviewBlock > div .TabContent > div:first-child {
+        margin-bottom: calc(var(--contentDesktop) * 2);
     }
 
     .BR {
@@ -1783,6 +1798,10 @@ footer > div > div:last-child {
         display: none;
     }
 
+    #Experience svg {
+        width: 3.5em;
+    }
+
     #BHeader {
         display: flex;
         flex-direction: column;
@@ -1805,6 +1824,10 @@ footer > div > div:last-child {
     }
 
     .LightTheme #BHeader span {
+        background-color: var(--black) !important;
+    }
+
+    [darktheme] #BHeader span {
         background-color: var(--white) !important;
     }
 
@@ -2011,7 +2034,7 @@ footer > div > div:last-child {
 
     .Category {
         width: fit-content;
-        font-size: 40px !important;
+        font-size: 2.5rem !important;
         background-color: white;
         color: var(--black);
         padding-right: 2%;

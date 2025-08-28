@@ -49,10 +49,10 @@ header {
     /* flex-grow: 1; */
     align-items: center;
     text-align: center;
-    padding-bottom: 10px;
     border-radius: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 1%;
     line-height: 1;
 }
 
@@ -424,12 +424,13 @@ header {
         flex-direction: column;
         align-items: flex-start;
         gap: 0px;
-        padding-top: var(--safeDesktop);
+        padding-top: calc(var(--safeDesktop)/2);
+        padding-bottom: calc(var(--safeDesktop)/4);
         margin-top: calc(2*var(--safeDesktop) + 25px);
     }
 
     #JSCategory {
-        font-size: 60px !important;
+        font-size: 3rem !important;
     }
     
     #JSDescription {
