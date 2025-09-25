@@ -1,0 +1,1589 @@
+:root {
+    --defaultBack: white;
+    --defaultFront: black;
+    --margin: 20px;
+    --marginContent: 40px;
+}
+
+@font-face {
+    font-family: 'FirstTimeWriting';
+    src: url('../fonts/FirstTimeWriting.woff2') format('woff2'),
+            url('../fonts/FirstTimeWriting.woff') format('woff'),
+            url('../fonts/FirstTimeWriting!.ttf') format('otf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; /* Для лучшей производительности */
+}
+
+
+.Handrawn, .Handrawn > * {
+    font-family: 'FirstTimeWriting';
+    letter-spacing: 1px;
+    color: var(--defaultFront);
+}
+
+.BlackPage .Handrawn {
+    color: var(--defaultBack);
+}
+
+body {
+    background-color: black;
+    perspective: 2000px;
+    overflow: hidden;
+    cursor: none !important;
+}
+
+body * {
+    cursor: none !important;
+}
+
+#Sketchbook {
+    width: 40vw;
+    height: 90vh;
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    rotate: -1deg;
+}
+
+.Page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    transform-style: preserve-3d;
+    transform-origin: top center;
+    transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.BlackPage {
+    background-color: var(--defaultFront) !important;
+    color: var(--defaultBack)
+}
+
+.BlackPage svg {
+    stroke: var(--defaultBack) !important;
+}
+
+.PageFront, .PageBack {
+    background-color: white;
+    backface-visibility: hidden;
+
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    padding: var(--margin);
+}
+
+.PageFront {
+    z-index: 0;
+}
+
+.PageBack {
+    transform: rotateX(180deg);
+    z-index: -1;
+}
+
+.Page.Flip {
+    transform: rotateX(-180deg);
+}
+
+.PageContent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    padding: calc( var(--marginContent) + var(--margin) );
+    padding-top: calc(var(--marginContent) * 2.5 + var(--margin));
+}
+
+.PageMargin {
+    padding: var(--margin);
+}
+
+.BlackPage {
+    background-color: var(--defaultFront) !important;
+    color: var(--defaultBack)
+}
+
+.BlackPage svg {
+    stroke: var(--defaultBack) !important;
+}
+
+
+.Link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Link::before {
+  content: '';
+  position: absolute;
+  top: -10px;    /* невидимый padding сверху */
+  right: -15px;  /* невидимый padding справа */
+  bottom: -10px; /* невидимый padding снизу */
+  left: -15px;   /* невидимый padding слева */
+  z-index: 3;    /* выше других элементов */
+  /* background: rgba(255,0,0,0.3); /* для отладки */
+}
+
+.Link:not(.Active) *:not(svg)::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    clip-path: inset(0 0 0 0);
+    border-bottom: 7px solid transparent;
+    border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 30'%3E%3Cpath d='m0 15 q20 -10 40 5 q20 -15 40 0 q20 15 40 -5 q20 10 40 0 q20 -10 40 5' stroke='%23000' fill='none' stroke-width='3'/%3E%3C/svg%3E") 0 0 50 0 stretch;
+    transition: clip-path 0.2s ease-in-out 0.4s;
+}
+
+.BlackPage .Link:not(.Active) *:not(svg)::after {
+    border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 30'%3E%3Cpath d='m0 15 q20 -10 40 5 q20 -15 40 0 q20 15 40 -5 q20 10 40 0 q20 -10 40 5' stroke='%23fff' fill='none' stroke-width='3'/%3E%3C/svg%3E") 0 0 50 0 stretch;
+}
+
+.Link:hover *:not(svg)::after {
+    clip-path: inset(0 0 0 100%);
+    transition: clip-path 0.2s ease-in-out 0s;
+}
+
+.Link svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150%;
+    height: 250%;
+    pointer-events: none;
+    z-index: 1; /* SVG под текстом */
+    stroke-dasharray: 800;
+}
+
+.Active.Link svg {
+    stroke-dashoffset: 0;
+}
+
+.Active.Link *:not(svg)::after {
+    border: 0;
+}
+
+.Link:not(.Active):hover svg {
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 0.5s ease-in-out 0s;
+}
+
+.Link:not(.Active) svg {
+    stroke-dashoffset: 800;
+    transition: stroke-dashoffset 0.3s ease-in-out 0.1s;
+}
+
+.Active.Link:not(:hover) svg {
+    stroke-dashoffset: 0;
+}
+
+.ButtonOrder, .ButtonLink {
+    all: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ButtonOrder:not(.Active) span {
+    position: relative;
+    color: var(--defaultFront);
+    transition: color 0.2s ease; 
+}
+
+.ButtonOrder svg {
+    position: absolute;
+    stroke-dasharray: 2000;
+    
+}
+
+.ButtonOrder:not(.Active) .BO_Fill {
+    stroke-dashoffset: 2000;
+    transition: stroke-dashoffset 0.5s ease-in-out;
+}
+
+.ButtonOrder:not(.Active) .BO_Stroke {
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 1s ease 0.5s;
+}
+
+.ButtonOrder:not(.Active):hover span {
+    color: var(--defaultBack);
+    text-shadow: 
+        -0.3px -0.3px 0 var(--defaultBack),  
+        0.3px -0.3px 0 var(--defaultBack),
+        -0.3px 0.3px 0 var(--defaultBack),
+        0.3px 0.3px 0 var(--defaultBack);
+}
+
+.ButtonOrder:not(.Active):hover .BO_Fill {
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 1s ease-in-out 0.1s;
+}
+
+.ButtonOrder:not(.Active):hover .BO_Stroke {
+    stroke-dashoffset: 2000;
+    transition: stroke-dashoffset 0.3s ease-in-out;
+}
+
+.Active.ButtonOrder .BO_Stroke {
+    stroke-dashoffset: 2000;
+}
+
+.Active.ButtonOrder .BO_Fill {
+    stroke-dashoffset: 0;
+}
+
+.Active.ButtonOrder span {
+    position: relative;
+    color: var(--defaultBack);
+    text-shadow: 
+        -0.3px -0.3px 0 var(--defaultBack),  
+        0.3px -0.3px 0 var(--defaultBack),
+        -0.3px 0.3px 0 var(--defaultBack),
+        0.3px 0.3px 0 var(--defaultBack);
+}
+
+*:not(.Page).Active {
+    cursor: pointer;
+    transform: scale(1) !important;
+    transition: transform 0.3s ease-in-out;
+    z-index: 10;
+}
+
+*:not(.Page).Active:hover {
+    cursor: pointer;
+    transform: scale(1.05) !important;
+}
+
+.ButtonLink {
+    position: relative;
+    padding: 20px;
+}
+
+.ButtonLink svg {
+    position: absolute;
+    left: -1rem;
+    top: 2.5rem;
+    animation: pulse 0.8s infinite forwards;
+}
+.ButtonLink span {
+    position: relative;
+}
+
+@keyframes pulse {
+    0% {
+        transform: translateX(0rem);
+    }
+    50% {
+        transform: translateX(1rem);
+    }
+    100% {
+        transform: translateX(0rem);
+    }
+}
+
+#P4_ButtonLink, #P5_ButtonLink {
+    position: absolute;
+    bottom: calc(var(--marginContent) * 1.1);
+    left: var(--marginContent);
+}
+
+
+.DesktopNavigation {
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+}
+
+
+.TitleCenter {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    text-align: center;
+    align-items: center;
+}
+
+#Page1_Title h1 {
+    width: 70%;
+}
+
+#Page1_Title h2 {
+    width: 50%;
+}
+
+#P1_Content, #P9_Content {
+    display: flex;
+    flex-direction: column;
+}
+
+#P1_Content .ButtonOrder, #P9_Content .ButtonOrder  {
+    margin-top: auto;
+    margin-bottom: 5rem;
+}
+
+
+#Page2_Experience {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap:30px;
+    rotate: -3deg;
+}
+
+#Page2_Experience > div > div:first-child {
+    display: flex;
+    flex-direction: row;
+    gap:10px;
+    align-items: flex-end;
+}
+
+#Page2_Experience svg {
+    animation: infStars 3s infinite;
+}
+
+@keyframes infStars {
+    0% {
+        scale: 1;
+        rotate: 0deg;
+    }
+    50% {
+        scale: 1.1;
+        rotate: 2deg;
+    }
+    100% {
+        scale: 1;
+        rotate: 0deg;
+    }
+}
+
+#Page2_Clients {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap:30px;
+    rotate: -3deg;
+}
+
+#Page2_Clients > #P2C_Title > div:first-child {
+    display: flex;
+    flex-direction: row;
+    gap:10px;
+    align-items: flex-end;
+}
+
+#Page2_Clients > #P2C_Flags {
+    position: relative;
+}
+
+.Flag {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.Flag h4 {
+    opacity: 0.3;
+    transition: opacity 0.3s ease;
+}
+
+.Flag:hover {
+    transform: scale(1.05);
+}
+
+.Flag:hover h4 {
+    opacity: 1;
+}
+
+#Page2_Clients > #P2C_Flags {
+    padding: 10px;
+}
+
+#Page2_Clients > #P2C_Flags .Flag:nth-child(1) {
+    bottom: -2rem;
+}
+
+#Page2_Clients > #P2C_Flags .Flag:nth-child(2) {
+    top: 5rem;
+    left: 0;
+}
+
+#Page2_Clients > #P2C_Flags .Flag:nth-child(3) {
+    top: 6rem;
+    right: 5rem;
+}
+
+#P2_Text {
+    text-align: justify;
+    line-height: 1.8;
+}
+
+#P2_GROUP {
+    display:flex;
+    flex-direction: column;
+    gap: 60px;
+    width: 90%;
+}
+
+#P2_GROUP #Page2_Clients {
+    align-self: flex-end;
+}
+
+#P2_Content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: calc(var(--marginContent)*3.5);
+}
+
+#P2_Content > p {
+    align-self: flex-end;
+}
+
+#PC3_Title {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: justify;
+    width: 65%;
+}
+
+#PC3_Works {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    width: 100%; /* или фиксированная ширина */
+    margin-top: 3rem;
+}
+
+.P3_Work {
+    max-width: 280px;
+    min-width: 230px;
+    padding: 30px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.P3_Work .P3W_Image {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.P3_Work .P3W_Image svg {
+    position: relative;
+    width: 6rem;
+    height: 6rem;
+    z-index: 1;
+}
+
+.P3_Work .P3W_Image::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    padding: 50px;
+    background-color: gray;
+    rotate: -2deg;
+    position: absolute;
+}
+
+.P3_Work .P3W_Text {
+    align-self: flex-start;
+    width: 100%;
+    margin-top: 4rem;
+}
+
+.P3_Work .P3W_Text .P3WT_Header {
+    margin-bottom: 0.5rem;
+}
+
+.ReviewTab {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    margin: 40px 20px;
+}
+
+.ReviewTab.Active svg {
+    stroke-dashoffset: 0;
+}
+
+.ReviewTab svg {
+    position: absolute;
+    bottom: -1em;
+    width: 130%; /* Растягивается на всю ширину контейнера */
+    height: 270%;
+    stroke-dasharray: 800;
+    stroke-dashoffset: 800;
+    transition: stroke-dashoffset 0.5s ease;
+    min-width: 100px;
+}
+
+.ReviewTab:not(.Active):hover svg {
+    stroke-dashoffset: 0;
+}
+
+.ReviewTab span {
+    position: relative;
+}
+
+.PC4_Tabs {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 20px
+}
+
+.ReviewText {
+    width: 100%;
+    position: relative;
+}
+
+.ReviewText p {
+    text-align: justify;
+}
+
+.ReviewText p + p {
+    margin-top: 1rem; /* Вот он — Paragraph Spacing! */
+}
+
+.ReviewText h3 {
+    margin-bottom: 1.5rem;
+    
+}
+
+.PC4_Text {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.PC4_Text  > p {
+    margin-top: 3rem;
+    align-self: flex-end;
+}
+
+#PC6_Content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+}
+
+.PC6_Grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;  /* 2 столбца */
+    grid-auto-rows: minmax(1rem, auto);
+    gap: 10px;
+    place-items: center;
+}
+
+.PC6_Grid > * {
+    padding: 1rem 2rem;
+}
+
+.PC6_Grid > .Active {
+    opacity: 1;
+}
+
+.PC6_Title {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 4rem;
+    margin-bottom: auto;
+    align-items: center;
+}
+
+.PC6_Title:has(h3:empty) h2 {
+    margin-top: 2rem;
+    width: 40%;
+}
+
+
+.TextCenter {
+    text-align: center;
+}
+
+.Stat {
+    display: flex;
+    flex-direction: column;
+    gap:0.4rem;
+}
+
+#P7_Content {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    justify-content: flex-end;
+}
+
+.PC7_Grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;  /* 2 столбца */
+    grid-auto-rows: minmax(1rem, auto);
+    gap: 2rem;
+    row-gap: 3rem;
+    place-items: center;
+    margin-bottom: 20%;
+}
+
+.StatHeader {
+    display: inline-flex;
+    gap: 0.5rem;
+}
+
+#P8_Content {
+    display: flex;
+    flex-direction: column;
+}
+
+#PC8_Title {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: justify;
+    width: 40%;
+}
+
+#PC8_Links {
+    display: flex;
+    width: min-content;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: flex-start;
+    margin-top: auto;
+    margin-bottom: 5rem !important;
+}
+
+#PC8_Image {
+    rotate: 1deg;
+    position: absolute;
+    width: 35%;
+    height: 50%;
+    right: calc(var(--marginContent) * 2);
+    bottom: calc(var(--marginContent) * 3);
+}
+
+#PC8_Image::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: white;
+}
+
+#PC8_Image::before {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    content: '';
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+    position: absolute;
+    background-color: gray;
+    z-index: -1;
+}
+
+#PC9_Title {
+    width: 20rem;
+    text-align: center;
+}
+
+#PContacts_Content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#PContacts_Content  #PContacts_Title {
+    align-self: flex-start;
+}
+
+#PContacts_Links {
+    display: grid;
+    grid-template-columns: repeat(2, min-content);
+    column-gap: 5rem;
+    row-gap: 2.5rem;
+    justify-content: start;
+    margin-top: auto;
+    margin-bottom: 4rem;
+}
+
+#Cursor {
+    position: fixed;
+    pointer-events: none; /* важно! */
+    z-index: 9999;
+    transform-origin: top left;
+
+    opacity: 0.1;
+    transform: scale(1.05);
+    
+    transition: filter 0.5s ease,
+    opacity 0.5s ease,
+    transform 0.5s ease;
+
+
+    /* 2. Смешиваем с фоном */
+    filter: blur(5px) invert(100%);
+    mix-blend-mode: difference;
+}
+
+body:has(.Interactive:hover) #Cursor {
+    opacity: 0.2;
+    transform: scale(1);
+    filter: blur(0px) invert(100%);
+}
+
+#Cursor2 {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    width: 16px;
+    aspect-ratio: 1/1;
+    background-color: white;
+    border-radius: 100%;
+    filter:
+        drop-shadow(0 0 5px #fff)
+        drop-shadow(0 0 15px rgba(255,255,255, 0.5))
+        drop-shadow(0 0 30px rgba(255,255,255, 0.3));
+    transition: opacity 0.3s ease-in-out,
+    filter 0.5s ease-in-out;
+}
+
+body:has(.Module.Actived) #Cursor {
+    opacity: 0;
+}
+
+body:not(:has(.Module.Actived)) #Cursor2 {
+    opacity: 0;
+}
+
+body:has(.Lighted:hover) #Cursor2 {
+    opacity: 0.1;
+    filter: blur(10px);
+}
+
+.PageNumber {
+    position: absolute;
+    right: var(--margin);
+    bottom: var(--margin);
+}
+
+.Module {
+    min-height: 100vh;
+    height: fit-content;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: black;
+    z-index: 1;
+    box-sizing: border-box;
+    padding: var(--marginContent);
+    padding-bottom: calc(var(--marginContent) * 2);
+    display: flex;
+    flex-direction: column;
+    transition: top 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.Module * {
+    display: none;
+}
+
+.Module.Actived * {
+    display: inherit;
+}
+
+.Module:not(.ModuleLight) {
+    top: 0;
+}
+
+.Module:not(.ModuleLight):not(.Actived) {
+    top: 100vh;
+}
+
+.ModuleLight {
+    top: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.ModuleLight.Actived {
+    opacity: 1;
+    pointer-events: initial;
+}
+
+body:has(.ModuleLight.Actived) #Sketchbook {
+    display: none;;
+}
+
+.ModulePages {
+    padding: 0;
+}
+
+.ModulePages .MPages {
+    overflow-y: scroll;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+}
+
+.ModulePages .MPages::after {
+    pointer-events: none;
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: linear-gradient( black 0%, transparent 30%, transparent 70%, black 100%);
+    width: 100vw;
+    height: 100vh;
+}
+
+.ModulePages .MPages .MPage {
+    position: absolute;
+    width: 100vw;
+    height: fit-content;
+    min-height: 100vh;
+    transition: left 0.3s ease-in-out;
+    left: 100%;
+
+    box-sizing: border-box;
+    padding: calc(var(--marginContent)*2);
+}
+
+.ModulePages .MPages .MPage.Backed {
+    left: -100%;
+}
+
+.ModulePages .MPages .MPage.Actived {
+    left: 0;
+}
+
+
+
+#OrderNow .MPage {
+    display: flex;
+    flex-direction: column;
+}
+
+#OrderNow .MPage > *:first-child {
+    margin-top: 20vh;
+}
+
+#ONButtons {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: flex-start;
+}
+
+#ONInputs  {
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+}
+
+#ONInputs input {
+    padding: 0;
+    background: transparent;
+    /* border: none; */
+    color: white;
+    outline: none;
+    font-size: inherit;
+    overflow: visible;
+}
+
+.Lighted {
+    background-color: transparent;
+    border: none;
+    opacity: 0.3;
+    padding: 0;
+    display:block;
+    padding: 2rem 3rem;
+    transition: opacity 0.2s ease-in-out;
+    position: relative;
+}
+
+.Lighted:not(.Disabled):hover {
+    opacity: 1;
+    text-shadow: 
+        0 0 5px #fff,
+        0 0 10px #fff,
+        0 0 60px #fff;
+}
+
+.Lighted.Disabled {
+    pointer-events: none;
+}
+
+.Lighted.Actived:hover {
+    opacity: 1;
+    text-shadow: 
+        0 0 5px #fff,
+        0 0 10px #fff,
+        0 0 30px #fff,
+        0 0 60px #fff;
+}
+
+.Lighted.Actived {
+    opacity: 1;
+    text-shadow: 
+        0 0 5px #fff,
+        0 0 10px #fff,
+        0 0 30px #fff,
+        0 0 60px #fff;
+}
+
+.Lighted.Actived::before {
+    opacity: 0.6;
+    animation: pulseLamp 0.7s infinite;
+}
+
+.Lighted::before {
+    content: '';
+    background: radial-gradient(
+        circle at center,
+        white 0%,
+        rgba(0, 0, 0, 0) 100%);
+    width: 100%;
+    height: 5rem;
+    border-radius: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: blur(100px);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    transition: scale 0.2s ease-in-out;
+    pointer-events: none;
+}
+
+@keyframes pulseLamp {
+    0% {
+        opacity: 0.6;
+    }
+    10% {
+        opacity: 0.5;
+    }
+    30% {
+        opacity: 0.6;
+    }
+    60% {
+        opacity: 0.45;
+    }
+    80% {
+        opacity: 0.65;
+    }
+    100% {
+        opacity: 0.55;
+    }
+}
+
+.Lighted:not(.Disabled):hover::before {
+    opacity: 0.6;
+    animation: pulseLamp 0.7s infinite;
+}
+
+.LightedInput {
+    position: relative;
+}
+
+.LightedInput input {
+    border: none;
+    background: transparent;
+    padding: 1rem 0rem !important;
+    width: 30%;
+    /* я понял, чтобы не было обрезки, нужно чтото делать с line height и width. */
+    /* text-shadow: 0 0 5px #fff,
+    0 0 20px #fff,
+    0 0 50px #fff,
+    0 0 100px #fff; */
+
+    filter: drop-shadow(0px 0px 20px white)
+    drop-shadow(0px 0px 30px rgba(255,255,255,0.5));
+
+    transition: filter 0.3s linear;
+}
+
+.LightedInput input:focus {
+    filter: drop-shadow(0px 0px 0px transparent)
+    drop-shadow(0px 0px 0px transparent);
+}
+
+.LightedInput input::placeholder {
+    color: white;
+    opacity: 0.5;
+    transition: color 0.5s ease-in-out,
+                        transform 0.4s cubic-bezier( 0.175, 0.885, 0.32, 1.275 );
+    opacity: 0.3s ease-in-out;
+    transform: scale(0.9);
+    transform-origin: 0% 100%;
+    
+}
+
+.LightedInput > div:first-of-type {
+    position: absolute;
+    width: 30%;
+    height: 1px;
+    bottom: 0;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.LightedInput > div:first-of-type::before {
+    content: '';
+    position: absolute;
+    top: 0 ;left: 0;right: 0;bottom: 0;
+    background: linear-gradient(to right, white 50%, transparent 100%);
+    width: 200%;
+    transition: left 0.3s ease-in-out, 
+                        opacity 1.2s ease;
+    left: -200%;
+    opacity: 1;
+}
+
+.LightedInput:hover > div:first-of-type:before {
+    left: -125%;
+    opacity: 0.7;
+}
+
+.LightedInput:has(input:focus) > div:first-of-type:before {
+    left: 0;
+    opacity: 0.2;
+}
+
+body:has(.LightedInput:hover) #Cursor2 {
+    opacity: 0.2;
+}
+
+.LightedInput input:focus::placeholder {
+    opacity: 0.8;
+    transform: scale(1);
+}
+
+#ONInputs label:not(label:first-of-type) {
+    margin-top: 4rem;
+    margin-bottom: 0.5rem;
+}
+
+.MPage  > p:first-of-type {
+    margin-bottom: 0.5rem;
+}
+
+.MPage > p:nth-child(2), .MPage[only-header] > p:first-of-type {
+    margin-bottom: 4rem;
+}
+
+.BurgerMenu {
+    display: none !important;
+}
+
+.BurgerMenu, .CrossMenu {
+    all: unset;
+    position: fixed;
+    z-index: 999;
+    right: var(--marginContent);
+    top: var(--marginContent);
+
+    height: 2rem;
+    width: 2.3rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.CrossMenu {
+    position: fixed;
+    z-index: 999;
+}
+
+.CrossMenu span:first-child {
+    rotate: 45deg;
+    margin-left: 4px;
+}
+
+.CrossMenu span:last-child {
+    rotate: -45deg;
+    margin-right: -5px;
+}
+
+.BurgerMenu span, .CrossMenu span {
+    width: 100%;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 20'%3E%3Cpath d='M0 10 Q50 0 100 10 Q150 20 200 10' stroke='black' fill='none' stroke-width='2'/%3E%3C/svg%3E") 10 stretch;
+}
+
+.CrossMenu span {
+    border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 20'%3E%3Cpath d='M0 10 Q50 0 100 10 Q150 20 200 10' stroke='white' fill='none' stroke-width='2'/%3E%3C/svg%3E") 10 stretch;
+}
+
+.CrossMenu span:last-child {
+    border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 20'%3E%3Cpath d='M0 10 Q50 0 200 10 Q150 20 200 10' stroke='white' fill='none' stroke-width='2'/%3E%3C/svg%3E") 5 stretch !important;
+}
+
+.BurgerMenu span:first-child, .CrossMenu span:last-child {
+    border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 20'%3E%3Cpath d='M0 10 Q50 0 200 10 Q150 20 200 10' stroke='black' fill='none' stroke-width='2'/%3E%3C/svg%3E") 5 stretch;
+}
+
+.ModulePages .MPages .MPage.Actived #ON2_Button {
+    position: fixed;
+    width: fit-content;
+    bottom: 0;
+    right: 0;
+    margin-bottom: calc(var(--marginContent) - 2rem);
+    z-index: 999;
+}
+
+#ON3_Links {
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+}
+
+#ON3_Links .Lighted {
+    display: inline-block;
+    width: fit-content;
+}
+
+
+@media (max-width: 768px) {
+    #Cursor{
+        display: none !important; /* Скрываем курсор на телефонах */
+    }
+
+    #Cursor2 {
+        display: none !important; /* Скрываем курсор на телефонах */
+    }
+
+    h1 {
+        font-size: 2.6rem;
+    }
+
+    body {
+        cursor: default !important;
+        background-color: white !important;
+        perspective: none;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        height: fit-content;
+    }
+
+    body * {
+        cursor: default !important;
+    }
+
+    .TextSpacing {
+        line-height: 2;
+    }
+
+    #Sketchbook {
+        overflow-x: hidden;
+        position: relative;
+        width: 100vw;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        rotate: 0deg;
+    }
+
+    .Page {
+        min-height: 100vh;
+        position: relative;
+        transform-style: flat;
+    }
+    .PageBack {
+        display: none;
+    }
+
+    .PageFront {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+        min-height: 100vh;
+        height: fit-content;
+        position: relative;
+        padding: 0;
+        
+    }
+    .PageContent {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        padding: var(--marginContent);
+        
+        justify-content: space-between;
+    }
+
+    .PageContent.MBottomPadding {
+        padding-bottom: calc(var(--marginContent)*4);
+    }
+
+    .PageFront .ButtonLink {
+        position: relative !important; 
+    }
+
+    .Page.Flip {
+        transform: rotateX(0deg);
+    }
+
+    .PageNumber {
+        display: none;
+    }
+
+    .controls, .controls * {
+        display: none;
+    }
+
+    .DesktopNavigation {
+        display: none;
+    }
+
+    .Page[data-page="4"] .PageFront, .Page[data-page="6"] .PageFront {
+        justify-content: flex-start;
+    }
+
+    .Page[data-page="5"] .PageFront {
+        justify-content: space-between;
+    }
+
+    .controls {
+        display: none;
+    }
+
+    #Page1_Title {
+        position: relative;
+        gap: 0.5rem;
+    } 
+
+    #Page1_Title h2 {
+        width: 70%;
+    }
+
+
+    #P1_Content, #P9_Content, #P2_Content, #PContacts_Content, #P8_Content{
+        position: absolute;
+    }
+
+    #P2_Content {
+        padding: var(--marginContent);
+    }
+
+    #P2_GROUP {
+        width: 100%;
+        align-items: center;
+    }
+
+    #P2_GROUP > div  {
+        rotate: 0deg;
+    }
+
+    #Page2_Clients {
+        flex-direction: column;
+        align-self: center !important;
+        gap: 1.5rem;
+    }
+
+    .Flag {
+        position: relative;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+    }
+
+    .Flag:hover h4, .Flag h4 {
+        opacity: 1;
+    }
+
+    .Flag:hover {
+        transform: scale(1);
+    }
+
+    #P2C_Flags {
+        display: flex;
+        flex-direction: row;
+        gap: 2.5rem;
+    }
+
+    #P2_Text {
+        margin-bottom: 4rem;
+    }
+
+    #P3_Content {
+        align-self: flex-end;
+    }
+
+    #PC3_Title {
+        width: 100%;
+    }
+
+    .ReviewTab svg {
+        bottom: -0.7rem;
+    }
+
+    .ReviewTab span {
+        font-size: 1.25rem !important;
+    }
+
+    .ReviewText h3 {
+        font-size: 1.25rem !important;
+    }
+
+    .PC4_Tabs {
+        margin-top: 0.5rem;
+    }
+
+    #P5_ButtonLink {
+        position: relative;
+        left: var(--marginContent);
+        bottom: calc(var(--margin) * -1);
+    }
+
+    .P3WT_Header {
+        font-size: 1.125rem !important;
+    }
+
+    .P3WT_Text {
+        font-size: 1.125rem !important;
+    }
+
+    .P3_Work .P3W_Text {
+        margin-top: 6rem;
+    }
+
+    .PC6_Title {
+        width: 100%;
+        order: 1;
+        align-items: flex-start;
+    }
+
+    .PC6_Title .Thirty {
+        font-size: 1.5rem !important;
+    }
+
+    #PC6_Content > .PC6_Grid > p {
+        font-size: 1.25rem;
+        width: 100%;
+        text-align: start;
+        padding: 1rem;
+    }
+
+    #PC6_Content > .PC6_Grid > p br {
+        display: none;
+    }
+
+    #PC6_Content > .PC6_Grid {
+        display: flex;
+        flex-direction: column;
+        align-self: flex-start;
+    }
+
+    .PC6_Title h2 {
+        text-align: start;
+    }
+
+    .PC7_Grid {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+        align-items: flex-start;
+    }
+
+    .Stat {
+        gap: 0.8em;
+    }
+
+    #PContacts_Links {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .Page:not(.MNotGap) {
+        margin: 50px 0;
+    }
+
+    .Page.MNotBottomGap {
+        margin-bottom: 0;
+    }
+
+    .Page.MNotTopGap {
+        margin-top: 0;
+    }
+
+    .Twenty {
+        font-size: 1rem !important;
+    }
+
+    .TwentyFive, .TwentyFive > * {
+        font-size: 1.5rem !important;
+    }
+
+    #PC9_Title h2 {
+        scale: 0.9;
+    }
+
+    #PN_links {
+        margin-top: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4rem
+    }
+
+    #PN_Language {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        position: relative;
+        margin-top: 6rem;
+    }
+
+    #PN_Language #PNL_1 {
+        position: absolute;
+        top: -0.5rem;
+        width: 100%;
+    }
+
+    #PN_Language #PNL_2 {
+        position: absolute;
+        top: -1rem;
+        scale: 1.05;
+        transition: left 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+
+    #PN_Language span {
+        padding: 1rem 2rem;
+        z-index: 2;
+        transition: color 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+
+    #PN_Language span.Actived {
+        color: var(--defaultFront);
+        text-shadow: 
+            -0.3px -0.3px 0 var(--defaultFront),  
+            0.3px -0.3px 0 var(--defaultFront),
+            -0.3px 0.3px 0 var(--defaultFront),
+            0.3px 0.3px 0 var(--defaultFront);
+    }
+
+    #PN_Language:has(#PNL_Ru.Actived) #PNL_2 {
+        left: 0;
+    }
+
+    #PN_Language:has(#PNL_En.Actived) #PNL_2 {
+        left: 50%;
+    }
+
+    body:has(.Module.Actived) {
+        overflow: hidden;
+    }
+
+    body:has(.Module.Actived) .BurgerMenu {
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    #ONButtons .Lighted::before {
+        width: 200%;
+        aspect-ratio: 3/2;
+    }
+
+    #ONButtons {
+        margin-top: 4rem;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .Lighted {
+        padding: 2rem 0;
+        text-align: start;
+    }
+
+    #ONButtons .Lighted::after {
+        content: '';
+        position: absolute;
+        width: 100vw;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        pointer-events:fill;
+    }
+
+    .LightedInput input, .LightedInput > div:first-of-type {
+        width: 100%;
+    }
+
+    .BurgerMenu {
+        display: flex !important;
+    }
+
+    .ModulePages .MPages .MPage {
+        padding: var(--marginContent);
+    }
+
+    #ON2_Button {
+        margin-top: 5rem;
+        position:relative !important;
+        width: 100% !important;
+        text-align: center;
+    }
+
+    .MPage > p.Thirty {
+        font-size: 1.5rem !important;
+    }
+
+    .MPage > p.TwentyFive {
+        font-size: 1rem !important;
+    }
+}

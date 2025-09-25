@@ -1,0 +1,1240 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+    --defaultBack: white;
+    --defaultFront: black;
+    --margin: 20px;
+    --marginContent: 40px;
+    --backColor: #fff;
+    --accColor: #000;
+    --backColor2: #0F0F0F;
+}
+
+body {
+    background-color: black;
+    overflow: hidden;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+button {
+    border: none;
+    background-color: var(--accColor);
+    color: var(--backColor);
+    padding: 2rem 3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+button, input {
+    cursor: pointer;
+}
+
+p, h1, h2, h3, h4, h5, h6, button, a, div {
+    font-family: 'Inter', sans-serif;
+    font-variation-settings: 'wght' 500;
+    font-style: normal;
+}
+
+#Presentation {
+    width: 75vw;
+    height: 85vh;
+    position: absolute;
+    overflow: hidden;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+.Page {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    
+
+    transition: top 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.Page.BlackPage .PageContent, .Page.BlackPage {
+    background: radial-gradient(#202020, #111111) !important;
+    color: white;
+}
+
+.Page.Active {
+    display: initial;
+}
+
+.Page.Flip {
+    top:-50%;
+    background-color: gray;
+}
+
+.PageContent {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    padding: var(--marginContent);
+    background-color: var(--backColor) ;
+}
+
+.PageMargin {
+    padding: var(--margin);
+}
+
+#PC1_Title {
+    margin-top: auto;
+    width: 35%;
+}
+
+#PC1_Title > * {
+    color: var(--accColor)
+}
+
+.ButtonPage {
+    position: absolute;
+    width: 30%;
+    right: var(--marginContent);
+    bottom: var(--marginContent);
+    z-index: 99;
+    background-color: var(--backColor);
+    color: var(--accColor);
+    box-shadow: inset 0 0 0 2px var(--accColor);
+    overflow: hidden;
+    transition: color 0.2s ease-in-out;
+    padding: 1.5rem 2.5rem;
+}
+
+.ButtonPage::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;;
+    height: 100%;
+    background: var(--accColor);
+    transition: left 0.2s ease-in-out;
+    z-index: -1;
+}
+
+.ButtonPage:hover::after {
+    left: 0%;
+}
+
+.ButtonPage:hover {
+    color: var(--backColor);
+}
+
+.ButtonPage.CenterButton {
+    justify-content: center !important;
+}
+
+.ButtonPage svg > * {
+    stroke: var(--accColor);
+    transition: stroke 0.2s ease-in-out;
+}
+
+.ButtonPage:hover svg > * {
+    stroke: var(--backColor);
+}
+
+#PC1_Image {
+    width: 14vw;
+    aspect-ratio: 1/1;
+
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    filter: drop-shadow( 0px 5px 15px rgba(var(--accColorRGB), 0.3));
+}
+
+.TextBlock p:not(p:first-child) {
+    padding-top: 0.5rem;
+}
+
+.TextBlock {
+    width: 25vw;
+}
+
+.PageContent .Header {
+    padding-bottom: 1rem;
+}
+
+.Link {
+    display: flex;
+    width: fit-content;
+    position: relative;
+}
+
+.BlackPage .Link::before {
+    background-color: white;
+}
+
+.PageContent:not(.Custom) > *:first-child {
+    margin-top: auto;
+}
+
+.Link::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: black;
+    transition: width 0.15s ease-in-out;
+}
+
+.Link::after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -100vw;
+    right: -100vw;
+    bottom: -20px;
+}
+
+.Link[nonFullscreen]::after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left:  -20px;
+    right:  -20px;
+    bottom: -20px;
+}
+
+.Link:hover:before, .Link.Actived::before {
+     /* Ширина по контенту */
+    width: 100%;
+}
+
+#PC5_Links {
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-top: 4rem;
+}
+
+.SpaceBetween {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#P5_Content .SpaceBetween {
+    width: 40%;
+}
+
+#PC5_Subtitles {
+    align-self:flex-end;
+    opacity: 0.2;
+}
+
+#PC5_ReadLater {
+    position: absolute;
+    right: var(--marginContent);
+    bottom: var(--marginContent);
+}
+
+.ImageBlock, .FontBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-top: 2rem;
+    width: 25vw;
+}
+
+.FontBlock .SpaceBetween p:nth-child(2) {
+    align-self: flex-end;
+}
+
+.ImageBlock.Right, .Right {
+    padding-top: 0;
+    position: absolute;
+    right: var(--marginContent);
+    bottom: var(--marginContent);
+}
+
+
+
+.ImageBlock .IBImage {
+    /* width: 25vw; */
+    aspect-ratio: 1/1;
+    background-color: gray;
+}
+
+.ImageBlock .IBImage.Colors {
+    display: inline-flex;
+    aspect-ratio:1.5;
+    flex-wrap: wrap;
+}
+
+.ImageBlock .IBImage.Colors .ColorBlock {
+    flex: 1;
+    min-width: 200px;
+    background-color: var(--backColor);
+    color: var(--accColor);
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 1rem;
+}
+
+.ColorBlock p {
+    margin-top: auto;
+}
+
+.BlockRight {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 25vw;
+}
+
+.AddText {
+    margin-top: 6rem;
+}
+
+.Width25 {
+    width: 25vw;
+}
+
+#List h3 {
+    padding-top: 4rem;
+    padding-bottom: 1rem;
+}
+
+#List .TextBlock p:not(p:first-child) {
+    margin-top: 1rem;
+}
+
+.List {
+    display: flex;
+    flex-direction: column;
+    gap:1.5rem;
+}
+
+.PageContent .List {
+    margin-top: 2rem;
+}
+
+.List .Spacer {
+    height: 2rem;
+}
+
+.SpacingBottom {
+    margin-top: none !important;
+    margin-bottom: auto !important;
+}
+
+#ButtonFullScreen {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--accColor);
+    color: var(--backColor);
+}
+
+#ButtonFullScreen::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--accColor);
+}
+
+.PageContent:has(#ButtonFullScreen) {
+    padding-bottom: calc(5rem + var(--margin)) !important;
+}
+
+.Module {
+    min-height: 100vh;
+    height: fit-content;
+    width: 100vw;
+    position: fixed;
+    top: 100vh;
+    left: 0;
+    background: radial-gradient(#202020, #111111) !important;
+    z-index: 1;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    transition: top 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.Module.Actived {
+    top: 0;
+}
+
+body:has(.Module.Actived) #Sketchbook {
+    display: none;
+}
+
+.ModulePages .MPages {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.Module.Actived .MPages .MPage::after {
+    top: 0;
+}
+
+.Module .MPages .MPage::after {
+    pointer-events: none;
+    content: '';
+    position: fixed;
+    top: 100vh;
+    left: 0;
+    background: linear-gradient( black 0%, transparent 30%, transparent 70%, black 100%);
+    width: 100vw;
+    height: 100vh;
+    opacity: 0.3;
+    z-index: 4;
+
+    transition: top 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.ModulePages .MPages .MPage {
+    position: absolute;
+    width: 100%;
+    height: fit-content;
+    padding-bottom: 30vh;
+    min-height: 100vh;
+    transition: left 0.3s ease-in-out;
+    left: 100%;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+
+    pointer-events: none;
+
+    box-sizing: border-box;
+    padding: calc(var(--marginContent)*2);
+}
+
+.ModulePages .MPages .MPage.Backed {
+    left: -100%;
+}
+
+.ModulePages .MPages .MPage.Actived {
+    left: 0;
+
+    pointer-events:visible;
+}
+
+
+#ONButtons {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.BackgroundButton {
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    transition: color 0.1s ease-in-out;
+    justify-content: center;
+}
+
+.BackgroundButton.Actived, .BackgroundButton:hover, .BackgroundButton:focus {
+    color: #000;
+}
+
+.BackgroundButton::before {
+    content: '';
+    position: absolute;
+    left: -100%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    transition: left 0.2s ease-in-out;
+    z-index: -1;
+}
+
+.BackgroundButton:hover::before, .BackgroundButton:focus::before, .BackgroundButton.Actived::before {
+    left: 0%;
+}
+
+.MPage .Header {
+    margin-top: 25vh;
+    margin-bottom: 0.5rem;
+}
+
+#ONInputs {
+    display: flex;
+    flex-direction: column;
+    margin-top: 4rem;
+}
+
+#ONInputs input {
+    width: 100vw;
+    margin-left: calc(var(--marginContent)*-2);
+    padding: 2rem !important;
+    padding-left: calc(var(--marginContent)*2) !important;
+    border: none;
+    outline: none;
+    color: #fff;
+    background-color: var(--backColor2);
+    transition: background-color 0.1s ease-in-out,
+    color 0.2s ease-in-out;
+}
+
+#ONInputs input::placeholder {
+    color:#fff;
+    opacity: 0.2;
+    transition: color 0.2s ease-in-out;
+}
+
+#ONInputs input:hover::placeholder, #ONInputs input:focus::placeholder {
+    color:#000;
+}
+
+#ONInputs input:hover,#ONInputs input:focus  {
+    background-color: #fff;
+    color: #000;
+}
+
+#ONInputs input:not(:last-child) {
+    margin-bottom: 2rem;
+}
+
+#ONInputs label {
+    margin-bottom: 1rem;
+}
+
+button.Disabled {
+    pointer-events: none;
+    opacity: 0.3;
+}
+
+#ON2_Button, #ON3_Button {
+    position: sticky;
+    width:fit-content;
+    right: var(--marginContent);
+    bottom: var(--marginContent);
+    margin-left: auto;
+    margin-top: 3rem;
+    z-index: 10;
+}
+
+.MPage .List {
+    display: flex;
+    flex-direction: column;
+    gap:2rem;
+    margin-top: 3rem;
+}
+
+.ListHorizontal {
+    display: flex;
+    flex-direction: row;
+    gap:3rem;
+}
+
+.DesktopNavigation {
+    display: flex;
+    flex-direction: row;
+    z-index: 9999;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    position: fixed;
+    box-sizing: border-box;
+    padding: var(--marginContent);
+    top: 0;
+    left: 0;
+}
+
+.DesktopNavigation .ListHorizontal * {
+    height: fit-content;
+    color: var(--accColor);
+}
+
+.DesktopNavigation .ListHorizontal .Link::before {
+    background-color: var(--accColor);
+}
+
+.DesktopNavigation .ListHorizontal .Link::after {
+    width: fit-content;
+}
+
+.DesktopNavigation #PN_Language {
+    width: fit-content;
+    cursor: pointer;
+}
+
+.DesktopNavigation #PN_Language span {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.DesktopNavigation #PN_Language {
+    border: 2px solid var(--accColor);
+}
+
+.DesktopNavigation #PN_Language span.Actived {
+    color: var(--backColor);
+}
+
+.DesktopNavigation #PN_Language span {
+    color: var(--accColor);
+}
+
+.DesktopNavigation #PN_Language::before {
+    background-color: var(--accColor);
+}
+
+.CrossMenu {
+    position: absolute;
+    z-index: 10;
+    top: var(--marginContent);
+    right: var(--marginContent);
+    width: 3rem !important;
+    aspect-ratio: 1/1;
+    padding: 0;
+    scale: 0.8;
+    rotate: 0deg;
+    transition: scale 0.2s cubic-bezier(0.6, -0.01, 0, 1.2), rotate 0.2s cubic-bezier(0.6, -0.01, 0.21, 1.08);
+}
+
+.CrossMenu::after, .CrossMenu::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+}
+
+.CrossMenu::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.CrossMenu::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.CrossMenu:hover {
+    scale: 1;
+    rotate: 90deg;
+}
+
+.ArrowLeft {
+    position: absolute;
+    z-index: 10;
+    top: var(--marginContent);
+    right: var(--marginContent);
+    width: 3rem !important;
+    aspect-ratio: 1/1;
+    padding: 0;
+    scale: -0.8;
+    rotate: 0deg;
+    transition: scale 0.2s cubic-bezier(0.6, -0.01, 0, 1.2), opacity 0.2s ease-in-out;
+}
+
+.ArrowLeft::after, .ArrowLeft::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 55%; /* короче для стрелочного эффекта */
+    height: 2px;
+    background: #fff;
+    transform-origin: left center; /* точка вращения слева */
+    transition: left 0.15s ease-in-out;
+}
+
+.ArrowLeft::before {
+    transform: translate(30%, -50%) rotate(135deg); /* верхнее крыло */
+}
+
+.ArrowLeft::after {
+    transform: translate(30%, -50%) rotate(-135deg); /* нижнее крыло */
+}
+
+.ArrowLeft:hover {
+    scale: -1;
+}
+
+.ArrowLeft:hover::after, .ArrowLeft:hover::before  {
+    left: 60%;
+}
+
+.BurgerMenu {
+    display: none;
+}
+
+.Module:has(.MPage[module-page="1"].Actived) .ArrowLeft, .Module:has(.MPage[module-page]:not([module-page="1"]).Actived) .CrossMenu   {
+    opacity: 0.5;
+    scale: 0;
+}
+
+.Module:has(.MPage[module-page]:not([module-page="1"]).Actived) .ArrowLeft   {
+    opacity: 1;
+    scale: -0.8;
+}
+
+.Module:has(.MPage[module-page="1"].Actived) .CrossMenu   {
+    opacity: 1;
+    scale: 0.8;
+}
+
+
+
+#Gallery:not(.Custom) > *:first-child {
+    margin-top: 0;
+}
+
+#Gallery {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 колонки */
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+}
+
+#Gallery .GalleryBlock:nth-child(1) { grid-area: 2 / 1; } /* нижний левый */
+#Gallery .GalleryBlock:nth-child(2) { grid-area: 2 / 2; }
+#Gallery .GalleryBlock:nth-child(3) { grid-area: 2 / 3; }
+#Gallery .GalleryBlock:nth-child(4) { grid-area: 2 / 4; } /* нижний правый */
+#Gallery .GalleryBlock:nth-child(5) { grid-area: 1 / 1; } /* верхний левый */
+#Gallery .GalleryBlock:nth-child(6) { grid-area: 1 / 2; }
+#Gallery .GalleryBlock:nth-child(7) { grid-area: 1 / 3; }
+#Gallery .GalleryBlock:nth-child(8) { grid-area: 1 / 4; } /* верхний правый */
+
+.GalleryBlock, .GalleryBlock img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* aspect-ratio: 1/1; */
+    scale: 1;
+    overflow: hidden;
+    object-fit: cover;
+    transition: scale 0.2s ease-in-out;
+}
+
+.GalleryBlock:hover {
+    scale: 1.02;
+}
+
+.GalleryBlock::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 100;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.GalleryBlock:hover::before {
+    opacity: 0.8;
+}
+
+.GalleryBlock:hover span {
+    animation: fadeTop2 0.5s cubic-bezier(0.58, 0.01, 0.25, 1.5) forwards;
+}
+
+@keyframes fadeTop2 {
+    0% {
+        opacity: 0;
+        top: 45%;
+    }
+    100% {
+        opacity: 1;
+        top: 50%;
+    }
+}
+
+
+
+.GalleryBlock span {
+    position: absolute;
+    color: white;
+    z-index: 100;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    text-align: center;
+    opacity: 0;
+}
+
+#FullScreenPreview {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0);
+    backdrop-filter: blur(0px);
+    pointer-events: none;
+    z-index: 100;
+
+    transition: background-color 0.3s ease-in-out,
+    backdrop-filter 0.3s ease-in-out;
+}
+
+#FullScreenPreview.Actived {
+    background-color: rgba(0,0,0,0.9);
+    backdrop-filter: blur(5px);
+    pointer-events:all;
+}
+
+#FullScreenPreview img {
+    top: 45%;
+    left: 50%;
+    transform: translateX(-50%) scale(1.05);
+    position: absolute;
+    height: 85vh;
+    opacity: 0;
+}
+
+@keyframes fadeScale {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+    100% {
+        opacity: 100;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes fadeTop {
+    0% {
+        opacity: 0;
+        bottom: 3vh;
+    }
+    100% {
+        opacity: 0.2;
+        bottom: 5vh;
+    }
+}
+
+#FullScreenPreview.Actived img {
+    animation: fadeScale 0.5s cubic-bezier(0.58, 0.01, 0.25, 1.5) 0.3s forwards;
+}
+
+#FullScreenPreview.Actived p {
+    animation: fadeTop 0.5s cubic-bezier(0.58, 0.01, 0.25, 1.5) 1s forwards;
+}
+
+#FullScreenPreview p {
+    bottom: 3vh;
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    opacity: 0;
+}
+
+
+
+#PhoneNavigation {
+    width: 100vw;
+    box-sizing: border-box;
+    padding: calc(var(--marginContent) * 2);
+    padding-bottom: 6rem !important;
+}
+
+#PhoneNavigation * {
+    color: white;
+}
+
+#PhoneNavigation .List {
+    margin-top: auto;
+    margin-bottom: 4rem;
+    gap:2rem;
+}
+
+#PN_Language {
+    position: relative;
+    border: 2px solid #fff;
+    /* padding: 1.5rem 2rem;  */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#PN_Language span {
+    padding: 1.5rem 0rem;
+    text-align: center;
+    width: 50%;
+    transition: color 0.2s ease-in-out;
+}
+
+#PN_Language::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #fff;
+    z-index: -1;
+    transition: left 0.2s ease-in-out;
+}
+
+#PN_Language > .Actived {
+    color: #000;
+}
+
+
+body:has(#PNL_Ru.Actived) #PN_Language::before {
+    left: 0;
+}
+
+body:has(#PNL_En.Actived) #PN_Language::before {
+    left: 50%;
+}
+
+
+
+@media (max-width: 768px) {
+
+    @keyframes fadeTop {
+    0% {
+        opacity: 0;
+        bottom: 3vh;
+    }
+    100% {
+        opacity: 0.2;
+        bottom: 6vh;
+    }
+}
+
+    #FullScreenPreview img {
+        height: auto;
+        width: 95vw;
+        top: 50%;
+    }
+
+    #Gallery {
+        width: 100vw;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .GalleryBlock, .GalleryBlock img {
+        position: relative;
+        width: 100vw;
+        height: auto;
+        scale: 1;
+        overflow: hidden;
+        transition: scale 0.2s ease-in-out;
+    }
+
+    .GalleryBlock:hover {
+        scale: 1.02;
+    }
+
+    .GalleryBlock:hover img{
+        scale: 1.05;
+    }
+
+    body:has(#Gallery) #PC1_Button {
+        position: relative;
+        width: 100%;
+        bottom: 0;
+
+    }
+
+    .GalleryBlock:hover {
+        scale: 1;
+    }
+
+    .MobileFit, .MobileFit .PageContent {
+        height: fit-content !important;
+        min-height: 0 !important;
+    }
+
+    #PhoneNavigation {
+        padding: var(--marginContent);
+    }
+
+    .DesktopNavigation, #PC5_ReadLater {
+        display: none;
+    }
+
+    #P5_Content .SpaceBetween {
+        width: 100%;
+    }
+
+    .ImageBlock {
+        padding-top: 2rem !important;
+    }
+
+    .Right, .ImageBlock, .FontBlock {
+        position: relative !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        width: 100%;
+    }
+
+    .AddText {
+        position: relative;
+    }
+    body {
+        margin: 0;
+    }
+
+    #Presentation {
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+        overflow-y: scroll;
+        display: flex;
+        flex-direction: column;
+        top: 0;
+        left: 0;
+        transform: none;
+    }
+
+    .Page {
+        position: relative;
+        width: 100vw;
+        min-height: 100vh;
+        height: fit-content;
+        overflow: initial;
+        top: 0;
+        left: 0;
+        transform: none;
+    }
+
+    #PC1_Image {
+        width: 35vw;
+    }
+
+    .PageContent {
+        width: 100%;
+        min-height: 100vh;
+        height: fit-content;
+        position: relative;
+    }
+    .PageContent:not(.Custom) > *:first-child {
+        position: relative;
+    }
+
+    .TextBlock {
+        width: 100%;
+    }
+
+    .FontBlock .Fourty {
+        font-size: 2.2rem !important;
+    }
+
+    .PageContent .FontBlock:first-of-type {
+        padding-top: 4rem;
+    }
+
+    .ButtonPage {
+        position: absolute;
+        width: calc(100% - var(--margin)*2);
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -2.5rem;
+        z-index: 99;
+        background-color: var(--backColor);
+        color: var(--accColor);
+        box-shadow: inset 0 0 0 2px var(--accColor);
+        overflow: hidden;
+        transition: color 0.2s ease-in-out;
+    }
+
+    .ButtonPage::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;;
+        height: 100%;
+        background: var(--accColor);
+        transition: left 0.2s ease-in-out;
+        z-index: -1;
+    }
+
+    .ButtonPage:hover::after {
+        left: 0%;
+    }
+
+    .ButtonPage:hover {
+        color: var(--backColor);
+    }
+
+    .ButtonPage:hover svg > * {
+        stroke: var(--backColor);
+    }
+
+    .ButtonPage svg > * {
+        transition: stroke 0.2s ease-in-out;
+        stroke: var(--accColor);
+    }
+
+    .TextSpacing {
+        line-height: 2 !important;
+    }
+
+    #PC1_Title {
+        width: 100%;
+        padding-bottom: var(--marginContent);
+    }
+
+    #PC1_Title > .Default {
+        text-align: justify;
+    }
+
+    .PageContent .Header {
+        padding-bottom: 1.5rem;
+    }
+
+    .MobileContent {
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+    }
+
+    #P11_Content {
+        padding-top: calc(var(--marginContent) * 2);
+        height: calc(100vh + 3rem);
+    }
+
+    #P11_Content .Header {
+        padding-bottom: 2rem;
+    }
+
+    .Width25 {
+        width: 100%;
+    }
+    /* #P11_Content:not(.Custom) > *:first-child {
+        margin-top: 0;
+    } */
+
+    .ModulePages .MPages .MPage {
+        padding: var(--marginContent);
+    }
+
+    .MPage .TwentyFive {
+        font-size: 20px !important;
+        line-height: 1.6;
+        font-variation-settings: 'wght' 500;
+    }
+
+    .MPage .Header + p {
+        text-align: justify;
+    }
+
+    #ONButtons {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        gap: 0;
+    }
+
+    #ONButtons > * {
+        font-size: 20px !important;
+    }
+    #ONInputs > * {
+        font-size: 1rem !important;
+    }
+
+    .MPage .List {
+        gap: 3rem;
+        margin-top: 5rem;
+    }
+
+    .PageContent .List {
+        gap: 3rem;
+    }
+
+    #ONInputs input {
+        margin-left: calc(var(--marginContent)* -1);
+        padding-left: calc(var(--marginContent)) !important;
+    }
+
+    #ON2_Button, #ON3_Button {
+        width: 100vw;
+        padding-bottom: 6rem;
+        position: relative;
+        right: var(--marginContent);
+        top: var(--marginContent);
+    }
+
+    .BurgerMenu {
+        position: absolute;
+        z-index: 10;
+        top: var(--marginContent);
+        right: var(--marginContent);
+        width: 3rem !important;
+        height: 2rem;
+        padding: 0;
+        scale: 0.8;
+        rotate: 0deg;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        transition: scale 0.15s ease-in-out;
+    }
+
+    .BurgerMenu::after, .BurgerMenu::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background: black;
+    }
+
+    .BurgerMenu::after {
+        margin-bottom: 1rem;
+    }
+
+    .BurgerMenu::before {
+        margin-top: 1rem;
+    }
+
+    .BurgerMenu:hover {
+        scale: 1;
+
+    }
+
+    body:has(.Module.Actived) .BurgerMenu {
+        pointer-events: none;
+        z-index: 0;
+
+    }
+}
