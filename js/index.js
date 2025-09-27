@@ -26,9 +26,36 @@ function cursorChange() {
     }
 }
 
+let langGlobal = {};
 
+function changeText(element = null) {
+    const text = document.getElementById("PC6SSText");
+    const grids = document.querySelectorAll(".PC6_Grid .Hovering")
+    Array.from(grids).forEach(e => {
+        if (element != null) {
+            e.classList.remove("Actived")
+        }
+        if (element == e) {
+            e.classList.add("Actived")
+        }
 
+        if (e.classList.contains("Actived")) {
+            text.setAttribute("lang-id", e.getAttribute("id2"))
+            text.textContent = langGlobal[e.getAttribute("id2")][0]
+        }
+
+        
+
+    })
+}
 
 document.addEventListener('DOMContentLoaded', function() {
     cursorChange()
+    fetch("../data/languages.json")
+        .then(response => response.json())
+        .then(data => {
+            langGlobal = data;
+            changeText()
+        })
+        .catch(error => console.error('Error:', error));
 });

@@ -1,10 +1,10 @@
 {
-    "creativityText": [],
-    "adaptableText": [],
-    "mentoringText": [],
-    "initiativeText": [],
-    "productThinkingText": [],
-    "communicationText": [],
-    "responsibilityText": [],
-    "peoplePersonText": []
+    "creativityText": ["Креативный текст", "creativity TEXT"],
+    "adaptableText": ["Адапптинвый текст", "adaptable TEXT"],
+    "mentoringText": ["Наставничество текст", "mentoring TEXT"],
+    "initiativeText": ["Инициаливный текст", "initiabtive TEXT"],
+    "productThinkingText": ["Продукт финкинг текст", "product think TEXT"],
+    "communicationText": ["коммуникационный текст", "communication TEXT"],
+    "responsibilityText": ["отвественный текст", "responsibility TEXT"],
+    "peoplePersonText": ["понимающйи людей текст", "people person TEXT"]
 }
