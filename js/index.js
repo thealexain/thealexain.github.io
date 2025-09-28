@@ -1,5 +1,3 @@
-
-
 const cursor = document.getElementById('Cursor');
 const cursor2 = document.getElementById('Cursor2');
 
@@ -26,7 +24,7 @@ function cursorChange() {
     }
 }
 
-let langGlobal = {};
+// let langGlobal = {};
 
 function changeText(element = null) {
     const text = document.getElementById("PC6SSText");
@@ -37,11 +35,13 @@ function changeText(element = null) {
         }
         if (element == e) {
             e.classList.add("Actived")
+            
         }
 
         if (e.classList.contains("Actived")) {
             text.setAttribute("lang-id", e.getAttribute("id2"))
-            text.textContent = langGlobal[e.getAttribute("id2")][0]
+            changeTextLanguage()
+            // text.textContent = langGlobal[e.getAttribute("id2")][0]
         }
 
         
@@ -51,11 +51,5 @@ function changeText(element = null) {
 
 document.addEventListener('DOMContentLoaded', function() {
     cursorChange()
-    fetch("../data/languages.json")
-        .then(response => response.json())
-        .then(data => {
-            langGlobal = data;
-            changeText()
-        })
-        .catch(error => console.error('Error:', error));
+    changeText()
 });

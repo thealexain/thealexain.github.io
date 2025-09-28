@@ -627,6 +627,17 @@ body * {
     padding: 1rem 2rem;
 }
 
+.VideoBG {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* заполняет весь экран без искажений */
+    z-index: -1; /* позади всего контента */
+    pointer-events: none; /* нельзя кликнуть */
+}
+
 .PC6_Title {
     width: 90%;
     display: flex;
@@ -653,6 +664,8 @@ body * {
     gap:0.4rem;
 }
 
+
+
 #P7_Content {
     display: flex;
     flex-direction: column;
@@ -673,6 +686,14 @@ body * {
 .StatHeader {
     display: inline-flex;
     gap: 0.5rem;
+}
+
+.Stat .StatHeader {
+    font-size: 1.2rem !important;
+}
+
+.Stat .StatText {
+    font-size: 1.2rem !important;
 }
 
 #P8_Content {
@@ -1208,6 +1229,16 @@ body:has(.LightedInput:hover) #Cursor2 {
     rotate: 360deg;
 }
 
+.Link button {
+    appearance: none;
+    background: transparent;
+    border: none;
+}
+
+.MarginLeftAuto {
+    margin-left: auto;
+}
+
 @media (max-width: 768px) {
     #Cursor{
         display: none !important; /* Скрываем курсор на телефонах */
@@ -1219,6 +1250,10 @@ body:has(.LightedInput:hover) #Cursor2 {
 
     h1 {
         font-size: 2.6rem;
+    }
+
+    .Stat .StatHeader, .Stat .StatHeader > * {
+        font-size: 1.3rem !important;
     }
 
     body {
@@ -1427,7 +1462,7 @@ body:has(.LightedInput:hover) #Cursor2 {
     .PC6_Title .Thirty {
         display: inline;
         font-size: 1.5rem !important;
-        text-wrap: none;
+        white-space: nowrap;
     }
 
     #PC6_Content > .PC6_Grid > p {

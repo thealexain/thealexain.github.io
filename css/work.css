@@ -920,7 +920,13 @@ body:has(#PNL_En.Actived) #PN_Language::before {
     left: 50%;
 }
 
-
+.NoneButton {
+    appearance: none;
+    background: transparent;
+    padding: 0;
+    width: fit-content;
+    color: var(--accColor);
+}
 
 @media (max-width: 768px) {
 

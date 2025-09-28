@@ -1,14 +1,4 @@
 
-function PNLButton(element) {
-
-    console.log(element)
-
-    document.querySelectorAll('#PN_Language span').forEach(btn => {
-        btn.classList.remove('Actived');
-    });
-
-    element.classList.add('Actived');
-}
 
 function OpenModule(element, forId="") {
     var for_id = document.getElementById(element.getAttribute("for"));
