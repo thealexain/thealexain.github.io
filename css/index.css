@@ -1,6 +1,6 @@
 :root {
     --defaultBack: white;
-    --defaultFront: black;
+    --defaultFront: rgb(32, 32, 38);
     --margin: 20px;
     --marginContent: 40px;
 
@@ -35,11 +35,69 @@
 
 body {
     background-color: black;
-    perspective: 2000px;
     overflow: hidden;
     cursor: none !important;
     padding: 0;
     margin: 0;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url('../images/table.jpeg');
+    background-size:cover;
+}
+
+.LightApperance {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(
+        ellipse at center,
+        transparent 0%,
+        rgba(0, 0, 0, 0.9) 90%
+    );
+    pointer-events: none;
+    animation: breatheAnimation 0.3s ease-in-out infinite;
+}
+
+.LightApperance::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    height: 150vh;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(255,255,255,0.5) 0%,
+        transparent 60%
+    );
+    mix-blend-mode:lighten;
+    opacity: 0.3;
+}
+
+@keyframes breatheAnimation {
+    0%, 100% { 
+        opacity: 0.9;
+        transform: scale(1);
+    }
+    25% { 
+        opacity: 0.91;
+        transform: scale(1.01);
+    }
+    50% { 
+        opacity: 0.85;
+        transform: scale(1);
+    }
 }
 
 body * {
@@ -55,6 +113,12 @@ body * {
     left: 50%;
     transform: translate(-50%, -50%);
     rotate: -1deg;
+
+    box-shadow:
+        0 3.9px 4.6px rgba(0, 0, 0, 0.8),
+        0 12.3px 8.4px rgba(0, 0, 0, 0.06),
+        0 18.8px 19.2px rgba(0, 0, 0, 0.37),
+        0 22px 40px rgba(0, 0, 0, 0.2)
 }
 
 .Page {
@@ -102,6 +166,33 @@ body * {
 
 .Page.Flip {
     transform: rotateX(-180deg);
+}
+
+.Page .PageFront::before, .Page .PageBack::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;    
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+    pointer-events: none;
+}
+
+.Page.Flip .PageFront::before {
+    opacity: 0.2;
+}
+
+.Page.Flip .PageBack::before {
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 1) 90%,
+        transparent 100%
+    );
+    opacity: 0.2;
 }
 
 .PageContent {
@@ -370,7 +461,30 @@ body * {
 }
 
 #Page2_Experience svg {
-    animation: infStars 3s infinite;
+    animation: infStars 2s infinite ease-in-out;
+    width: 5rem;
+    height: 5.5rem;
+}
+
+#Page2_Experience svg > path:first-child {
+    animation: infStars1 2s infinite ease-in-out;
+}
+
+#Page2_Experience svg > path:last-child {
+    animation: infStars2 1.5s infinite ease-in-out;
+    animation-delay: 0.1s;
+}
+
+.Flag svg {
+    animation: infStars1 2s infinite ease-in-out;
+}
+
+.Flag:nth-child(2) svg {
+    animation: infStars1 1.5s infinite ease-in-out;
+}
+
+.Flag:nth-child(3) svg {
+    animation: infStars2 2s infinite ease-in-out;
 }
 
 @keyframes infStars {
@@ -385,6 +499,42 @@ body * {
     100% {
         scale: 1;
         rotate: 0deg;
+    }
+}
+
+@keyframes infStars2 {
+    0% {
+        scale: 1;
+        rotate: 0deg;
+        translate: 0 -0.5rem;
+    }
+    50% {
+        scale: 1.01;
+        rotate: 2deg;
+        translate: 0 0rem;
+    }
+    100% {
+        scale: 1;
+        rotate: 0deg;
+        translate: 0 -0.5rem;
+    }
+}
+
+@keyframes infStars1 {
+    0% {
+        scale: 1;
+        rotate: 0deg;
+        translate: 0 -0.5rem;
+    }
+    50% {
+        scale: 1.1;
+        rotate: -3deg;
+        translate: 0 -0rem;
+    }
+    100% {
+        scale: 1;
+        rotate: 0deg;
+        translate: 0 -0.5rem;
     }
 }
 
@@ -497,7 +647,7 @@ body * {
     max-width: 280px;
     min-width: 230px;
     padding: 30px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -548,7 +698,7 @@ body * {
     margin: 40px 20px;
 }
 
-.ReviewTab.Active svg {
+.ReviewTab.Actived svg {
     stroke-dashoffset: 0;
 }
 
@@ -563,7 +713,7 @@ body * {
     min-width: 100px;
 }
 
-.ReviewTab:not(.Active):hover svg {
+.ReviewTab:not(.Actived):hover svg {
     stroke-dashoffset: 0;
 }
 
@@ -598,10 +748,41 @@ body * {
 
 .PC4_Text {
     position: relative;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: space-between;
 }
+
+.PC4_Text.Actived {
+    display: flex;
+    animation: textFade 0.5s forwards ease-in-out;
+}
+
+.Page > .PageFront::after , .Page > .PageBack::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('../images/paper.png');
+    top: 0;
+    left: 0;
+    z-index: 99;
+    mix-blend-mode: multiply;
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+@keyframes textFade {
+    0% {
+        opacity: 0;
+        transform: translateY(0.5rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
 .PC4_Text  > p {
     margin-top: 3rem;
@@ -1269,6 +1450,10 @@ body:has(.LightedInput:hover) #Cursor2 {
         cursor: default !important;
     }
 
+    .LightApperance {
+        display: none;
+    }
+
     .TextSpacing {
         line-height: 2;
     }
@@ -1287,6 +1472,7 @@ body:has(.LightedInput:hover) #Cursor2 {
         min-height: 100vh;
         position: relative;
         transform-style: flat;
+        box-sizing: border-box;
     }
     .PageBack {
         display: none;
@@ -1504,8 +1690,8 @@ body:has(.LightedInput:hover) #Cursor2 {
         width: 100%;
     }
 
-    .Page:not(.MNotGap) {
-        margin: 50px 0;
+    .Page .PageContent:not(.MNotGap) {
+        padding-top: calc(var(--marginContent) + 50px) !important;
     }
 
     .Page.MNotBottomGap {

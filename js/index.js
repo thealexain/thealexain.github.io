@@ -49,6 +49,17 @@ function changeText(element = null) {
     })
 }
 
+function switchTab(element) {
+    Array.from(element.closest(".PC4_Tabs").querySelectorAll(".ReviewTab")).forEach(e => {
+        e.classList.remove("Actived");
+        document.getElementById(e.getAttribute("tab")).classList.remove("Actived")
+    })
+
+    element.classList.add("Actived")
+
+    document.getElementById(element.getAttribute("tab")).classList.add("Actived")
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     cursorChange()
     changeText()
