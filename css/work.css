@@ -2,7 +2,7 @@
 
 :root {
     --defaultBack: white;
-    --defaultFront: black;
+    --defaultFront: rgb(32, 32, 38);
     --margin: 20px;
     --marginContent: 40px;
     --backColor: #fff;
@@ -29,6 +29,8 @@ button {
     flex-direction: row;
     justify-content: space-between;
 }
+
+.BurgerMenu
 
 button, input {
     cursor: pointer;
@@ -164,9 +166,20 @@ p, h1, h2, h3, h4, h5, h6, button, a, div {
     filter: drop-shadow( 0px 5px 15px rgba(var(--accColorRGB), 0.3));
 }
 
-.TextBlock p:not(p:first-child) {
-    padding-top: 0.5rem;
+#PC1_Image:has(img) {
+    width: fit-content;
 }
+
+#PC1_Image img.square, #PC1_Image img.horizontal {
+    height: 11rem;
+    width: auto;
+}
+
+#PC1_Image img.vertical {
+    width: 11rem;
+}
+
+
 
 .TextBlock {
     width: 25vw;
@@ -197,8 +210,8 @@ p, h1, h2, h3, h4, h5, h6, button, a, div {
     left: 0;
     width: 0%;
     height: 2px;
-    background-color: black;
-    transition: width 0.15s ease-in-out;
+    background-color: var(--accColor);
+    transition: width 0.15s ease-in-out, background-color 0.3s ease-in-out;
 }
 
 .Link::after {
@@ -478,6 +491,14 @@ body:has(.Module.Actived) #Sketchbook {
     z-index: -1;
 }
 
+.LightApperance  {
+    background: radial-gradient(
+        ellipse at center,
+        transparent 0%,
+        rgba(0, 0, 0, 0.6) 80%
+    ) !important;
+}
+
 .BackgroundButton:hover::before, .BackgroundButton:focus::before, .BackgroundButton.Actived::before {
     left: 0%;
 }
@@ -574,13 +595,15 @@ button.Disabled {
 .DesktopNavigation .ListHorizontal * {
     height: fit-content;
     color: var(--accColor);
+    transition: color 0.3s ease-in-out;
 }
 
 .DesktopNavigation .ListHorizontal .Link::before {
     background-color: var(--accColor);
+
 }
 
-.DesktopNavigation .ListHorizontal .Link::after {
+.DesktopNavigation .ListHorizontal .Link::after , .DesktopNavigation button::after{
     width: fit-content;
 }
 
@@ -621,6 +644,7 @@ button.Disabled {
     scale: 0.8;
     rotate: 0deg;
     transition: scale 0.2s cubic-bezier(0.6, -0.01, 0, 1.2), rotate 0.2s cubic-bezier(0.6, -0.01, 0.21, 1.08);
+    background-color: transparent !important;
 }
 
 .CrossMenu::after, .CrossMenu::before {
@@ -689,7 +713,11 @@ button.Disabled {
 
 .BurgerMenu {
     display: none;
+    background-color: transparent !important;
+    mix-blend-mode: difference;
 }
+
+
 
 .Module:has(.MPage[module-page="1"].Actived) .ArrowLeft, .Module:has(.MPage[module-page]:not([module-page="1"]).Actived) .CrossMenu   {
     opacity: 0.5;
@@ -704,6 +732,11 @@ button.Disabled {
 .Module:has(.MPage[module-page="1"].Actived) .CrossMenu   {
     opacity: 1;
     scale: 0.8;
+}
+
+.Page.BlackPage {
+    --backColor: var(--defaultFront);
+    --accColor: var(--defaultBack);
 }
 
 
@@ -911,6 +944,18 @@ button.Disabled {
     color: #000;
 }
 
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url('../images/back.png');
+    background-size:cover;
+    filter: brightness(0.7);
+}
+
 
 body:has(#PNL_Ru.Actived) #PN_Language::before {
     left: 0;
@@ -926,6 +971,11 @@ body:has(#PNL_En.Actived) #PN_Language::before {
     padding: 0;
     width: fit-content;
     color: var(--accColor);
+    transition: color 0.3s ease-in-out;
+}
+
+.DNColorful {
+    mix-blend-mode: difference;
 }
 
 @media (max-width: 768px) {
@@ -1081,6 +1131,10 @@ body:has(#PNL_En.Actived) #PN_Language::before {
         transition: color 0.2s ease-in-out;
     }
 
+    .LightApperance {
+        display: none;
+    }
+
     .ButtonPage::after {
         content: '';
         position: absolute;
@@ -1112,6 +1166,10 @@ body:has(#PNL_En.Actived) #PN_Language::before {
 
     .TextSpacing {
         line-height: 2 !important;
+    }
+
+    body:not(body:has(#PC1_Button))  #PC1_Title {
+        padding-bottom: 0 !important;
     }
 
     #PC1_Title {
@@ -1222,7 +1280,7 @@ body:has(#PNL_En.Actived) #PN_Language::before {
         position: absolute;
         width: 100%;
         height: 2px;
-        background: black;
+        background: white;
     }
 
     .BurgerMenu::after {

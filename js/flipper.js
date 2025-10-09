@@ -2,6 +2,8 @@
 let currentPage = 1;
 let totalPages;
 
+const dncolor = document.querySelector(".DNColorful");
+
 function flipNext() {
     if (currentPage >= totalPages) return;
     
@@ -14,6 +16,8 @@ function flipNext() {
     currentPage++;
 
     interactives = document.querySelectorAll('.Page.Active .Interactive')
+
+    changeColor(currentPageEl2);
 }
 
 function flipPrev() {
@@ -27,7 +31,20 @@ function flipPrev() {
     currentPageEl.classList.add('Active');
 
     interactives = document.querySelectorAll('.Page.Active .Interactive')
+
+    changeColor(currentPageEl);
     
+}
+
+function changeColor(page) {
+    if (dncolor != null) {
+        if (page.hasAttribute("data-page") && page.getAttribute("data-page") == 1) {
+            dncolor.style = `--backColor: ${getComputedStyle(page).getPropertyValue('--backColor').trim()}; --accColor: ${getComputedStyle(page).getPropertyValue('--accColor').trim()}; --accColorRGB:${getComputedStyle(page).getPropertyValue('--accColorRGB').trim()}; mix-blend-mode: normal;`
+        }
+        else {
+            dncolor.style = `--backColor: white; --accColor: white; --accColorRGB:white; mix-blend-mode: difference;`;
+        }
+    }
 }
 
 
@@ -162,7 +179,7 @@ function canScrollVerticallyAtPoint(x, y, deltaY, container) {
     while (current && current !== container) {
         const style = window.getComputedStyle(current);
         const canScroll = current.scrollHeight > current.clientHeight && 
-                         style.overflowY !== 'hidden';
+                        style.overflowY !== 'hidden';
         
         if (canScroll) {
             // Проверяем, может ли элемент прокрутиться в направлении скролла
@@ -206,6 +223,7 @@ window.addEventListener('resize', () => {
 document.addEventListener('DOMContentLoaded', function() {
     currentPage = 1;
     totalPages = parseInt(document.querySelector("div[all-pages]").getAttribute("all-pages"))
+    changeColor(document.querySelector(".Page.Active"));
 
     if (width >= 768) {
         wheel()

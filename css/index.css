@@ -40,6 +40,9 @@ body {
     padding: 0;
     margin: 0;
 }
+body * {
+    cursor: none !important;
+}
 
 body::before {
     content: '';
@@ -50,39 +53,6 @@ body::before {
     height: 100vh;
     background: url('../images/table.jpeg');
     background-size:cover;
-}
-
-.LightApperance {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: radial-gradient(
-        ellipse at center,
-        transparent 0%,
-        rgba(0, 0, 0, 0.9) 90%
-    );
-    pointer-events: none;
-    animation: breatheAnimation 0.3s ease-in-out infinite;
-}
-
-.LightApperance::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    translate: -50% -50%;
-    height: 150vh;
-    aspect-ratio: 1/1;
-    border-radius: 100%;
-    background: radial-gradient(
-        ellipse at center,
-        rgba(255,255,255,0.5) 0%,
-        transparent 60%
-    );
-    mix-blend-mode:lighten;
-    opacity: 0.3;
 }
 
 @keyframes breatheAnimation {
@@ -98,10 +68,6 @@ body::before {
         opacity: 0.85;
         transform: scale(1);
     }
-}
-
-body * {
-    cursor: none !important;
 }
 
 #Sketchbook {
@@ -134,8 +100,9 @@ body * {
 }
 
 .BlackPage {
-    background-color: var(--defaultFront) !important;
-    color: var(--defaultBack)
+    background-color: rgb(14, 14, 17) !important;
+    color: var(--defaultBack);
+    
 }
 
 .BlackPage svg {
@@ -208,15 +175,6 @@ body * {
 
 .PageMargin {
     padding: var(--margin);
-}
-
-.BlackPage {
-    background-color: var(--defaultFront) !important;
-    color: var(--defaultBack)
-}
-
-.BlackPage svg {
-    stroke: var(--defaultBack) !important;
 }
 
 
@@ -647,7 +605,6 @@ body * {
     max-width: 280px;
     min-width: 230px;
     padding: 30px;
-    /* border: 1px solid black; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -662,10 +619,18 @@ body * {
     justify-content: center;
 }
 
-.P3_Work .P3W_Image svg {
+.P3WT_Header {
+    font-size: 1.125rem !important;
+}
+
+.P3WT_Text {
+    font-size: 1.35rem !important;
+}
+
+.P3_Work .P3W_Image svg, .P3_Work .P3W_Image img {
     position: relative;
-    width: 6rem;
-    height: 6rem;
+    width: 7rem;
+    height: 7rem;
     z-index: 1;
 }
 
@@ -673,10 +638,26 @@ body * {
     content: '';
     width: 100%;
     height: 100%;
-    padding: 50px;
-    background-color: gray;
+    padding: 35px;
+    background-color: var(--backColor);
+    mask-image: url('../images/backLogo.png');
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    -webkit-mask-image: url('../images/backLogo.png');
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
     rotate: -2deg;
+
     position: absolute;
+}
+
+#PC3_Works .P3_Work:nth-child(2) .P3W_Image::before {
+    rotate: 0deg !important;
+    scale: -1 1;
+}
+
+#PC3_Works .P3_Work:nth-child(3) .P3W_Image::before {
+    rotate: 180deg !important;
 }
 
 .P3_Work .P3W_Text {
@@ -725,7 +706,13 @@ body * {
     position: relative;
     display: flex;
     flex-direction: row;
-    gap: 20px
+    gap: 20px;
+    overflow-y: scroll;
+}
+
+.PC4_Tabs span {
+    width: 100%;
+    white-space: nowrap;
 }
 
 .ReviewText {
@@ -972,14 +959,20 @@ body * {
 
 
     /* 2. Смешиваем с фоном */
-    filter: blur(5px) invert(100%);
-    mix-blend-mode: difference;
+    filter: blur(5px);
 }
+
+#Cursor img {
+    height: 200vh;
+    rotate: 10deg;
+}
+
+
 
 body:has(.Interactive:hover) #Cursor {
     opacity: 0.2;
     transform: scale(1);
-    filter: blur(0px) invert(100%);
+    filter: blur(0px);
 }
 
 #Cursor2 {
@@ -1330,7 +1323,7 @@ body:has(.LightedInput:hover) #Cursor2 {
 
 .BurgerMenu, .CrossMenu {
     all: unset;
-    position: absolute;
+    position: fixed;
     z-index: 999;
     right: var(--marginContent);
     top: var(--marginContent);
@@ -1342,6 +1335,7 @@ body:has(.LightedInput:hover) #Cursor2 {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    mix-blend-mode: difference;
 }
 
 .CrossMenu {
@@ -1363,7 +1357,7 @@ body:has(.LightedInput:hover) #Cursor2 {
     width: 100%;
     height: 0;
     border-top: 10px solid transparent;
-    border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 20'%3E%3Cpath d='M0 10 Q50 0 100 10 Q150 20 200 10' stroke='black' fill='none' stroke-width='2'/%3E%3C/svg%3E") 10 stretch;
+    border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 20'%3E%3Cpath d='M0 10 Q50 0 100 10 Q150 20 200 10' stroke='white' fill='none' stroke-width='2'/%3E%3C/svg%3E") 10 stretch;
 }
 
 .CrossMenu span {
@@ -1375,7 +1369,7 @@ body:has(.LightedInput:hover) #Cursor2 {
 }
 
 .BurgerMenu span:first-child, .CrossMenu span:last-child {
-    border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 20'%3E%3Cpath d='M0 10 Q50 0 200 10 Q150 20 200 10' stroke='black' fill='none' stroke-width='2'/%3E%3C/svg%3E") 5 stretch;
+    border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 20'%3E%3Cpath d='M0 10 Q50 0 200 10 Q150 20 200 10' stroke='white' fill='none' stroke-width='2'/%3E%3C/svg%3E") 5 stretch;
 }
 
 .ModulePages .MPages .MPage.Actived #ON2_Button {
@@ -1418,6 +1412,11 @@ body:has(.LightedInput:hover) #Cursor2 {
 
 .MarginLeftAuto {
     margin-left: auto;
+}
+
+.TextMarginBR {
+    margin-top: 0.5rem;
+    display: flex;
 }
 
 @media (max-width: 768px) {
@@ -1632,7 +1631,7 @@ body:has(.LightedInput:hover) #Cursor2 {
     }
 
     .P3WT_Text {
-        font-size: 1.125rem !important;
+        font-size: 1.35rem !important;
     }
 
     .P3_Work .P3W_Text {

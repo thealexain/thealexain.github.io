@@ -10,3 +10,4 @@ function OpenGallery(element, forId="") {
         for_id.classList.add("Actived")
     }
 }
+

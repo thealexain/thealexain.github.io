@@ -1,0 +1,155 @@
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0,orientation=portrait" name="viewport"/>
+<title>Карточки Алексайн</title>
+<link href="../css/work.css" rel="stylesheet"/>
+<link href="../css/main.css" rel="stylesheet"/>
+</head>
+<body>
+<div all-pages="4" id="Presentation">
+<!-- HERO PAGE -->
+<div class="Page Active" data-page="1" id="PAGE_HERO" style="--backColor: #F5F5F5; --accColor: #2A2A2A;">
+<div class="PageContent Custom">
+<div id="PC1_Image">
+<img class="vertical" src="../images/logos/wb.png"/></div>
+<div id="PC1_Title">
+<h3 class="Twenty" id="PC1TCategory" lang-id="categoryInfographic">Категория</h3>
+<h1 class="Thirty" id="PC1TName" lang-id="name" lang-work="wb">Карточки</h1>
+<h2 class="Default TextSpacing" id="PC1TDescription" lang-id="description" lang-work="wb">Описание работы </h2>
+</div>
+
+</div>
+</div>
+<div class="MobileContent">
+<div class="Page MobileFit BlackPage" data-page="2" id="PAGE_GALLERY">
+<div class="PageContent" id="Gallery">
+<div class="GalleryBlock" for="FullScreenPreview" onclick="OpenGallery(this)">
+<img alt="" src="../images/works/wb/4.png"/>
+<span class="Default" lang-id="workGallerySee">Смотреть полное изображение</span>
+</div><div class="GalleryBlock" for="FullScreenPreview" onclick="OpenGallery(this)">
+<img alt="" src="../images/works/wb/2.png"/>
+<span class="Default" lang-id="workGallerySee">Смотреть полное изображение</span>
+</div><div class="GalleryBlock" for="FullScreenPreview" onclick="OpenGallery(this)">
+<img alt="" src="../images/works/wb/3.png"/>
+<span class="Default" lang-id="workGallerySee">Смотреть полное изображение</span>
+</div><div class="GalleryBlock" for="FullScreenPreview" onclick="OpenGallery(this)">
+<img alt="" src="../images/works/wb/1.png"/>
+<span class="Default" lang-id="workGallerySee">Смотреть полное изображение</span>
+</div></div>
+</div>
+<!-- TASK -->
+
+<!-- SOLUTION -->
+
+<!-- REVIEW -->
+
+
+
+
+
+
+<div class="Page" data-page="3" id="PAGE_END">
+<div class="PageContent">
+<h2 class="Thirty Header Width25" lang-id="9header">Готовы сделать решение, <br/>а не просто картинку?</h2>
+<button class="CenterButton ButtonPage" for="OrderNow" id="PC10_Button" onclick="OpenModule(this)" style="--backColor: #fff; --accColor: #000">
+<span class="Twenty" lang-id="orderNow">Начать работу</span>
+</button>
+</div>
+</div>
+<div class="Page BlackPage" data-page="4" id="PAGE_CONTACTS">
+<div class="PageContent" id="P11_Content">
+<h2 class="TwentyFive Header" lang-id="contacts">Связаться со мной</h2>
+<div class="List">
+<a class="Twenty Link" href="https://t.me/alex_desg">Telegram</a>
+<a class="Twenty Link" href="">Linkedin</a>
+<a class="Twenty Link" href="mailto:covalevalex@vk.com" id="ON3Email">Email</a>
+<a class="Twenty Link" href="https://vk.com/alex_de.sign">VK</a>
+<div class="Spacer"></div>
+<a class="Twenty Link" href="https://youtube.com/@alex_de.sign_">YouTube</a>
+<a class="Twenty Link" href="https://www.tiktok.com/@alex_de.sign">TikTok</a>
+</div>
+</div>
+</div>
+</div>
+<div class="DesktopNavigation Interactive PageMargin DNColorful">
+<div class="ListHorizontal">
+<a class="Twenty Link" href="../index.html" lang-id="mainMenu">Главная</a>
+<a class="Twenty Link" href="../portfolio.html" lang-id="portfolioMenu">Портфолио</a>
+<!-- <a href="" class="Twenty Link" lang-id="reviewsMenu">Отзывы</a> -->
+</div>
+<button class="Default Link NoneButton" lang-id="languageShort" onclick="switchLanguage()">EN</button>
+</div>
+</div>
+<div class="LightApperance">
+<div class="LALamp"></div>
+</div>
+<div class="BlackPage Module" id="PhoneNavigation">
+<button class="CrossMenu" for="PhoneNavigation" onclick="CloseModule(this)">
+</button>
+<div class="List">
+<a class="TwentyFive Link" href="../index.html" lang-id="mainMenu">Главная</a>
+<a class="TwentyFive Link" href="../portfolio.html" lang-id="portfolioMenu">Портфолио</a>
+<!-- <a href="" class="Thirty Link" lang-id="reviewsMenu">Отзывы</a> -->
+</div>
+<div id="PN_Language">
+<span class="Twenty Actived" id="PNL_Ru" onclick="PNLButton(this)">Русский</span>
+<span class="Twenty" id="PNL_En" onclick="PNLButton(this)">English</span>
+</div>
+</div>
+<button class="BurgerMenu" for="PhoneNavigation" onclick="OpenModule(this)">
+</button>
+<div class="BlackPage Module ModulePages" id="OrderNow">
+<button class="CrossMenu" for="OrderNow" onclick="CloseModule(this)">
+</button>
+<button class="ArrowLeft" for="OrderNow" onclick="BackPage(this)">
+</button>
+<div class="MPages">
+<div class="MPage Actived" fixed="" module-page="1">
+<div class="Header">
+<p class="Thirty">Что вы хотите создать?</p>
+<div id="ONButtons" style="--accColor: transparent;">
+<button class="TwentyFive BackgroundButton" for="OrderNow" lang-id="categoryLogotype" onclick="ModuleNextPage(this); ONopenInputs(this) ">Логотип</button>
+<button class="TwentyFive BackgroundButton" for="OrderNow" lang-id="categoryBranding" onclick="ModuleNextPage(this); ONopenInputs(this)">Брендинг</button>
+<button class="TwentyFive BackgroundButton" for="OrderNow" lang-id="categoryWeb" onclick="ModuleNextPage(this); ONopenInputs(this)">Веб-сайт</button>
+<button class="TwentyFive BackgroundButton" for="OrderNow" lang-id="categoryAnimation" onclick="ModuleNextPage(this); ONopenInputs(this)">Анимация</button>
+<button class="TwentyFive BackgroundButton" for="OrderNow" lang-id="categoryInfographic" onclick="ModuleNextPage(this); ONopenInputs(this)">Инфографика</button>
+<button class="TwentyFive BackgroundButton" for="OrderNow" lang-id="categoryPrint" onclick="ModuleNextPage(this); ONopenInputs(this)">Печать</button>
+</div>
+</div>
+</div>
+<div class="MPage" module-page="2">
+<p class="Thirty Header">Замечательный выбор!</p>
+<p class="TwentyFive">Ответьте на простых 10 вопросов</p>
+<div id="ONInputs">
+<label class="TwentyFive" for="1">инпут 1</label>
+<input class="TwentyFive" id="" name="1" oninput="inputOpenButton(this)" placeholder="placeholder..." type="text"/>
+</div>
+<button class="TwentyFive Disabled BackgroundButton" for="OrderNow" id="ON2_Button" onclick="ModuleNextPage(this)" style="--accColor: transparent;">Продолжить</button>
+</div>
+<div class="MPage" module-page="3">
+<p class="Thirty Header">Ответы скопированы!</p>
+<p class="TwentyFive">Пришлите мне их в любую социальгую сеть</p>
+<div class="List">
+<a class="Twenty Link" href="https://t.me/alex_desg">Telegram</a>
+<a class="Twenty Link" href="">Linkedin</a>
+<a class="Twenty Link" href="mailto:covalevalex@vk.com" id="ON3Email">Email</a>
+<a class="Twenty Link" href="https://vk.com/alex_de.sign">VK</a>
+</div>
+<button class="TwentyFive BackgroundButton" id="ON3_Button" style="--accColor: transparent;">Копировать</button>
+</div>
+</div>
+</div>
+<div class="" for="FullScreenPreview" id="FullScreenPreview" onclick="CloseModule(this)">
+<img alt="" id="FSPImage" src="../images/works/wb/1.png"/>
+<p class="Default" lang-id="workTap">Нажмите в любое место для закрытия</p>
+</div>
+<!-- <div id="Cursor"><img src="images/cursor.png" alt=""></div>
+    <div id="Cursor2" class=""></div> -->
+<script src="../js/language.js"></script>
+<script src="../js/index.js"></script>
+<script src="../js/module.js"></script>
+<script src="../js/work.js"></script>
+<script src="../js/flipper.js"></script>
+</body>
+</html>

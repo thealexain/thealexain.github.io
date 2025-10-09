@@ -94,3 +94,43 @@ h1, h2, h3, h4,h5,h6,p {
 .Page[data-page="10"] { z-index: 3; }
 .Page[data-page="11"] { z-index: 2; }
 .Page[data-page="12"] { z-index: 1; }
+
+.LightApperance {
+    --cursorX: 50vw;
+    --cursorY: 50vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(
+        ellipse at center,
+        transparent 0%,
+        rgba(0, 0, 0, 0.9) 90%
+    );
+    pointer-events: none;
+    animation: breatheAnimation 0.3s ease-in-out infinite;
+}
+
+.TextMarginBR {
+    margin-top: 0.5rem;
+    display: flex;
+}
+
+.LightApperance::after {
+    content: '';
+    position: absolute;
+    top: var(--cursorY);
+    left: var(--cursorX);
+    height: 150vh;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(255,255,255,0.5) 0%,
+        transparent 60%
+    );
+    mix-blend-mode:lighten;
+    opacity: 0.3;
+}
+

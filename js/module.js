@@ -125,36 +125,41 @@ function initSimpleSwipeBack() {
     });
 }
 
-async function copyToClipboard(text) {
+let answers = {}
+
+function copyToClipboard() {
     try {
-        await navigator.clipboard.writeText(text);
-        console.log('Текст скопирован в буфер обмена: ', text);
+
+        let text = "Здравствуйте! Меня зовут " + Object.values(answers)[0] + ".\n";
+        let brief = "Бриф проекта"
+        if (language == 1) {
+            text = text.replace("Здравствуйте! Меня зовут ", "Hello! I'm ")
+            brief = "Project's brief"
+        }
+
+        for (let i = 1; i < Object.values(answers).length; i++) {
+            text += `${i}. ${Object.values(answers)[i]}\n`
+        }
+        
+        navigator.clipboard.writeText(text);
+        document.getElementById("ON3Email").setAttribute("href", `mailto:covalevalex@vk.com?subject=${brief}`)
     } catch (err) {
         console.error('Ошибка копирования: ', err);
         // Fallback для старых браузеров
-        copyToClipboardFallback(text);
     }
 }
-
-let answers = {}
 
 function inputOpenButton(element) {
     if (element.value.trim() != "") {
         answers[element.getAttribute("name")] = element.value.trim()
     }
 
-    if (Object.keys(answers).length == 2) {
+    if (Object.keys(answers).length == 9) {
         const button = document.getElementById("ON2_Button")
         button.classList.remove("Disabled")
         button.classList.add("Actived")
 
-        let txt = ""
-
-        for (var key in answers) {
-            txt += `1. ${answers[key]}\n`
-        }
-
-        copyToClipboard(txt)
+        copyToClipboard()
     }
 
 }
