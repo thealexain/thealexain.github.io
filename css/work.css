@@ -1301,4 +1301,13 @@ body:has(#PNL_En.Actived) #PN_Language::before {
         z-index: 0;
 
     }
+
+    .MPage > p.Thirty, .Header > p {
+        font-size: 1.5rem !important;
+    }
+
+    .MPage > p.TwentyFive {
+        margin-top: 0.1rem;
+        font-size: 1.2rem !important;
+    }
 }

@@ -51,8 +51,8 @@ function switchLanguage() {
 function changeTextLanguage() {
     console.log(document.querySelectorAll("*[lang-id]"))
     Array.from(document.querySelectorAll("*[lang-id]")).forEach(a => {
-        if (a.hasAttribute("lang-for")) {
-            a.setAttribute(a.getAttribute("lang-for"), langData[a.getAttribute("lang-id")][language])
+        if (a.hasAttribute("lang-for") && a.getAttribute("lang-for") == "placeholder") {
+            a.setAttribute(a.getAttribute("lang-for"), langData[a.getAttribute("lang-id") + "Placeholder"][language])
         }
         else {
             if (a.hasAttribute("lang-work")) {

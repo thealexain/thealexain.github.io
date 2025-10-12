@@ -134,3 +134,12 @@ h1, h2, h3, h4,h5,h6,p {
     opacity: 0.3;
 }
 
+@media (max-width: 768px) {
+    #ONButtons {
+        margin-bottom: 15rem;
+    }
+
+    #ONInputs label {
+        font-size: 1.3rem !important;
+    }
+}
