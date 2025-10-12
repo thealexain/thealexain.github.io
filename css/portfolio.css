@@ -1,6 +1,5 @@
 .PortfolioCard {
     width: 100%;
-    aspect-ratio: 1/1;
     padding: var(--margin);
     background-color: var(--backColor);
     display: flex;
@@ -97,5 +96,5 @@
         height: 70vh;
     }
 
-    
+
 }
