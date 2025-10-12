@@ -69,12 +69,13 @@
     flex-direction: column;
     gap: 0;
     padding: 0;
-
+    
 }
 
     .PortfolioCard {
         border: none;
         padding: var(--marginContent);
+        aspect-ratio: 1/1;
     }
 
     .PortfolioCard .PPCategory {
@@ -87,12 +88,19 @@
     }
 
     .PortfolioCard .PPImage {
-        /* padding-top: 2rem; */
+        padding-top: 2rem;
     }
 
-    .PortfolioCard .PPImage svg {
-        width: 30vw !important;
-        aspect-ratio: 1/1;
+    .PortfolioCard .PPImage svg, .PPImage img.square, .PPImage img.horizontal {
+        height: 8.5rem;
+    }
+
+    .PPImage svg.horizontal {
+        height: 5.5rem;
+    }
+
+    .PPImage img.vertical {
+        width: 9rem;
     }
 
     .PortfolioCard:hover {

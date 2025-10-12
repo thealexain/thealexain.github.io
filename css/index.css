@@ -1308,7 +1308,7 @@ body:has(.LightedInput:hover) #Cursor2 {
 }
 
 #ONInputs label:not(label:first-of-type) {
-    margin-top: 4rem;
+    margin-top: 6rem;
     margin-bottom: 0.5rem;
 }
 
