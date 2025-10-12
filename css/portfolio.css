@@ -14,6 +14,10 @@
     margin: 0;
 }
 
+.PortfolioCard .PPName {
+        font-size: 1.15rem !important;
+}
+
 .PortfolioCard .PPCategory, .PortfolioCard .PPName {
     color: var(--accColor);
 }
@@ -33,11 +37,15 @@
 }
 
 .PortfolioCard .PPImage svg, .PPImage img.square, .PPImage img.horizontal {
-    height: 9rem;
+    height: 7.5rem;
+}
+
+.PPImage svg.horizontal {
+    height: 5rem;
 }
 
 .PPImage img.vertical {
-    width: 9rem;
+    width: 8rem;
 }
 
 

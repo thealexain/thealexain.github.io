@@ -46,7 +46,9 @@
         "solution": "В основе логотипа — стилизованное изображение коробки, ключевого объекта в логистике.<span class='TextMarginBR'></span>Её грани образуют буквы F и T, что создает абстрактную форму, но при этом передает надежность, порядок и структуру.<span class='TextMarginBR'></span>Скрытые в логотипе инициалы FullTraffic помогают лучше запомнить бренд, сохраняя современный и технологичный вид.",
         "solutionEng": "The logo's foundation is a stylized image of a box—a key object in logistics.<span class='TextMarginBR'></span>Its edges form letters F and T, creating an abstarct shape that also conveys reliability, order and structure.<span class='TextMarginBR'></span>Hidden FullTraffic initials aid in brand memorability while maintaining a modern and technological appearance.",
         "color1": "#FFFFFF",
-        "color2": "var(--black)"
+        "color2": "var(--black)",
+
+        "type":"horizontal"
     },
     "yantar": {
         "name": "Янтарь",
@@ -104,7 +106,9 @@
         "review": "Спасибо большое за лого! Все понравилось: оперативность, подход к работе, внимание к правкам и замечаниям.",
         "reviewEng": "Thank you so much for the logo!<span class='TextMarginBR'></span>I liked everything: the efficiency, approach to work, and attention to revisions and feedback.",
         "color1": "#FFFFFF",
-        "color2": "#36A9E1"
+        "color2": "#36A9E1",
+
+        "type":"horizontal"
     },
     "smuzi": {
         "name": "Рецепты Смузи",

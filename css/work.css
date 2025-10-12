@@ -543,7 +543,7 @@ body:has(.Module.Actived) #Sketchbook {
 }
 
 #ONInputs input:not(:last-child) {
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
 }
 
 #ONInputs label {
