@@ -84,7 +84,7 @@ body::before {
         0 3.9px 4.6px rgba(0, 0, 0, 0.8),
         0 12.3px 8.4px rgba(0, 0, 0, 0.06),
         0 18.8px 19.2px rgba(0, 0, 0, 0.37),
-        0 22px 40px rgba(0, 0, 0, 0.2)
+        0 22px 40px rgba(0, 0, 0, 0.2);
 }
 
 .Page {
@@ -386,6 +386,10 @@ body::before {
 
 #Page1_Title h1 {
     width: 70%;
+}
+
+#Page1_Title h1.NotWidth {
+    width: 100%;
 }
 
 #Page1_Title h2 {
@@ -1047,7 +1051,7 @@ body:has(.Lighted:hover) #Cursor2 {
     top: 0;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.4s ease-in-out;
 }
 
 .ModuleLight.Actived {
@@ -1055,9 +1059,6 @@ body:has(.Lighted:hover) #Cursor2 {
     pointer-events: initial;
 }
 
-body:has(.ModuleLight.Actived) #Sketchbook {
-    display: none;;
-}
 
 .ModulePages {
     padding: 0;

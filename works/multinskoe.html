@@ -7,7 +7,7 @@
 <link href="../css/main.css" rel="stylesheet"/>
 </head>
 <body>
-<div all-pages="6" id="Presentation">
+<div all-pages="7" id="Presentation">
 <!-- HERO PAGE -->
 <div class="Page Active" data-page="1" id="PAGE_HERO" style="--backColor: #1A4B55; --accColor: #EFAB68;">
 <div class="PageContent Custom">
@@ -76,9 +76,33 @@
 </div>
 </div>
 <div class="MobileContent">
-
+<div class="Page MobileFit BlackPage" data-page="2" id="PAGE_GALLERY">
+<div class="PageContent" id="Gallery">
+<div class="GalleryBlock" for="FullScreenPreview" onclick="OpenGallery(this)">
+<img alt="" src="../images/works/multinskoe/5.webp"/>
+<span class="Default" lang-id="workGallerySee">Смотреть полное изображение</span>
+</div><div class="GalleryBlock" for="FullScreenPreview" onclick="OpenGallery(this)">
+<img alt="" src="../images/works/multinskoe/4.webp"/>
+<span class="Default" lang-id="workGallerySee">Смотреть полное изображение</span>
+</div><div class="GalleryBlock" for="FullScreenPreview" onclick="OpenGallery(this)">
+<img alt="" src="../images/works/multinskoe/3.webp"/>
+<span class="Default" lang-id="workGallerySee">Смотреть полное изображение</span>
+</div><div class="GalleryBlock" for="FullScreenPreview" onclick="OpenGallery(this)">
+<img alt="" src="../images/works/multinskoe/2.webp"/>
+<span class="Default" lang-id="workGallerySee">Смотреть полное изображение</span>
+</div><div class="GalleryBlock" for="FullScreenPreview" onclick="OpenGallery(this)">
+<img alt="" src="../images/works/multinskoe/1.webp"/>
+<span class="Default" lang-id="workGallerySee">Смотреть полное изображение</span>
+</div><div class="GalleryBlock" for="FullScreenPreview" onclick="OpenGallery(this)">
+<img alt="" src="../images/works/multinskoe/7.webp"/>
+<span class="Default" lang-id="workGallerySee">Смотреть полное изображение</span>
+</div><div class="GalleryBlock" for="FullScreenPreview" onclick="OpenGallery(this)">
+<img alt="" src="../images/works/multinskoe/6.webp"/>
+<span class="Default" lang-id="workGallerySee">Смотреть полное изображение</span>
+</div></div>
+</div>
 <!-- TASK -->
-<div class="Page BlackPage" data-page="2" id="PAGE_TASK">
+<div class="Page BlackPage" data-page="3" id="PAGE_TASK">
 <div class="PageContent" id="P2_Content">
 <h2 class="TwentyFive Header" lang-id="workTask">Задача</h2>
 <div class="TextBlock TextJustify" id="PT_Text">
@@ -86,7 +110,7 @@
 </div>
 </div>
 <!-- SOLUTION -->
-<div class="Page" data-page="3" id="PAGE_SOLUTION">
+<div class="Page" data-page="4" id="PAGE_SOLUTION">
 <div class="PageContent" id="P2_Content">
 <h2 class="TwentyFive Header" lang-id="workSolution">Решение</h2>
 <div class="TextBlock TextJustify" id="PS_Text">
@@ -94,7 +118,7 @@
 </div>
 </div>
 <!-- REVIEW -->
-<div class="Page BlackPage" data-page="4" id="PAGE_REVIEW">
+<div class="Page BlackPage" data-page="5" id="PAGE_REVIEW">
 <div class="PageContent" id="P2_Content">
 <h2 class="TwentyFive Header" lang-id="workReview">Отзыв</h2>
 <div class="TextBlock TextJustify" id="PR_Text">
@@ -106,7 +130,7 @@
 
 
 
-<div class="Page" data-page="5" id="PAGE_END">
+<div class="Page" data-page="6" id="PAGE_END">
 <div class="PageContent">
 <h2 class="Thirty Header Width25" lang-id="9header">Готовы сделать решение, <br/>а не просто картинку?</h2>
 <button class="CenterButton ButtonPage" for="OrderNow" id="PC10_Button" onclick="OpenModule(this)" style="--backColor: #fff; --accColor: #000">
@@ -114,12 +138,12 @@
 </button>
 </div>
 </div>
-<div class="Page BlackPage" data-page="6" id="PAGE_CONTACTS">
+<div class="Page BlackPage" data-page="7" id="PAGE_CONTACTS">
 <div class="PageContent" id="P11_Content">
 <h2 class="TwentyFive Header" lang-id="contacts">Связаться со мной</h2>
 <div class="List">
 <a class="Twenty Link" href="https://t.me/alex_desg">Telegram</a>
-<a class="Twenty Link" href="">Linkedin</a>
+<!-- <a class=" Twenty Link" href="">Linkedin</a> -->
 <a class="Twenty Link" href="mailto:covalevalex@vk.com" id="ON3Email">Email</a>
 <a class="Twenty Link" href="https://vk.com/alex_de.sign">VK</a>
 <div class="Spacer"></div>
@@ -164,7 +188,7 @@
 <div class="MPages">
 <div class="MPage Actived" fixed="" module-page="1">
 <div class="Header">
-<p class="Thirty">Что вы хотите создать?</p>
+<p class="Thirty" lang-id="ONHeader1">Что вы хотите создать?</p>
 <div id="ONButtons" style="--accColor: transparent;">
 <button class="TwentyFive BackgroundButton" for="OrderNow" lang-id="categoryLogotype" onclick="ModuleNextPage(this); ONopenInputs(this) ">Логотип</button>
 <button class="TwentyFive BackgroundButton" for="OrderNow" lang-id="categoryBranding" onclick="ModuleNextPage(this); ONopenInputs(this)">Брендинг</button>
@@ -176,24 +200,22 @@
 </div>
 </div>
 <div class="MPage" module-page="2">
-<p class="Thirty Header">Замечательный выбор!</p>
-<p class="TwentyFive">Ответьте на простых 10 вопросов</p>
+<p class="Thirty Header" lang-id="ONChoice">Замечательный выбор!</p>
+<p class="TwentyFive" lang-id="ONQuestions">Ответьте на простых 10 вопросов</p>
 <div id="ONInputs">
-<label class="TwentyFive" for="1">инпут 1</label>
-<input class="TwentyFive" id="" name="1" oninput="inputOpenButton(this)" placeholder="placeholder..." type="text"/>
 </div>
-<button class="TwentyFive Disabled BackgroundButton" for="OrderNow" id="ON2_Button" onclick="ModuleNextPage(this)" style="--accColor: transparent;">Продолжить</button>
+<button class="TwentyFive Disabled BackgroundButton" for="OrderNow" id="ON2_Button" lang-id="continue" onclick="ModuleNextPage(this)" style="--accColor: transparent;">Продолжить</button>
 </div>
 <div class="MPage" module-page="3">
-<p class="Thirty Header">Ответы скопированы!</p>
-<p class="TwentyFive">Пришлите мне их в любую социальгую сеть</p>
+<p class="Thirty Header" lang-id="ONHeader3">Ответы скопированы!</p>
+<p class="TwentyFive" lang-id="ONText3">Пришлите мне их в любую социальгую сеть</p>
 <div class="List">
 <a class="Twenty Link" href="https://t.me/alex_desg">Telegram</a>
-<a class="Twenty Link" href="">Linkedin</a>
+<!-- <a class=" Twenty Link" href="">Linkedin</a> -->
 <a class="Twenty Link" href="mailto:covalevalex@vk.com" id="ON3Email">Email</a>
 <a class="Twenty Link" href="https://vk.com/alex_de.sign">VK</a>
 </div>
-<button class="TwentyFive BackgroundButton" id="ON3_Button" style="--accColor: transparent;">Копировать</button>
+<button class="TwentyFive BackgroundButton" id="ON3_Button" lang-id="copy" style="--accColor: transparent;">Копировать</button>
 </div>
 </div>
 </div>

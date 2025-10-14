@@ -681,6 +681,7 @@ button.Disabled {
     scale: -0.8;
     rotate: 0deg;
     transition: scale 0.2s cubic-bezier(0.6, -0.01, 0, 1.2), opacity 0.2s ease-in-out;
+    background-color: transparent !important;
 }
 
 .ArrowLeft::after, .ArrowLeft::before {

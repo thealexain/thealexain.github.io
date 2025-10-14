@@ -52,7 +52,9 @@ function changeTextLanguage() {
     console.log(document.querySelectorAll("*[lang-id]"))
     Array.from(document.querySelectorAll("*[lang-id]")).forEach(a => {
         if (a.hasAttribute("lang-for") && a.getAttribute("lang-for") == "placeholder") {
-            a.setAttribute(a.getAttribute("lang-for"), langData[a.getAttribute("lang-id") + "Placeholder"][language])
+            if (a.getAttribute("lang-id") + "Placeholder" in langData) {
+                a.setAttribute(a.getAttribute("lang-for"), langData[a.getAttribute("lang-id") + "Placeholder"][language])
+            }
         }
         else {
             if (a.hasAttribute("lang-work")) {
@@ -72,6 +74,7 @@ function changeTextLanguage() {
             }
             else {
                 a.innerHTML = langData[a.getAttribute("lang-id")][language]
+                console.log(langData[a.getAttribute("lang-id")][language])
             }
         }
     })

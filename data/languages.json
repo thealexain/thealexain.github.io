@@ -1,12 +1,36 @@
 {
-    "creativityText": ["Креативный текст", "creativity TEXT"],
-    "adaptableText": ["Адапптинвый текст", "adaptable TEXT"],
-    "mentoringText": ["Наставничество текст", "mentoring TEXT"],
-    "initiativeText": ["Инициаливный текст", "initiabtive TEXT"],
-    "productThinkingText": ["Продукт финкинг текст", "product think TEXT"],
-    "communicationText": ["коммуникационный текст", "communication TEXT"],
-    "responsibilityText": ["отвественный текст", "responsibility TEXT"],
-    "peoplePersonText": ["понимающйи людей текст", "people person TEXT"],
+    "creativityText": [
+        "Ищу не очевидные решения и всегда оставляю место идее, которая рождается в процессе. Для меня креатив — не цель, а естественный способ мыслить.",
+        "I look for non-obvious solutions and always leave room for ideas that are born in the process. For me, creativity is not a goal, but a natural way of thinking."
+    ],
+    "adaptableText": [
+        "Быстро вживаюсь в новую среду, проект или команду. Умею сохранять стиль и качество даже при смене условий, требований или культурного контекста.",
+        "I quickly integrate into a new environment, project, or team. I can maintain style and quality even when conditions, requirements, or cultural contexts change."
+    ],
+    "mentoringText": [
+        "Мне важно делиться опытом. Умею объяснить сложное просто, поддержать, если человек делает первые шаги, и вдохновить — если он уже идёт своим путём.",
+        "Sharing experience is important to me. I can explain complex things simply, provide support if a person is taking their first steps, and inspire them if they are already on their own path."
+    ],
+    "initiativeText": [
+        "Не жду указаний, когда вижу, как можно улучшить. Предлагаю идеи, ищу альтернативы и беру на себя ответственность за результат.",
+        "I don't wait for instructions when I see room for improvement. I propose ideas, look for alternatives, and take responsibility for the result."
+    ],
+    "productThinkingText": [
+        "Дизайн для меня — не просто визуал. Это инструмент, который решает задачу бизнеса и делает продукт понятным, живым и нужным.",
+        "For me, design is not just about visuals. It is a tool that solves business problems and makes the product clear, alive, and necessary."
+    ],
+    "communicationText": [
+        "Умею выстраивать диалог — с заказчиком, командой и пользователем",
+        "I know how to build a dialogue — with the client, the team, and the user."
+    ],
+    "responsibilityText": [
+        "Веду проекты от скетча до реализации, контролируя сохранение концепции на всех этапах.",
+        "I lead projects from sketch to implementation, controlling the preservation of the concept at all stages."
+    ],
+    "peoplePersonText": [
+        "Каждый проект — диалог. Умею работать и с теми, кто точно знает, чего хочет, и с теми, кто только ищет направление. Моя задача — услышать, предложить и сделать лучше, чем ожидали.",
+        "Every project is a dialogue. I can work both with those who know exactly what they want and with those who are just looking for direction. My task is to listen, suggest, and deliver better than expected."
+    ],
 
     "categoryLogotype": ["Логотип", "Logotype"],
     "categoryBranding": ["Брендинг", "Brand"],
@@ -156,7 +180,7 @@
     "6communication": ["коммуникация", "communication"],
     "6peoplePerson": ["ориентирован <br>на любого", "people person"],
     "alexain": ["Алексайн", "Alexain"],
-    "7text": ["Это не просто блог, это чистый показатель моей чистой работы", "Not a blog. A portfolio of pure craftsmanship."],
+    "7text": ["Мой творческий профессиональный полигон, где я проверяю, что цепляет разных людей с разными идеями", "My creative playground where I test what resonates with different people and different ideas"],
     "thousand": [" тыс. ", "K "],
     "million": [" млн. ", "M "],
     "subs": [" подписчиков", "subscribers"],
@@ -173,6 +197,10 @@
     "ONChoice": ["Замечательный выбор!", "The perfect choice!"],
     "ONQuestions": ["Ответьте на простых 10 вопросов", "Answer 10 simple questions"],
     "ONHeader1": ["Что вы хотите создать?", "What do you want to create?"],
+    "ONHeader3": ["Ответы скопированы!", "The answers are copied!"],
+    "ONText3": ["Пришлите мне их в любую социальную сеть", "Send them to me on any social network"],
+    "404Header": ["Здесь мог быть ваш дизайн", "Your design could be here"],
+    "404Button": ["Заполним пустоты", "Fill in the voids"],
 
     "workTask": ["Задача", "Task"],
     "workSolution": ["Решение", "Solution"],
