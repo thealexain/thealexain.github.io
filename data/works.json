@@ -186,7 +186,19 @@
         "review": "Сотрудничество с Александром оставило только положительные эмоции и хорошее впечатление.<span class='TextMarginBR'></span>Монтаж видео получился на высоком уровне — всё чётко, динамично и со вкусом.<span class='TextMarginBR'></span>Видно, что Александр подходит к делу профессионально и внимательно к деталям.<span class='TextMarginBR'></span>А шапка для канала вышла стильной и запоминающейся — получилось именно то, что мне и нужно было.<span class='TextMarginBR'></span>Хочу поблагодарить за индивидуальный подход и отличный результат — с удовольствием рекомендую Александра другим!",
         "reviewEng": "Working with Alexander left me with only positive emotions and a great impression.<span class='TextMarginBR'></span>The video editing was done at a high level—everything was clear, dynamic, and tasteful.<span class='TextMarginBR'></span>It's evident that Alexander approaches his work professionally and pays close attention to details.<span class='TextMarginBR'></span>The channel banner turned out stylish and memorable—it was exactly what I needed.<span class='TextMarginBR'></span>I want to thank him for his individual approach and excellent results—I happily recommend Alexander to others!",
         "color1": "#FFE3D4",
-        "color2": "#C90101"
+        "color2": "#C90101",
+
+        "galleryLinked": true,
+        "links": {
+            "https://youtube.com/shorts/GmSFoG-QT3k?si=f-NvUufsc2b5l5rz": "youtube",
+            "https://youtube.com/shorts/at-bYwv8I_8?si=53g2DUyXL5aD8dVb": "youtube",
+            "https://youtube.com/shorts/wVENPVHWi8U?si=WNzqRRWzWb5aOSrR": "youtube",
+            "https://youtube.com/shorts/S6qzRKdBgoo?si=WE8ns5vOMRtIaPUU": "youtube",
+            "https://youtube.com/shorts/A2GW9JHvIPk?si=Fn5yVv_r2HvEvCJ9": "youtube",
+            "https://youtube.com/shorts/88sgSktPiNo?si=LDaZFCTFYIlU1gx3": "youtube",
+            "https://youtube.com/shorts/PRflx1xfv2M?si=MFpyWZD7GJnVcBBk": "youtube",
+            "https://youtube.com/shorts/10KpaTSzSeY?si=0dfIu7eS180c255p": "youtube"
+        }
     },
     "photomaster": {
         "name": "Сертификат ФотоМастер",

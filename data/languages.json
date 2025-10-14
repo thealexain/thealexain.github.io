@@ -203,6 +203,7 @@
     "404Button": ["Заполним пустоты", "Fill in the voids"],
 
     "workTask": ["Задача", "Task"],
+    "workVideo": ["Видео", "Video"],
     "workSolution": ["Решение", "Solution"],
     "workReview": ["Отзыв", "Review"],
     "workGallerySee": ["Смотреть полное фото", "See full photo"],
